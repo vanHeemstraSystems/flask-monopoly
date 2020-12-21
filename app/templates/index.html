@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% assets "scss_all" %}
+        <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    {% endassets %}
+</head>
+<body>
+    <div id="board">
+        <div class="tile" id="field1">start</div>
+        <div class="tile" id="field2">saloniki</div>
+        <div class="tile" id="field3">?</div>
+        <div class="tile" id="field4">ateny</div>
+        <div class="tile" id="field5">parking strzeżony</div>
+        <div class="tile" id="field6">dworzec poł</div>
+        <div class="tile" id="field7">neapol</div>
+        <div class="tile" id="field8">?</div>
+        <div class="tile" id="field9">mediolan</div>
+        <div class="tile" id="field10">rzym</div>
+        <div class="tile" id="field11">więzienie</div>
+        <div class="tile" id="field12">barcelona</div>
+        <div class="tile" id="field13">elektrownia</div>
+        <div class="tile" id="field14">sewila</div>
+        <div class="tile" id="field15">madryt</div>
+        <div class="tile" id="field16">dworzec zach</div>
+        <div class="tile" id="field17">loverpool</div>
+        <div class="tile" id="field18">?</div>
+        <div class="tile" id="field19">glasgow</div>
+        <div class="tile" id="field20">londyn</div>
+        <div class="tile" id="field21">darmowy parking</div>
+        <div class="tile" id="field22">rotterdam</div>
+        <div class="tile" id="field23">?</div>
+        <div class="tile" id="field24">bruksela</div>
+        <div class="tile" id="field25">amsterdam</div>
+        <div class="tile" id="field26">dworzec pół</div>
+        <div class="tile" id="field27">malmo</div>
+        <div class="tile" id="field28">goteborg</div>
+        <div class="tile" id="field29">wodociag</div>
+        <div class="tile" id="field30">sztokcholm</div>
+        <div class="tile" id="field31">do więzienia</div>
+        <div class="tile" id="field32">frankfurt</div>
+        <div class="tile" id="field33">kolonia</div>
+        <div class="tile" id="field34">?</div>
+        <div class="tile" id="field35">bonn</div>
+        <div class="tile" id="field36">dworzec wsch</div>
+        <div class="tile" id="field37">?</div>
+        <div class="tile" id="field38">insbruck</div>
+        <div class="tile" id="field39">podatek</div>
+        <div class="tile" id="field40">wiedeń</div>
+        <div id="display">dispaly</div>
+    </div>
+
+    {% assets "js_build" %}
+        <!-- <link rel=stylesheet type=text/css href="{{ ASSET_URL }}"> -->
+        <script src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+</body>
+</html>
