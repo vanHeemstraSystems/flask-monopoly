@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="row justify-content-start mt-3">
+        <div class="col-4">
+            <ul class="list-group">
+                <li class="list-group-item"><bold>{{ current_user.username}}</bold></li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <p>join code:</p>
+            <h2>{{ join_code }}</h2>
+        </div>
+    </div>
+
+{% endblock %}
