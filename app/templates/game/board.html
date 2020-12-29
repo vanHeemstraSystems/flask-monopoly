@@ -9,7 +9,17 @@
 {% block body %}
     <div id="board" class="mt-5">
         {% for field in game.board %}
-            <div class="tile" id="field{{ loop.index }}">{{ field.label }}</div>
+            <div class="tile" id="field{{ loop.index0 }}">
+                {{ field.label }}
+                <div class="players">
+                    {% set fieldloop = loop %}
+                    {% for player in game.players %}
+                        {% if player.current_field_id == fieldloop.index0 %}
+                            <div class="player">{{ player.id }}</div>
+                       {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
         {% endfor %}
         <div id="display">dispaly</div>
     </div>

@@ -16,3 +16,17 @@ body {
   grid-template-rows:  2fr repeat(9, 1fr) 2fr;
   
 }
+
+.players{
+  position: absolute;
+  display: flex;
+  bottom: 1px;
+}
+
+.player{
+  width: 25px;
+  height: 25px;
+  background-color: #17a2b8;
+  margin-left: 2px;
+  border-radius: 50%;
+}
