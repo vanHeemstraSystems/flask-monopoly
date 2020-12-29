@@ -1,10 +1,11 @@
-import os
 from secrets import token_hex
 from flask import Blueprint, render_template, flash, redirect, url_for
 from flask_login import current_user
+from app import db
 from app.game.game import Game, Player
-from app.game.forms import JoinGameForm
 from app.game.utils import save_game, load_game
+from app.game.models import Game as GameModel
+from app.game.constants import HOT_SEATS_MODE
 
 game = Blueprint('game', __name__)
 
@@ -28,6 +29,10 @@ def hot_seats(code=None):
         new_game_code = token_hex(16)
         g = Game()
         save_game(g, new_game_code)
+
+        game_in_db = GameModel(code=new_game_code, user_id=current_user.id, mode=HOT_SEATS_MODE)
+        db.session.add(game_in_db)
+        db.session.commit()
         return '222'
 
 
