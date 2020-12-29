@@ -27,14 +27,14 @@ def hot_seats(code=None):
         pass
     else:
         new_game_code = token_hex(16)
-        g = Game()
+        g = Game(2)
         save_game(g, new_game_code)
 
         game_in_db = GameModel(code=new_game_code, user_id=current_user.id, mode=HOT_SEATS_MODE)
         db.session.add(game_in_db)
         db.session.commit()
 
-    return render_template('game/board.html')
+    return render_template('game/board.html', game=g)
 
 
 @game.route('/start')
