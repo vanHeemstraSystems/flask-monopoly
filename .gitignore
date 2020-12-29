@@ -7,3 +7,4 @@ app/game/games/*
 **/__pycache__
 **/*.pyc
 setup.sh
+**/*.pkl

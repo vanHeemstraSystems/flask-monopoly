@@ -1,7 +1,6 @@
 class Player:
-    def __init__(self, player_id):
+    def __init__(self,):
         self.money = 1500
-        self.id = id
 
 
 class Game:

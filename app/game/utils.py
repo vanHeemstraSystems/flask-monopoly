@@ -5,7 +5,7 @@ from app.game.game import Game
 
 
 def get_games_dir():
-    return os.path.abspath(os.getcwd()) + '/app/game/games'
+    return os.path.abspath(os.getcwd()) + '/app/game/save_files'
 
 
 def save_game(game: Game, code: str) -> str:
