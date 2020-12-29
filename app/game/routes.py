@@ -33,7 +33,8 @@ def hot_seats(code=None):
         game_in_db = GameModel(code=new_game_code, user_id=current_user.id, mode=HOT_SEATS_MODE)
         db.session.add(game_in_db)
         db.session.commit()
-        return '222'
+
+    return render_template('game/board.html')
 
 
 @game.route('/start')

@@ -11,7 +11,7 @@
         Geneva, Verdana, sans-serif; }
 
     #board {
-      height: 100vh;
+      height: 95vh;
       display: grid;
       grid-template-columns: 2fr repeat(9, 1fr) 2fr;
       grid-template-rows: 2fr repeat(9, 1fr) 2fr; }

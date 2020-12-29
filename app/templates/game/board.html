@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends 'layout.html' %}
+
+{% block css %}
     {% assets "scss_all" %}
         <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
     {% endassets %}
-</head>
-<body>
-    <div id="board">
+{% endblock %}
+
+{% block body %}
+    <div id="board" class="mt-5">
         <div class="tile" id="field1">start</div>
         <div class="tile" id="field2">saloniki</div>
         <div class="tile" id="field3">?</div>
@@ -52,10 +50,11 @@
         <div class="tile" id="field40">wiedeń</div>
         <div id="display">dispaly</div>
     </div>
+{% endblock %}
 
+{% block js %}
     {% assets "js_build" %}
         <!-- <link rel=stylesheet type=text/css href="{{ ASSET_URL }}"> -->
         <script src="{{ ASSET_URL }}"></script>
     {% endassets %}
-</body>
-</html>
+{% endblock %}

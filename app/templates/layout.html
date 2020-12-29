@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    {% block css %}{% endblock %}
 </head>
 <body>
     {% include 'navbar.html' %}
-    <div class="container">
+    <div class="container pt-5">
         {% block body %}{% endblock %}
     </div>
     {% include 'messages.html' %}
+    {% block js %}{% endblock %}
 </body>
 </html>
