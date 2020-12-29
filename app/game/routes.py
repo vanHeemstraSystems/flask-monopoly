@@ -28,6 +28,7 @@ def hot_seats(code=None):
     else:
         new_game_code = token_hex(16)
         g = Game(2)
+        g.next_turn()
         save_game(g, new_game_code)
 
         game_in_db = GameModel(code=new_game_code, user_id=current_user.id, mode=HOT_SEATS_MODE)
