@@ -14,6 +14,11 @@ def home():
     return render_template('game/home.html')
 
 
+@game.route('/menu')
+def menu():
+    return render_template('game/menu.html')
+
+
 @game.route('/start')
 def start():
     join_code = token_hex(8)
@@ -52,4 +57,3 @@ def join():
             flash('wrong code', 'danger')
 
     return render_template('game/join_game.html', form=form)
-
