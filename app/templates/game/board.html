@@ -21,7 +21,11 @@
                 </div>
             </div>
         {% endfor %}
-        <div id="display">dispaly</div>
+        <div id="display">dispaly
+            <form action="{{ url_for('game.hot_seats') }}/{{ code }}">
+                <input type="submit" value="next turn">
+            </form>
+        </div>
     </div>
 {% endblock %}
 

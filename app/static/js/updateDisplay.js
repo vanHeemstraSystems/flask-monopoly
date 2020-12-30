@@ -5,11 +5,11 @@
     tiles.forEach(tile=>{
         tile.addEventListener('mouseenter', e=>{
             const text = e.target.textContent
-            display.textContent = text
+            console.log(text)
         })
         
         tile.addEventListener('mouseout', ()=>{
-            display.textContent = ''
+            console.log('out')
         })
     })
 }

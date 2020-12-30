@@ -24,18 +24,20 @@ def menu():
 @game.route('/hot_seats/<code>')
 def hot_seats(code=None):
     if code:
-        pass
+        g = load_game(code)
+        g.next_turn()
+        save_game(g, code)
     else:
-        new_game_code = token_hex(16)
+        code = token_hex(16)
         g = Game(2)
         g.next_turn()
-        save_game(g, new_game_code)
+        save_game(g, code)
 
-        game_in_db = GameModel(code=new_game_code, user_id=current_user.id, mode=HOT_SEATS_MODE)
+        game_in_db = GameModel(code=code, user_id=current_user.id, mode=HOT_SEATS_MODE)
         db.session.add(game_in_db)
         db.session.commit()
 
-    return render_template('game/board.html', game=g)
+    return render_template('game/board.html', game=g, code=code)
 
 
 @game.route('/start')

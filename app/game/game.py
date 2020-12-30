@@ -10,7 +10,7 @@ class Player:
 
     def move(self, steps: int):
         if self.current_field_id + steps > 39:
-            self.current_field_id = self.current_field_id - len(FIELDS) - 1
+            self.current_field_id = self.current_field_id - len(FIELDS) - 1 + steps
         else:
             self.current_field_id += steps
 
