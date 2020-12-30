@@ -1,5 +1,5 @@
 from secrets import token_hex
-from flask import Blueprint, render_template, flash, redirect, url_for
+from flask import Blueprint, render_template, flash, redirect, url_for, request
 from flask_login import current_user
 from app import db
 from app.game.game import Game, Player
@@ -21,11 +21,12 @@ def menu():
 
 
 @game.route('/hot_seats')
-@game.route('/hot_seats/<code>')
+@game.route('/hot_seats/<code>', methods=['POST'])
 def hot_seats(code=None):
-    if code:
+    if code and request.form.get('next_turn'):
         g = load_game(code)
         g.next_turn()
+        print(request.form)
         save_game(g, code)
     else:
         code = token_hex(16)

@@ -9,7 +9,7 @@
 {% block body %}
     <div id="board" class="mt-5">
         {% for field in game.board %}
-            <div class="tile" id="field{{ loop.index0 }}">
+            <div class="tile" data-type="{{ field.type }}" id="field{{ loop.index0 }}">
                 {{ field.label }}
                 <div class="players">
                     {% set fieldloop = loop %}
@@ -22,7 +22,8 @@
             </div>
         {% endfor %}
         <div id="display">dispaly
-            <form action="{{ url_for('game.hot_seats') }}/{{ code }}">
+            <form method="post" action="{{ url_for('game.hot_seats') }}/{{ code }}">
+                <input type="hidden" name="next_turn" value="1">
                 <input type="submit" value="next turn">
             </form>
         </div>
