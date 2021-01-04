@@ -21,7 +21,7 @@ class PlaceholderField:
         self.label = data['label']
 
     def on_enter(self, player: Player):
-        print('field {} has been stepped on by player {}'.format(self.id, player.id))
+        return 'field {} has been stepped on by player {}'.format(self.id, player.id)
 
 
 class CityField:
@@ -31,7 +31,7 @@ class CityField:
         # price = data.price
 
     def on_enter(self, player: Player):
-        print('field {} has been stepped on by player {}'.format(self.id, player.id))
+        return 'field {} has been stepped on by player {}'.format(self.id, player.id)
 
 
 class Game:
@@ -39,6 +39,7 @@ class Game:
         self.players = []
         self.current_player_index = 0
         self.board = []
+        self.msgs = []
 
         for i, _ in enumerate(range(players_count)):
             self.players.append(Player(i))
@@ -50,7 +51,11 @@ class Game:
         move = randint(2, 12)
         player = self.players[self.current_player_index]
         player.move(move)
-        self.board[player.current_field_id].on_enter(player)
+        msg = self.board[player.current_field_id].on_enter(player)
+        self._add_message(msg)
+
+    def _add_message(self, msg):
+        self.msgs.append(msg)
 
     def _next_player(self):
         if self.current_player_index + 1 == len(self.players):
