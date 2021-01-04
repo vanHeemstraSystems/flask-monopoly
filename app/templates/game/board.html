@@ -21,7 +21,12 @@
                 </div>
             </div>
         {% endfor %}
-        <div id="display">dispaly
+        <div id="display">
+            <div class="cash">
+                {% for player in game.players %}
+                    <div>player{{ player.id }}: {{ player.money }}</div>
+                {% endfor %}
+            </div>
             <form method="post" action="{{ url_for('game.hot_seats') }}/{{ code }}">
                 <input type="hidden" name="next_turn" value="1">
                 <input type="submit" value="next turn">
