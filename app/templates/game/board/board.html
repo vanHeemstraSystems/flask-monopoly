@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    {% assets "scss_all" %}
+        <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    {% endassets %}
+    <script src="https://kit.fontawesome.com/047d79a93f.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body %}
+
+    <div id="board" class="mt-5">
+        {% include 'game/board/fields.html' %}
+
+        {% include 'game/board/display.html' %}
+    </div>
+
+    <div
+            id="player_info"
+            data-current_player_index="{{ game.current_player_index }}"
+            data-current_player_money="{{ game.players[game.current_player_index].money }}"
+    ></div>
+{% endblock %}
+
+{% block js %}
+    {% assets "js_build" %}
+        <!-- <link rel=stylesheet type=text/css href="{{ ASSET_URL }}"> -->
+        <script src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+{% endblock %}

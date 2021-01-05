@@ -1,0 +1,26 @@
+<div id="display">
+            <div class="cash">
+                {% for player in game.players %}
+                    player{{ player.id }}: {{ player.money }}
+                {% endfor %}
+            </div>
+            <form method="post" action="{{ url_for('game.hot_seats') }}/{{ code }}">
+                <input type="hidden" name="next_turn" value="1">
+                <input type="hidden" id="build_input" name="build" value="">
+                {% if game.can_buy %}
+                    <div>
+                        <p>do you want to buy
+                            field: {{ game.board[game.players[game.current_player_index].current_field_id].label }}, for
+                            ?</p>
+                        <label><input type="radio" name="buy" value="0">no</label>
+                        <label><input type="radio" name="buy" value="1" checked>yes</label>
+                    </div>
+                {% endif %}
+                <input type="submit" value="next turn">
+            </form>
+            <div class="msgs">
+                {% for msg in game.msgs|reverse %}
+                    <p>{{ msg }}</p>
+                {% endfor %}
+            </div>
+        </div>

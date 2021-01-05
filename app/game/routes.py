@@ -40,7 +40,7 @@ def hot_seats(code=None):
         db.session.add(game_in_db)
         db.session.commit()
 
-    return render_template('game/board.html', game=g, code=code)
+    return render_template('game/board/board.html', game=g, code=code)
 
 
 @game.route('/start')
