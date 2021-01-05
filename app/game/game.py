@@ -14,10 +14,15 @@ class Player:
         self.color = self.colors[self.id]
 
     def move(self, steps: int):
+        old_field_index = self.current_field_id
         if self.current_field_id + steps > 39:
             self.current_field_id = self.current_field_id - len(FIELDS) - 1 + steps
         else:
             self.current_field_id += steps
+
+        new_field_index = self.current_field_id
+        if new_field_index < old_field_index:
+            self.money += 300
 
 
 class PlaceholderField:
