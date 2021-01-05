@@ -1,14 +1,17 @@
 from typing import Union
-from random import randint
+from random import randint, choice
 from app.game.fields import *
 
 
 class Player:
+    colors = ['#ED553B', '#F6B55C', '#3CAEA3', '#20639B']
+
     def __init__(self, pid: int):
         self.money = 3000
         self.current_field_id = 0
         self.id = pid
         self.owned_fields = []
+        self.color = self.colors[self.id]
 
     def move(self, steps: int):
         if self.current_field_id + steps > 39:
@@ -56,16 +59,20 @@ class Game:
 
     def next_turn(self, payload):
         if payload['buy']:
+            print(self.board[self.players[self.current_player_index].current_field_id])
             self._sell_field(self.players[self.current_player_index],
                              self.board[self.players[self.current_player_index].current_field_id])
         self._next_player()
         move = randint(2, 12)
         player = self.players[self.current_player_index]
         player.move(move)
+        print(self.board[player.current_field_id].type)
         msg = self.board[player.current_field_id].on_enter(player)
+
         if self.board[player.current_field_id].type in [CITY] and not self.board[
             player.current_field_id].owner and player.money > self.board[player.current_field_id].price:
             self.can_buy = True
+
         self._add_message(msg)
 
     def _sell_field(self, player: Player, field: Union[CityField]):

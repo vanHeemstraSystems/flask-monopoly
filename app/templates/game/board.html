@@ -11,11 +11,14 @@
         {% for field in game.board %}
             <div class="tile" data-type="{{ field.type }}" id="field{{ loop.index0 }}">
                 {{ field.label }}
+                {% if field.owner %}
+                    <div style="background-color: {{ field.owner.color }}" class="ownership">{{ field.owner.id }}</div>
+                {% endif %}
                 <div class="players">
                     {% set fieldloop = loop %}
                     {% for player in game.players %}
                         {% if player.current_field_id == fieldloop.index0 %}
-                            <div class="player">{{ player.id }}</div>
+                            <div style="background-color: {{ player.color }}" class="player">{{ player.id }}</div>
                         {% endif %}
                     {% endfor %}
                 </div>

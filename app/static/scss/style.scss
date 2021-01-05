@@ -26,9 +26,15 @@ body {
 .player{
   width: 25px;
   height: 25px;
-  background-color: #17a2b8;
   margin-left: 2px;
   border-radius: 50%;
+}
+
+.ownership{
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  padding: 5px;
 }
 
 .msgs{
