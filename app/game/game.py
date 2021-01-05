@@ -63,7 +63,8 @@ class Game:
         player = self.players[self.current_player_index]
         player.move(move)
         msg = self.board[player.current_field_id].on_enter(player)
-        if self.board[player.current_field_id].type in [CITY] and not self.board[player.current_field_id].owner:
+        if self.board[player.current_field_id].type in [CITY] and not self.board[
+            player.current_field_id].owner and player.money > self.board[player.current_field_id].price:
             self.can_buy = True
         self._add_message(msg)
 
