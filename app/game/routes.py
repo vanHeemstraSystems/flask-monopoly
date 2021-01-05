@@ -2,7 +2,7 @@ from secrets import token_hex
 from flask import Blueprint, render_template, flash, redirect, url_for, request
 from flask_login import current_user
 from app import db
-from app.game.game import Game, Player
+from app.game.game import Game
 from app.game.utils import save_game, load_game
 from app.game.models import Game as GameModel
 from app.game.constants import HOT_SEATS_MODE
@@ -21,17 +21,19 @@ def menu():
 
 
 @game.route('/hot_seats')
-@game.route('/hot_seats/<code>', methods=['POST'])
+@game.route('/hot_seats/<code>', methods=['POST', 'GET'])
 def hot_seats(code=None):
+    payload = {
+        'buy': bool(int(request.form.get('buy'))) if request.form.get('buy') else None
+    }
     if code and request.form.get('next_turn'):
         g = load_game(code)
-        g.next_turn()
-        print(request.form)
+        g.next_turn(payload)
         save_game(g, code)
     else:
         code = token_hex(16)
         g = Game(2)
-        g.next_turn()
+        g.next_turn(payload)
         save_game(g, code)
 
         game_in_db = GameModel(code=code, user_id=current_user.id, mode=HOT_SEATS_MODE)
