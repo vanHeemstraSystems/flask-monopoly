@@ -24,7 +24,8 @@ def menu():
 @game.route('/hot_seats/<code>', methods=['POST', 'GET'])
 def hot_seats(code=None):
     payload = {
-        'buy': bool(int(request.form.get('buy'))) if request.form.get('buy') else None
+        'buy': bool(int(request.form.get('buy'))) if request.form.get('buy') else None,
+        'build': request.form.get('build').split(';')[0:-1] if request.form.get('build') else None
     }
     if code and request.form.get('next_turn'):
         g = load_game(code)

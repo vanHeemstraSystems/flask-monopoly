@@ -68,6 +68,9 @@ class Game:
             print(self.board[self.players[self.current_player_index].current_field_id])
             self._sell_field(self.players[self.current_player_index],
                              self.board[self.players[self.current_player_index].current_field_id])
+        if payload['build']:
+            for field_id in payload['build']:
+                self._updated_field_build(field_id)
         self._next_player()
         move = randint(2, 12)
         player = self.players[self.current_player_index]
@@ -80,6 +83,17 @@ class Game:
             self.can_buy = True
 
         self._add_message(msg)
+
+    def _updated_field_build(self, field_id: str):
+        field_id = int(field_id)
+        for field in self.board:
+            if field.id == field_id:
+                if field.build == '0': field.build = '1'
+                if field.build == '1': field.build = '2'
+                if field.build == '2': field.build = '3'
+                if field.build == '3': field.build = '4'
+                if field.build == '4': field.build = 'h'
+                field.owner.money -= field.build_price
 
     def _sell_field(self, player: Player, field: Union[CityField]):
         player.money -= field.price

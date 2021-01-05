@@ -9,7 +9,8 @@
                 <input type="hidden" id="build_input" name="build" value="">
                 {% if game.can_buy %}
                     <div>
-                        <p>do you want to buy
+                        <p>active player: {{ game.current_player_index }}
+                            do you want to buy
                             field: {{ game.board[game.players[game.current_player_index].current_field_id].label }}, for
                             ?</p>
                         <label><input type="radio" name="buy" value="0">no</label>
