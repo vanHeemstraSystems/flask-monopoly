@@ -22,7 +22,7 @@ def create_app():
     assets.url = app.static_url_path
     scss = Bundle('scss/style.scss', 'scss/tiles.scss', filters='pyscss', output='css/all.css')
     assets.register('scss_all', scss)
-    js = Bundle('js/updateDisplay.js', output='js/build.js')
+    js = Bundle('js/selectors.js', 'js/buildOnField.js', 'js/updateDisplay.js', output='js/build.js')
     assets.register('js_build', js)
 
     db.init_app(app)

@@ -44,6 +44,7 @@ class CityField:
         self.build_price = data['build_price']
         self.pricing = data['pricing']
         self.owner = None
+        self.build = '0'
 
     def on_enter(self, player: Player):
         return 'field {} has been stepped on by player {}'.format(self.id, player.id)

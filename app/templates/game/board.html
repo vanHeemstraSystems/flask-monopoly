@@ -4,12 +4,23 @@
     {% assets "scss_all" %}
         <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
     {% endassets %}
+    <script src="https://kit.fontawesome.com/047d79a93f.js" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block body %}
+
     <div id="board" class="mt-5">
         {% for field in game.board %}
-            <div class="tile" data-type="{{ field.type }}" id="field{{ loop.index0 }}">
+            <div
+                    class="tile"
+                    data-type="{{ field.type }}"
+                    data-id="{{ field.id }}"
+                    {% if field.type == 'CITY' %}
+                    data-build_price="{{ field.build_price }}"
+                    data-build="{{ field.build }}"
+                    data-owner_id="{{ field.owner.id if field.owner else "" }}"
+                    {% endif %}
+                    id="field{{ loop.index0 }}">
                 {{ field.label }}
                 {% if field.owner %}
                     <div style="background-color: {{ field.owner.color }}" class="ownership">{{ field.owner.id }}</div>
@@ -22,6 +33,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+
             </div>
         {% endfor %}
 
@@ -33,9 +45,12 @@
             </div>
             <form method="post" action="{{ url_for('game.hot_seats') }}/{{ code }}">
                 <input type="hidden" name="next_turn" value="1">
+                <input type="hidden" id="build_input" name="build" value="">
                 {% if game.can_buy %}
                     <div>
-                        <p>do you want to buy field: {{ game.board[game.players[game.current_player_index].current_field_id].label }}, for ?</p>
+                        <p>do you want to buy
+                            field: {{ game.board[game.players[game.current_player_index].current_field_id].label }}, for
+                            ?</p>
                         <label><input type="radio" name="buy" value="0">no</label>
                         <label><input type="radio" name="buy" value="1" checked>yes</label>
                     </div>
@@ -49,6 +64,12 @@
             </div>
         </div>
     </div>
+
+    <div
+            id="player_info"
+            data-current_player_index="{{ game.current_player_index }}"
+            data-current_player_money="{{ game.players[game.current_player_index].money }}"
+    ></div>
 {% endblock %}
 
 {% block js %}
