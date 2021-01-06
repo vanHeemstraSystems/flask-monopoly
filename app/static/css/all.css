@@ -39,6 +39,11 @@
               max-height: 50vh;
               overflow-y: scroll; }
 
+              .buildings {
+                position: absolute;
+                top: 0;
+                right: 2px; }
+
 #field0 {
   grid-row: 11;
   grid-column: 11; }

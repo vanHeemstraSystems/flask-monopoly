@@ -65,7 +65,6 @@ class Game:
 
     def next_turn(self, payload):
         if payload['buy']:
-            print(self.board[self.players[self.current_player_index].current_field_id])
             self._sell_field(self.players[self.current_player_index],
                              self.board[self.players[self.current_player_index].current_field_id])
         if payload['build']:
@@ -75,7 +74,6 @@ class Game:
         move = randint(2, 12)
         player = self.players[self.current_player_index]
         player.move(move)
-        print(self.board[player.current_field_id].type)
         msg = self.board[player.current_field_id].on_enter(player)
 
         if self.board[player.current_field_id].type in [CITY] and not self.board[
@@ -88,18 +86,18 @@ class Game:
         field_id = int(field_id)
         for field in self.board:
             if field.id == field_id:
-                if field.build == '0': field.build = '1'
-                if field.build == '1': field.build = '2'
-                if field.build == '2': field.build = '3'
-                if field.build == '3': field.build = '4'
                 if field.build == '4': field.build = 'h'
+                if field.build == '3': field.build = '4'
+                if field.build == '2': field.build = '3'
+                if field.build == '1': field.build = '2'
+                if field.build == '0': field.build = '1'
+
                 field.owner.money -= field.build_price
 
     def _sell_field(self, player: Player, field: Union[CityField]):
         player.money -= field.price
         player.owned_fields.append(field)
         field.owner = player
-        print(player.money, player.owned_fields, field.owner)
 
     def _add_message(self, msg):
         self.msgs.append(msg)
