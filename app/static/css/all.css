@@ -34,7 +34,7 @@
             padding: 5px; }
 
             .msgs {
-              height: 450px;
+              height: 50%;
               width: 50%;
               max-height: 50vh;
               overflow-y: scroll; }

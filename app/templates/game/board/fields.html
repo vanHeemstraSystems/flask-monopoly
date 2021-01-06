@@ -32,6 +32,9 @@
                 {% else %}
                     {% for _ in range(field.build|int) %}
                         <i class="fas fa-home"></i>
+                        {% if loop.index0  == 1 %}
+                            <br>
+                        {% endif %}
                     {% endfor %}
                 {% endif %}
             </div>

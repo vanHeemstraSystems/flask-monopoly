@@ -6,7 +6,7 @@
             if (parseInt(e.target.dataset.build_price, 10) < parseInt(playerInfo.dataset.current_player_money, 10)) {
                 if (e.target.dataset.build != 'h') {
                     buildInput.value += e.target.dataset.id + ';'
-                    e.target.style = 'border: 1px solid red'
+                    e.target.style = 'border: 3px solid blue'
                 }
             }
         }
