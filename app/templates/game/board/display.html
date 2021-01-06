@@ -1,4 +1,5 @@
 <div id="display">
+            <div>active player: {{ game.current_player_index }}</div>
             <div class="cash">
                 {% for player in game.players %}
                     player{{ player.id }}: {{ player.money }}
@@ -9,7 +10,7 @@
                 <input type="hidden" id="build_input" name="build" value="">
                 {% if game.can_buy %}
                     <div>
-                        <p>active player: {{ game.current_player_index }}
+                        <p>
                             do you want to buy
                             field: {{ game.board[game.players[game.current_player_index].current_field_id].label }}, for
                             ?</p>

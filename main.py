@@ -1,6 +1,7 @@
 import os
 from app import create_app, db
 from app.game.utils import get_games_dir
+from app.game.models import Game
 
 app = create_app()
 
@@ -17,6 +18,12 @@ def clear_saves():
         _, ext = os.path.splitext(f)
         if ext == '.pkl':
             os.remove(get_games_dir()+'/'+f)
+
+    try:
+        db.session.query(Game).delete()
+        db.session.commit()
+    except:
+        db.session.rollback()
 
 
 if __name__ == '__main__':
