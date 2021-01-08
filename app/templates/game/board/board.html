@@ -19,6 +19,10 @@
             id="player_info"
             data-current_player_index="{{ game.current_player_index }}"
             data-current_player_money="{{ game.players[game.current_player_index].money }}"
+            data-can_buy="{{ game.can_buy }}"
+            {% if game.can_buy %}
+                data-current_field_price="{{ game.board[game.players[game.current_player_index].current_field_id].price }}"
+            {% endif %}
     ></div>
 {% endblock %}
 

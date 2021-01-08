@@ -1,6 +1,8 @@
 const tiles = document.querySelectorAll('.tile')
 const display = document.querySelector('#display')
 const playerInfo = document.querySelector('#player_info')
+const br_no = document.querySelector('.br_no')
+const br_yes = document.querySelector('.br_yes')
 {
     const buildInput = document.querySelector('#build_input');
     let buildCount = 0;
@@ -18,6 +20,7 @@ const playerInfo = document.querySelector('#player_info')
                             buildCount++;
                             currentMoney -= parseInt(e.target.dataset.build_price, 10)
                             updateMoneyInfo(currentMoney)
+                            updateBuyForm(currentMoney)
                         }
                     }
 
@@ -35,6 +38,7 @@ const playerInfo = document.querySelector('#player_info')
                 buildCount--;
                 currentMoney += parseInt(e.target.dataset.build_price, 10)
                 updateMoneyInfo(currentMoney)
+                updateBuyForm(currentMoney)
             }
         }
 
@@ -44,6 +48,16 @@ const playerInfo = document.querySelector('#player_info')
         const className = `.player${playerInfo.dataset.current_player_index}_money`
         document.querySelector(className).textContent = money
         playerInfo.dataset.current_player_money = money
+    }
+
+    function updateBuyForm(money){
+        if(money <= playerInfo.dataset.current_field_price){
+            br_yes.removeAttribute('checked')
+            br_yes.setAttribute('disabled', '1')
+            br_no.setAttribute('checked', '1')
+        }{
+            br_yes.removeAttribute('disabled')
+        }
     }
 }
 {
