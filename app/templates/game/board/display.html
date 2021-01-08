@@ -2,7 +2,7 @@
             <div>active player: {{ game.current_player_index }}</div>
             <div class="cash">
                 {% for player in game.players %}
-                    player{{ player.id }}: {{ player.money }}
+                    player{{ player.id }}: <span class="player{{ player.id }}_money">{{ player.money }}</span>
                 {% endfor %}
             </div>
             <form method="post" action="{{ url_for('game.hot_seats') }}/{{ code }}">

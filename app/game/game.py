@@ -64,6 +64,7 @@ class Game:
         self._render_board()
 
     def next_turn(self, payload):
+        print(payload)
         if payload['buy']:
             self._sell_field(self.players[self.current_player_index],
                              self.board[self.players[self.current_player_index].current_field_id])
