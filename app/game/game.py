@@ -37,6 +37,29 @@ class PlaceholderField:
         return 'field {} has been stepped on by player {}'.format(self.id, player.id)
 
 
+class TrainField:
+    def __init__(self, data):
+        self.id = data['id']
+        self.label = data['label']
+        self.type = data['type']
+        self.owner = None
+        self.price = 400
+
+    def on_enter(self, player: Player, game):
+        if not self.owner and player.money > self.price:
+            game.can_buy = True
+            return 'field {} can be bought by player {}'.format(self.id, player.id)
+        if self.owner and self.owner != player:
+            trains_count = len([f for f in self.owner.owned_fields if f.type == TRAIN])
+            price = 50
+            for _ in range(trains_count - 1):
+                price = price*2
+            player.money -= price
+            self.owner.money += price
+            return 'player{} just paid {}$ to player{}'.format(self.id, price, self.owner.id)
+
+
+
 class SurpriseField:
     def __init__(self, data):
         self.id = data['id']
@@ -127,7 +150,7 @@ class Game:
 
                 field.owner.money -= field.build_price
 
-    def _sell_field(self, player: Player, field: Union[CityField]):
+    def _sell_field(self, player: Player, field: Union[CityField, TrainField]):
         player.money -= field.price
         player.owned_fields.append(field)
         field.owner = player
@@ -150,6 +173,8 @@ class Game:
                 f = FineField(field)
             elif field['type'] == SECRET:
                 f = SurpriseField(field)
+            elif field['type'] == TRAIN:
+                f = TrainField(field)
             else:
                 f = PlaceholderField(field)
 
