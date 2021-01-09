@@ -36,6 +36,16 @@ class PlaceholderField:
     def on_enter(self, player: Player):
         return 'field {} has been stepped on by player {}'.format(self.id, player.id)
 
+class FineField:
+    def __init__(self, data):
+        self.id = data['id']
+        self.label = data['label']
+        self.type = data['type']
+
+    def on_enter(self, player: Player):
+        player.money -= 300
+        return 'player {} has lost 300$'.format(player.id)
+
 
 class CityField:
     def __init__(self, data):
@@ -132,6 +142,8 @@ class Game:
         for field in FIELDS:
             if field['type'] == CITY:
                 f = CityField(field)
+            elif field['type'] == FINE:
+                f = FineField(field)
             else:
                 f = PlaceholderField(field)
 
