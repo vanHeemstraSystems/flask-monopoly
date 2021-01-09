@@ -33,7 +33,7 @@ class PlaceholderField:
         self.label = data['label']
         self.type = data['type']
 
-    def on_enter(self, player: Player):
+    def on_enter(self, player: Player, game):
         return 'field {} has been stepped on by player {}'.format(self.id, player.id)
 
 class FineField:
@@ -42,7 +42,7 @@ class FineField:
         self.label = data['label']
         self.type = data['type']
 
-    def on_enter(self, player: Player):
+    def on_enter(self, player: Player, game):
         player.money -= 300
         return 'player {} has lost 300$'.format(player.id)
 
@@ -58,7 +58,13 @@ class CityField:
         self.owner = None
         self.build = '0'
 
-    def on_enter(self, player: Player):
+    def on_enter(self, player: Player, game):
+        if not self.owner and player.money > self.price:
+            game.can_buy = True
+        if self.owner and self.owner != player:
+            price = self.pricing[self.build]
+            player.money -= price
+            self.owner.money += price
         return 'field {} has been stepped on by player {}'.format(self.id, player.id)
 
 
@@ -88,18 +94,8 @@ class Game:
         move = randint(2, 12)
         player = self.players[self.current_player_index]
         player.move(move)
-        msg = self.board[player.current_field_id].on_enter(player)
+        msg = self.board[player.current_field_id].on_enter(player, self)
         self._add_message(msg)
-        
-        if self.board[player.current_field_id].type in [CITY] and not self.board[
-            player.current_field_id].owner and player.money > self.board[player.current_field_id].price:
-            self.can_buy = True
-
-        if self.board[player.current_field_id].type in [CITY] and self.board[
-            player.current_field_id].owner:
-            price = self.board[player.current_field_id].pricing[self.board[player.current_field_id].build]
-            player.money -= price
-            self.board[player.current_field_id].owner.money += price
 
         self._check_finish()
 
