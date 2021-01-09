@@ -1,3 +1,14 @@
+function throttle(func, wait = 100) {
+    let timer = null;
+    return function (...args) {
+        if (timer === null) {
+            timer = setTimeout(() => {
+                func.apply(this, args);
+                timer = null;
+            }, wait);
+        }
+    };
+}
 const tiles = document.querySelectorAll('.tile')
 const display = document.querySelector('#display')
 const playerInfo = document.querySelector('#player_info')
@@ -61,11 +72,17 @@ const br_yes = document.querySelector('.br_yes')
     }
 }
 {
+    const fetchFieldInfo = e => {
+        const id = e.target.dataset.id
+            const url = `/field_info/${id}`
+            fetch(url)
+                .then(blob => blob.json())
+                .then(json => console.log(json))
+                .catch(err => console.log(err))
+    }
+
     tiles.forEach(tile => {
-        tile.addEventListener('mouseenter', e => {
-            const text = e.target.textContent
-            // console.log(text)
-        })
+        tile.addEventListener('mouseenter', throttle(fetchFieldInfo, 700))
 
         tile.addEventListener('mouseout', () => {
             // console.log('out')
