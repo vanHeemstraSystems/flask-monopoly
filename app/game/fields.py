@@ -2,7 +2,6 @@ CITY = 'CITY'
 START = 'START'
 TRAIN = 'TRAIN'
 POWERPLANT = 'POWERPLANT'
-WATER = "WATER"
 SECRET = 'SECRET'
 PRISON = 'PRISON'
 GOTO = "GOTO"
@@ -205,7 +204,7 @@ FIELDS = [
     }, {
         'id': 28,
         'label': 'wodociąg',
-        'type': WATER
+        'type': POWERPLANT
     }, {
         'id': 29,
         'label': 'sztokholm',

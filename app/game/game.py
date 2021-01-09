@@ -37,6 +37,28 @@ class PlaceholderField:
         return 'field {} has been stepped on by player {}'.format(self.id, player.id)
 
 
+class PowerplantField:
+    def __init__(self, data):
+        self.id = data['id']
+        self.label = data['label']
+        self.type = data['type']
+        self.owner = None
+        self.price = 300
+
+    def on_enter(self, player: Player, game):
+        if not self.owner and player.money > self.price:
+            game.can_buy = True
+            return 'field {} can be bought by player {}'.format(self.id, player.id)
+        if self.owner and self.owner != player:
+            powerplants_count = len([f for f in self.owner.owned_fields if f.type == POWERPLANT])
+            price = 10 * randint(2, 12)
+            if powerplants_count > 1:
+                price = price*2
+            player.money -= price
+            self.owner.money += price
+            return 'player{} just paid {}$ to player{}'.format(self.id, price, self.owner.id)
+
+
 class TrainField:
     def __init__(self, data):
         self.id = data['id']
@@ -53,11 +75,10 @@ class TrainField:
             trains_count = len([f for f in self.owner.owned_fields if f.type == TRAIN])
             price = 50
             for _ in range(trains_count - 1):
-                price = price*2
+                price = price * 2
             player.money -= price
             self.owner.money += price
             return 'player{} just paid {}$ to player{}'.format(self.id, price, self.owner.id)
-
 
 
 class SurpriseField:
@@ -175,6 +196,8 @@ class Game:
                 f = SurpriseField(field)
             elif field['type'] == TRAIN:
                 f = TrainField(field)
+            elif field['type'] == POWERPLANT:
+                f = PowerplantField(field)
             else:
                 f = PlaceholderField(field)
 
