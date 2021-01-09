@@ -30,6 +30,9 @@ def hot_seats(code=None):
     if code and request.form.get('next_turn'):
         g = load_game(code)
         g.next_turn(payload)
+        if g.winner:
+            flash('player {} have won!!'.format(g.winner.id), 'success')
+            return redirect(url_for('game.home'))
         save_game(g, code)
     else:
         code = token_hex(16)

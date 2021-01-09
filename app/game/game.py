@@ -59,6 +59,7 @@ class Game:
         self.board = []
         self.msgs = []
         self.can_buy = False
+        self.winner = None
 
         for i, _ in enumerate(range(players_count)):
             self.players.append(Player(i))
@@ -90,6 +91,14 @@ class Game:
             player.money -= price
             self.board[player.current_field_id].owner.money += price
 
+        self._check_finish()
+
+
+    def _check_finish(self):
+        for player in self.players:
+            if player.money < 0:
+                self.winner = self.players[player.id-1]
+
 
     def _updated_field_build(self, field_id: str):
         field_id = int(field_id)
@@ -107,6 +116,7 @@ class Game:
         player.money -= field.price
         player.owned_fields.append(field)
         field.owner = player
+
 
     def _add_message(self, msg):
         self.msgs.append(msg)
