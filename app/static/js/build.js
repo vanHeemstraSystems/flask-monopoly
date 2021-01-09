@@ -80,27 +80,28 @@ const cardBody = document.querySelector('.card-body')
     const fetchFieldInfo = e => {
         const id = e.target.dataset.id
         const url = `/field_info/${id}`
-        const call = setTimeout(()=>{
+        const call = setTimeout(() => {
             fetch(url)
-            .then(blob => blob.json())
-            .then(json => {
-                console.log(json)
-                fieldCard.setAttribute('style', 'visibility:visible')
+                .then(blob => blob.json())
+                .then(json => {
+                    fieldCard.setAttribute('style', 'visibility:visible')
 
-                const header = document.createElement('h5')
-                header.textContent = json.label
-                cardBody.appendChild(header)
+                    switch (json.type) {
+                        case 'CITY':
+                            const header = document.createElement('h5')
+                            header.textContent = json.label
+                            cardBody.appendChild(header)
 
-                const price = document.createElement('p')
-                price.textContent = `price: ${json.price}$`
-                cardBody.appendChild(price)
+                            const price = document.createElement('p')
+                            price.textContent = `price: ${json.price}$`
+                            cardBody.appendChild(price)
 
-                const b_price = document.createElement('p')
-                b_price.textContent = `build price: ${json.build_price}$`
-                cardBody.appendChild(b_price)
+                            const b_price = document.createElement('p')
+                            b_price.textContent = `build price: ${json.build_price}$`
+                            cardBody.appendChild(b_price)
 
-                const pricing = document.createElement('ul')
-                pricing.innerHTML = `
+                            const pricing = document.createElement('ul')
+                            pricing.innerHTML = `
                     <li>no houses: ${json.pricing['0']}$</li>
                     <li>one house: ${json.pricing['1']}$</li>
                     <li>two houses: ${json.pricing['2']}$</li>
@@ -108,10 +109,13 @@ const cardBody = document.querySelector('.card-body')
                     <li>four houses: ${json.pricing['4']}$</li>
                     <li>hotel: ${json.pricing['h']}$</li>
                 `
-                cardBody.appendChild(pricing)
+                            cardBody.appendChild(pricing)
+                            break;
+                    }
 
-            })
-            .catch(err => console.log(err))
+
+                })
+                .catch(err => console.log(err))
         }, 400)
         calls.push(call)
 
