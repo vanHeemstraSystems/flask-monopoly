@@ -1,5 +1,5 @@
 from typing import Union
-from random import randint, choice
+from random import randint
 from app.game.fields import *
 
 
@@ -15,10 +15,12 @@ class Player:
 
     def move(self, steps: int):
         old_field_index = self.current_field_id
-        if self.current_field_id + steps > 39:
-            self.current_field_id = self.current_field_id - len(FIELDS) - 1 + steps
+        if self.current_field_id + steps > len(FIELDS) - 1:
+            self.current_field_id = self.current_field_id - len(FIELDS) - 2 + steps
         else:
             self.current_field_id += steps
+        print(self.current_field_id)
+
 
         new_field_index = self.current_field_id
         if new_field_index < old_field_index:
@@ -76,12 +78,18 @@ class Game:
         player = self.players[self.current_player_index]
         player.move(move)
         msg = self.board[player.current_field_id].on_enter(player)
-
+        self._add_message(msg)
+        
         if self.board[player.current_field_id].type in [CITY] and not self.board[
             player.current_field_id].owner and player.money > self.board[player.current_field_id].price:
             self.can_buy = True
 
-        self._add_message(msg)
+        if self.board[player.current_field_id].type in [CITY] and self.board[
+            player.current_field_id].owner:
+            price = self.board[player.current_field_id].pricing[self.board[player.current_field_id].build]
+            player.money -= price
+            self.board[player.current_field_id].owner.money += price
+
 
     def _updated_field_build(self, field_id: str):
         field_id = int(field_id)

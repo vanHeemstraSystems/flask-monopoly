@@ -13,7 +13,7 @@
                         <p>
                             do you want to buy
                             field: {{ game.board[game.players[game.current_player_index].current_field_id].label }}, for
-                            ?</p>
+                            {{ game.board[game.players[game.current_player_index].current_field_id].price }}?</p>
                         <label><input class="buy_radio br_no" type="radio" name="buy" value="0">no</label>
                         <label><input class="buy_radio br_yes" type="radio" name="buy" value="1" checked>yes</label>
                     </div>
