@@ -49,3 +49,13 @@ body {
   top: 0;
   right: 2px;
 }
+
+#display{
+  display: flex;
+  >div{
+    flex: 1;
+  }
+}
+#card_container{
+  visibility: hidden;
+}

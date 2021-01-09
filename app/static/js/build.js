@@ -14,6 +14,9 @@ const display = document.querySelector('#display')
 const playerInfo = document.querySelector('#player_info')
 const br_no = document.querySelector('.br_no')
 const br_yes = document.querySelector('.br_yes')
+const fieldCard = document.querySelector('#field_card')
+const cardBody = document.querySelector('.card-body')
+
 {
     const buildInput = document.querySelector('#build_input');
     let buildCount = 0;
@@ -72,20 +75,55 @@ const br_yes = document.querySelector('.br_yes')
     }
 }
 {
+    const calls = []
+
     const fetchFieldInfo = e => {
         const id = e.target.dataset.id
-            const url = `/field_info/${id}`
+        const url = `/field_info/${id}`
+        const call = setTimeout(()=>{
             fetch(url)
-                .then(blob => blob.json())
-                .then(json => console.log(json))
-                .catch(err => console.log(err))
+            .then(blob => blob.json())
+            .then(json => {
+                console.log(json)
+                fieldCard.setAttribute('style', 'visibility:visible')
+
+                const header = document.createElement('h5')
+                header.textContent = json.label
+                cardBody.appendChild(header)
+
+                const price = document.createElement('p')
+                price.textContent = `price: ${json.price}$`
+                cardBody.appendChild(price)
+
+                const b_price = document.createElement('p')
+                b_price.textContent = `build price: ${json.build_price}$`
+                cardBody.appendChild(b_price)
+
+                const pricing = document.createElement('ul')
+                pricing.innerHTML = `
+                    <li>no houses: ${json.pricing['0']}$</li>
+                    <li>one house: ${json.pricing['1']}$</li>
+                    <li>two houses: ${json.pricing['2']}$</li>
+                    <li>three houses: ${json.pricing['3']}$</li>
+                    <li>four houses: ${json.pricing['4']}$</li>
+                    <li>hotel: ${json.pricing['h']}$</li>
+                `
+                cardBody.appendChild(pricing)
+
+            })
+            .catch(err => console.log(err))
+        }, 400)
+        calls.push(call)
+
     }
 
     tiles.forEach(tile => {
-        tile.addEventListener('mouseenter', throttle(fetchFieldInfo, 700))
+        tile.addEventListener('mouseenter', fetchFieldInfo)
 
         tile.addEventListener('mouseout', () => {
-            // console.log('out')
+            calls.forEach(call => clearTimeout(call))
+            fieldCard.setAttribute('style', 'visibility:hidden')
+            cardBody.innerHTML = ''
         })
     })
 }
