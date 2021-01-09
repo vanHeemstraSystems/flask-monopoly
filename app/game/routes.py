@@ -1,11 +1,12 @@
 from secrets import token_hex
-from flask import Blueprint, render_template, flash, redirect, url_for, request
+from flask import Blueprint, render_template, flash, redirect, url_for, request, make_response
 from flask_login import current_user
 from app import db
 from app.game.game import Game
 from app.game.utils import save_game, load_game
 from app.game.models import Game as GameModel
 from app.game.constants import HOT_SEATS_MODE
+from app.game.fields import FIELDS
 
 game = Blueprint('game', __name__)
 
@@ -45,6 +46,20 @@ def hot_seats(code=None):
         db.session.commit()
 
     return render_template('game/board/board.html', game=g, code=code)
+
+
+@game.route('/field_info/<field_id>')
+def field_info(field_id):
+    field_id = int(field_id)
+    field_data = None
+    for field in FIELDS:
+        if field['id'] == field_id:
+            field_data = field
+
+    if not field_data:
+        return make_response('xd'), 404
+
+    return make_response(field_data), 200
 
 
 @game.route('/start')
