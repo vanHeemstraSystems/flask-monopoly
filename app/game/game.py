@@ -1,6 +1,7 @@
 from typing import Union
-from random import randint
+from random import randint, choice
 from app.game.fields import *
+from app.game.surprises import SURPRISES
 
 
 class Player:
@@ -21,7 +22,6 @@ class Player:
             self.current_field_id += steps
         print(self.current_field_id)
 
-
         new_field_index = self.current_field_id
         if new_field_index < old_field_index:
             self.money += 300
@@ -35,6 +35,17 @@ class PlaceholderField:
 
     def on_enter(self, player: Player, game):
         return 'field {} has been stepped on by player {}'.format(self.id, player.id)
+
+
+class SurpriseField:
+    def __init__(self, data):
+        self.id = data['id']
+        self.label = data['label']
+        self.type = data['type']
+
+    def on_enter(self, player: Player, game):
+        return choice(SURPRISES)(player)
+
 
 class FineField:
     def __init__(self, data):
@@ -99,12 +110,10 @@ class Game:
 
         self._check_finish()
 
-
     def _check_finish(self):
         for player in self.players:
             if player.money < 0:
-                self.winner = self.players[player.id-1]
-
+                self.winner = self.players[player.id - 1]
 
     def _updated_field_build(self, field_id: str):
         field_id = int(field_id)
@@ -123,7 +132,6 @@ class Game:
         player.owned_fields.append(field)
         field.owner = player
 
-
     def _add_message(self, msg):
         self.msgs.append(msg)
 
@@ -140,6 +148,8 @@ class Game:
                 f = CityField(field)
             elif field['type'] == FINE:
                 f = FineField(field)
+            elif field['type'] == SECRET:
+                f = SurpriseField(field)
             else:
                 f = PlaceholderField(field)
 
