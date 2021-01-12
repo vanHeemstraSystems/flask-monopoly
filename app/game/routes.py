@@ -7,6 +7,7 @@ from app.game.utils import save_game, load_game
 from app.game.models import Game as GameModel
 from app.game.constants import HOT_SEATS_MODE
 from app.game.fields import FIELDS
+from app.game.ai import ai_move
 
 game = Blueprint('game', __name__)
 
@@ -60,6 +61,35 @@ def field_info(field_id):
         return make_response('xd'), 404
 
     return make_response(field_data), 200
+
+
+@game.route('/vs_ai')
+@game.route('/vs_ai/<code>', methods=['POST', 'GET'])
+def vs_ai(code=None):
+    payload = {
+        'buy': bool(int(request.form.get('buy'))) if request.form.get('buy') else None,
+        'build': request.form.get('build').split(';')[0:-1] if request.form.get('build') else None
+    }
+    if code and request.form.get('next_turn'):
+        g = load_game(code)
+        g.next_turn(payload)
+        ai_payload = ai_move(g)
+        g.next_turn(ai_payload)
+        if g.winner:
+            flash('player {} have won!!'.format(g.winner.id), 'success')
+            return redirect(url_for('game.home'))
+        save_game(g, code)
+    else:
+        code = token_hex(16)
+        g = Game(2)
+        g.next_turn(payload)
+        save_game(g, code)
+
+        game_in_db = GameModel(code=code, user_id=current_user.id, mode=HOT_SEATS_MODE)
+        db.session.add(game_in_db)
+        db.session.commit()
+
+    return render_template('game/board/board.html', game=g, code=code)
 
 
 @game.route('/start')

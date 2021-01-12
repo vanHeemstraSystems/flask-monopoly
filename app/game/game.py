@@ -53,7 +53,7 @@ class PowerplantField:
             powerplants_count = len([f for f in self.owner.owned_fields if f.type == POWERPLANT])
             price = 10 * randint(2, 12)
             if powerplants_count > 1:
-                price = price*2
+                price = price * 2
             player.money -= price
             self.owner.money += price
             return 'player{} just paid {}$ to player{}'.format(self.id, price, self.owner.id)
@@ -138,11 +138,11 @@ class Game:
         self._render_board()
 
     def next_turn(self, payload):
-        print(payload)
         if payload['buy']:
             self._sell_field(self.players[self.current_player_index],
                              self.board[self.players[self.current_player_index].current_field_id])
         if payload['build']:
+            print(payload['build'])
             for field_id in payload['build']:
                 self._updated_field_build(field_id)
         self._next_player()

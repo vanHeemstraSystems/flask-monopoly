@@ -7,7 +7,7 @@
                 player{{ player.id }}: <span class="player{{ player.id }}_money">{{ player.money }}</span>
             {% endfor %}
         </div>
-        <form method="post" action="{{ url_for('game.hot_seats') }}/{{ code }}">
+        <form method="post" action="{{ url_for(request.endpoint) }}/{{ code }}">
             <input type="hidden" name="next_turn" value="1">
             <input type="hidden" id="build_input" name="build" value="">
             {% if game.can_buy %}
