@@ -29,14 +29,21 @@ def hot_seats(code=None):
         'buy': bool(int(request.form.get('buy'))) if request.form.get('buy') else None,
         'build': request.form.get('build').split(';')[0:-1] if request.form.get('build') else None
     }
-    if code and request.form.get('next_turn'):
-        g = load_game(code)
-        g.next_turn(payload)
-        if g.winner:
-            flash('player {} have won!!'.format(g.winner.id), 'success')
-            return redirect(url_for('game.home'))
-        save_game(g, code)
+    print('----------------------', request.form)
+    if code:
+        if request.form.get('next_turn'):
+            print('=====', 1)
+            g = load_game(code)
+            g.next_turn(payload)
+            if g.winner:
+                flash('player {} have won!!'.format(g.winner.id), 'success')
+                return redirect(url_for('game.home'))
+            save_game(g, code)
+        else:
+            print('=====', 2)
+            g = load_game(code)
     else:
+        print('=====', 3)
         code = token_hex(16)
         g = Game(2)
         g.next_turn(payload)

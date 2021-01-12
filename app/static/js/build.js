@@ -1,13 +1,5 @@
-function throttle(func, wait = 100) {
-    let timer = null;
-    return function (...args) {
-        if (timer === null) {
-            timer = setTimeout(() => {
-                func.apply(this, args);
-                timer = null;
-            }, wait);
-        }
-    };
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
 }
 const tiles = document.querySelectorAll('.tile')
 const display = document.querySelector('#display')
