@@ -11,7 +11,7 @@
         Geneva, Verdana, sans-serif; }
 
     #board {
-      height: 95vh;
+      height: 85vh;
       display: grid;
       grid-template-columns: 2fr repeat(9, 1fr) 2fr;
       grid-template-rows: 2fr repeat(9, 1fr) 2fr; }
@@ -51,6 +51,9 @@
 
 #card_container {
   visibility: hidden; }
+
+  .buildings {
+    font-size: 12px; }
 
 #field0 {
   grid-row: 11;

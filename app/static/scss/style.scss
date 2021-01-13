@@ -10,7 +10,7 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #board {
-  height: 95vh;
+  height: 85vh;
   display: grid;
   grid-template-columns: 2fr repeat(9, 1fr) 2fr;
   grid-template-rows:  2fr repeat(9, 1fr) 2fr;
@@ -58,4 +58,7 @@ body {
 }
 #card_container{
   visibility: hidden;
+}
+.buildings{
+  font-size: 12px;
 }
