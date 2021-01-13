@@ -6,3 +6,4 @@ class Game(db.Model):
     code = db.Column(db.String(25), unique=True, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     mode = db.Column(db.String(16), nullable=False)
+    finished = db.Column(db.Boolean, default=False)

@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, flash, redirect, url_for, request,
 from flask_login import current_user
 from app import db
 from app.game.game import Game
-from app.game.utils import save_game, load_game
+from app.game.utils import save_game, load_game, delete_game
 from app.game.models import Game as GameModel
 from app.game.constants import HOT_SEATS_MODE
 from app.game.fields import FIELDS
@@ -80,6 +80,10 @@ def vs_ai(code=None):
             ai_payload = ai_move(g)
             g.next_turn(ai_payload)
             if g.winner:
+                game_record = GameModel.query.filter_by(code=code).first()
+                game_record.finished = True
+                db.session.commit()
+                delete_game(code)
                 flash('player {} have won!!'.format(g.winner.id), 'success')
                 return redirect(url_for('game.home'))
             save_game(g, code)

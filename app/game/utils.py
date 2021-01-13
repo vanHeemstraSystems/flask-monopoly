@@ -8,6 +8,11 @@ def get_games_dir():
     return os.path.abspath(os.getcwd()) + '/app/game/save_files'
 
 
+def delete_game(code: str):
+    filename = get_games_dir() + '/{}.pkl'.format(code)
+    os.remove(filename)
+
+
 def save_game(game: Game, code: str) -> str:
     filename = get_games_dir() + '/{}.pkl'.format(code)
 
