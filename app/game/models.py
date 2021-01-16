@@ -1,4 +1,5 @@
 from app import db
+from app.game.constants import STATUS_WAITING
 
 
 class Game(db.Model):
@@ -6,4 +7,4 @@ class Game(db.Model):
     code = db.Column(db.String(25), unique=True, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     mode = db.Column(db.String(16), nullable=False)
-    finished = db.Column(db.Boolean, default=False)
+    status = db.Column(db.String(16), nullable=False, default=STATUS_WAITING)

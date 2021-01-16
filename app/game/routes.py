@@ -5,7 +5,7 @@ from app import db
 from app.game.game import Game
 from app.game.utils import save_game, load_game, delete_game
 from app.game.models import Game as GameModel
-from app.game.constants import HOT_SEATS_MODE
+from app.game.constants import HOT_SEATS_MODE, PVP_MODE,
 from app.game.fields import FIELDS
 from app.game.ai import ai_move
 
@@ -95,6 +95,7 @@ def vs_ai(code=None):
         g.next_turn(payload)
         save_game(g, code)
 
+        # TODO: add vs ai mode
         game_in_db = GameModel(code=code, user_id=current_user.id, mode=HOT_SEATS_MODE)
         db.session.add(game_in_db)
         db.session.commit()
@@ -105,5 +106,13 @@ def vs_ai(code=None):
 @game.route('/waiting_room')
 def waiting_room():
     code = token_hex(16)
+    g = Game(2, current_user.id)
+    save_game(g, code)
+
+    game_record = GameModel(code=code, user_id=current_user.id, mode=PVP_MODE)
+    db.session.add(game_record)
+    db.session.commit()
+
+
 
     return render_template('game/waiting_room.html', code=code)

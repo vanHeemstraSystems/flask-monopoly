@@ -13,6 +13,7 @@ class Player:
         self.id = pid
         self.owned_fields = []
         self.color = self.colors[self.id]
+        self.db_id = None
 
     def move(self, steps: int):
         old_field_index = self.current_field_id
@@ -124,7 +125,7 @@ class CityField:
 
 
 class Game:
-    def __init__(self, players_count: int):
+    def __init__(self, players_count: int, db_id: int):
         self.players = []
         self.current_player_index = 0
         self.board = []
@@ -133,7 +134,10 @@ class Game:
         self.winner = None
 
         for i, _ in enumerate(range(players_count)):
-            self.players.append(Player(i))
+            p = Player(i)
+            if len(self.players) == 0:
+                p.db_id = db_id
+            self.players.append(p)
 
         self._render_board()
 
