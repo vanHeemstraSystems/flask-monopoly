@@ -102,43 +102,8 @@ def vs_ai(code=None):
     return render_template('game/board/board.html', game=g, code=code)
 
 
-@game.route('/start')
-def start():
-    # join_code = token_hex(8)
-    # g = Game()
-    # player = Player(current_user.id)
-    # g.add_player(player)
-    #
-    #
-    # with open(filename, 'wb') as f:
-    #     pickle.dump(g, f, pickle.HIGHEST_PROTOCOL)
-    #
-    # return render_template('game/waiting_room.html', join_code=join_code)
-    pass
+@game.route('/waiting_room')
+def waiting_room():
+    code = token_hex(16)
 
-
-@game.route('/join', methods=['GET', 'POST'])
-def join():
-    # form = JoinGameForm()
-    # if form.validate_on_submit():
-    #     join_code = form.join_code.data
-    #     if os.path.exists(get_games_dir() + '/{}.pkl'.format(join_code)):
-    #         f = open(get_games_dir() + '/{}.pkl'.format(join_code), 'rb')
-    #         g = pickle.load(f)
-    #         if len(g.players) < 4:
-    #             player = Player(current_user.id)
-    #             g.add_player(player)
-    #             f.close()
-    #
-    #             f = open(get_games_dir() + '/{}.pkl'.format(join_code), 'wb')
-    #             pickle.dump(g, f, pickle.HIGHEST_PROTOCOL)
-    #             f.close()
-    #         else:
-    #             f.close()
-    #             flash('full game', 'danger')
-    #             return redirect(url_for('game.home'))
-    #     else:
-    #         flash('wrong code', 'danger')
-    #
-    # return render_template('game/join_game.html', form=form)
-    pass
+    return render_template('game/waiting_room.html', code=code)
