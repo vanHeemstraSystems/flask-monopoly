@@ -6,7 +6,3 @@ from wtforms.validators import DataRequired
 class JoinGameForm(FlaskForm):
     join_code = StringField('Join Code', validators=[DataRequired()])
     submit = SubmitField('Join')
-
-
-class StartGameForm(FlaskForm):
-    start = SubmitField('Start game')

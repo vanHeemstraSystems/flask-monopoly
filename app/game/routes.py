@@ -8,7 +8,7 @@ from app.game.models import Game as GameModel
 from app.game.constants import HOT_SEATS_MODE, PVP_MODE, STATUS_ACTIVE
 from app.game.fields import FIELDS
 from app.game.ai import ai_move
-from app.game.forms import JoinGameForm, StartGameForm
+from app.game.forms import JoinGameForm
 
 game = Blueprint('game', __name__)
 
@@ -119,8 +119,15 @@ def init_pvp():
 
 @game.route('/waiting_room/<code>', methods=['POST', 'GET'])
 def waiting_room(code):
-    form = StartGameForm()
-    return render_template('game/waiting_room.html', code=code, form=form)
+    if request.method == 'POST':
+        partner_has_joined: bool = bool(GameModel.query.filter_by(code=code, isHost=False).first())
+        print(partner_has_joined)
+        if partner_has_joined:
+            pass
+        else:
+            flash('You can not start the game, no player has joined.', 'danger')
+
+    return render_template('game/waiting_room.html', code=code)
 #
 #
 # # @game.route('/join_game', methods=['POST', 'GET'])
