@@ -3,11 +3,17 @@
 {% block body %}
     <div class="row justify-content-start mt-3">
         <div class="col-4">
-            <p>join code:</p>
-            <h2>{{ code }}</h2>
-            <form method="POST">
-                <input type="submit" value="start game" class="btn btn-outline-primary">
-            </form>
+            {% if is_host %}
+                <p>join code:</p>
+                <h2>{{ code }}</h2>
+                <form method="POST">
+                    <input type="submit" value="start game" class="btn btn-outline-primary">
+                </form>
+            {% else %}
+                <form method="POST">
+                    <input type="submit" value="play" class="btn btn-primary">
+                </form>
+            {% endif %}
         </div>
     </div>
 

@@ -123,11 +123,14 @@ def waiting_room(code):
         partner_has_joined: bool = bool(GameModel.query.filter_by(code=code, isHost=False).first())
         print(partner_has_joined)
         if partner_has_joined:
-            pass
+            game_record = GameModel.query.filter_by(code=code, isHost=True).first()
+            game_record.status = STATUS_ACTIVE
+            db.session.commit()
+            return redirect(url_for('game.play_pvp', code=code))
         else:
             flash('You can not start the game, no player has joined.', 'danger')
 
-    return render_template('game/waiting_room.html', code=code)
+    return render_template('game/waiting_room.html', code=code, is_host=True)
 
 
 @game.route('/join_game', methods=['POST', 'GET'])
@@ -136,7 +139,7 @@ def join_game():
     if form.validate_on_submit():
         code = form.join_code.data
         game_records_count = GameModel.query.filter_by(code=code).count()
-        if game_records_count ==1:
+        if game_records_count == 1:
             g = load_game(code)
             g.pvp_add_joining_player(current_user.id)
             save_game(g, code)
@@ -144,8 +147,25 @@ def join_game():
             new_game_record = GameModel(code=code, user_id=current_user.id, mode=PVP_MODE)
             db.session.add(new_game_record)
             db.session.commit()
-
+            return redirect(url_for('game.guest_waiting_room', code=code))
         else:
             flash('you can not join this game.', 'danger')
 
     return render_template('game/join_game.html', form=form)
+
+
+@game.route('/guest_waiting_room/<code>', methods=['POST', 'GET'])
+def guest_waiting_room(code):
+    if request.method == 'POST':
+        game_record = GameModel.query.filter_by(code=code, isHost=True).first()
+        if game_record.status == STATUS_ACTIVE:
+            return redirect(url_for('game.play_pvp', code=code))
+
+    flash('now, wait for host to start the game.', 'primary')
+    return render_template('game/waiting_room.html', is_host=False)
+
+
+
+@game.route('/play_pvp/<code>')
+def play_pvp(code):
+    return 'game {}'.format(code)
