@@ -1,5 +1,5 @@
 import os
-from app import create_app, db
+from app import create_app, db, socketio
 from app.game.utils import get_games_dir
 from app.game.models import Game
 
@@ -27,4 +27,4 @@ def clear_saves():
 
 
 if __name__ == '__main__':
-    app.run()
+    socketio.run(app)

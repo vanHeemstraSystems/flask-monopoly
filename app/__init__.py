@@ -1,13 +1,14 @@
-import os
 from flask import Flask
 from flask_assets import Environment, Bundle
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
+from flask_socketio import SocketIO
 
 db = SQLAlchemy()
 bcrypt = Bcrypt()
 login_manager = LoginManager()
+socketio = SocketIO()
 
 
 def create_app():
@@ -30,6 +31,8 @@ def create_app():
     login_manager.init_app(app)
     login_manager.login_view = 'auth.login'
     login_manager.login_message_category = 'info'
+    socketio.init_app(app)
+    socketio.cors_allowed_origins = "*"
 
     from app.auth.routes import auth
     from app.game.routes import game

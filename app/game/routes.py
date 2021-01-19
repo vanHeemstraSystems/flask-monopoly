@@ -1,7 +1,8 @@
 from secrets import token_hex
 from flask import Blueprint, render_template, flash, redirect, url_for, request, make_response
 from flask_login import current_user
-from app import db
+from flask_socketio import emit, join_room, send
+from app import db, socketio
 from app.game.game import Game
 from app.game.utils import save_game, load_game, delete_game
 from app.game.models import Game as GameModel
@@ -176,6 +177,7 @@ def play_pvp(code):
         flash('{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has'))
         return redirect('game.home')
     if request.form.get('next_turn'):
+        last_player = g.players[g.current_player_index].db_id
         g.next_turn(payload)
         if g.winner:
             save_game(g, code)
@@ -185,6 +187,15 @@ def play_pvp(code):
             db.session.commit()
             return redirect(url_for('game.home'))
         save_game(g, code)
+        emit('refresh', data={'last_player': last_player}, broadcast=True)
 
     is_active = current_user.id == g.players[g.current_player_index].db_id
     return render_template('game/board/board.html', game=g, code=code, pvp=True, is_active=is_active)
+
+
+@socketio.on('join')
+def on_join(data):
+    room = data['room']
+    join_room(room)
+
+    send('', room=room)
