@@ -8,7 +8,7 @@ from app.game.models import Game as GameModel
 from app.game.constants import HOT_SEATS_MODE, PVP_MODE, STATUS_ACTIVE
 from app.game.fields import FIELDS
 from app.game.ai import ai_move
-from app.game.forms import JoinGameForm
+from app.game.forms import JoinGameForm, StartGameForm
 
 game = Blueprint('game', __name__)
 
@@ -114,28 +114,13 @@ def init_pvp():
     db.session.add(game_record)
     db.session.commit()
 
-    return redirect(url_for('game.waiting_room'))
+    return redirect(url_for('game.waiting_room', code=code))
 
-# @game.route('/waiting_room')
-# @game.route('/waiting_room/<code>', methods=['POST', 'GET'])
-# def waiting_room(code=None):
-#     if code:
-#         game_record: GameModel = GameModel.query.filter_by(code=code, user_id=current_user.id).first()
-#         game_record.status = STATUS_ACTIVE
-#         db.session.commit()
-#         g = load_game(code)
-#
-#         return render_template('game/board/board.html', game=g, code=code)
-#
-#     code = token_hex(16)
-#     g = Game(2, current_user.id)
-#     save_game(g, code)
-#
-#     game_record = GameModel(code=code, user_id=current_user.id, mode=PVP_MODE)
-#     db.session.add(game_record)
-#     db.session.commit()
-#
-#     return render_template('game/waiting_room.html', code=code)
+
+@game.route('/waiting_room/<code>', methods=['POST', 'GET'])
+def waiting_room(code):
+    form = StartGameForm()
+    return render_template('game/waiting_room.html', code=code, form=form)
 #
 #
 # # @game.route('/join_game', methods=['POST', 'GET'])

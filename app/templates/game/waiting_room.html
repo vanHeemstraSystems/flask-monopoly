@@ -5,7 +5,9 @@
         <div class="col-4">
             <p>join code:</p>
             <h2>{{ code }}</h2>
-            <a href="{{ url_for(request.endpoint) }}/{{ code }}" class="btn btn-primary">start</a>
+            <form method='POST'>
+                {{ form.start(class='btn btn-outline-info') }}
+            </form>
         </div>
     </div>
 
