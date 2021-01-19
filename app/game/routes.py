@@ -187,7 +187,7 @@ def play_pvp(code):
             db.session.commit()
             return redirect(url_for('game.home'))
         save_game(g, code)
-        emit('refresh', data={'last_player': last_player}, broadcast=True)
+        socketio.emit('refresh', data={'last_player': last_player}, broadcast=True)
 
     is_active = current_user.id == g.players[g.current_player_index].db_id
     return render_template('game/board/board.html', game=g, code=code, pvp=True, is_active=is_active)

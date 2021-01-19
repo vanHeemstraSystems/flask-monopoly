@@ -5,10 +5,10 @@
     socket.emit('join', {room})
 
     socket.on('refresh', data=>{
-        console.log(reload)
-        const curr_id = playerInfo.dataset.current_db_id
-        if(curr_id != data.last_player){
+        const curr_id = parseInt(playerInfo.dataset.current_db_id, 10)
+        if(curr_id === data.last_player){
             location.reload()
         }
+
     })
 }
