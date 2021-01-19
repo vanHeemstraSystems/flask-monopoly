@@ -5,7 +5,7 @@ from app import db
 from app.game.game import Game
 from app.game.utils import save_game, load_game, delete_game
 from app.game.models import Game as GameModel
-from app.game.constants import HOT_SEATS_MODE, PVP_MODE, STATUS_ACTIVE
+from app.game.constants import HOT_SEATS_MODE, PVP_MODE, STATUS_ACTIVE, STATUS_FINISHED
 from app.game.fields import FIELDS
 from app.game.ai import ai_move
 from app.game.forms import JoinGameForm
@@ -171,15 +171,20 @@ def play_pvp(code):
         'buy': bool(int(request.form.get('buy'))) if request.form.get('buy') else None,
         'build': request.form.get('build').split(';')[0:-1] if request.form.get('build') else None
     }
+    g = load_game(code)
+    if g.winner:
+        flash('{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has'))
+        return redirect('game.home')
     if request.form.get('next_turn'):
-        g = load_game(code)
         g.next_turn(payload)
         if g.winner:
-            flash('player {} have won!!'.format(g.winner.id), 'success')
+            save_game(g, code)
+            flash('{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has'))
+            game_record = GameModel.query.filter_by(code=code, isHost=True)
+            game_record.status = STATUS_FINISHED
+            db.session.commit()
             return redirect(url_for('game.home'))
         save_game(g, code)
-    else:
-        g = load_game(code)
 
     is_active = current_user.id == g.players[g.current_player_index].db_id
     return render_template('game/board/board.html', game=g, code=code, pvp=True, is_active=is_active)
