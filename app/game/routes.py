@@ -5,9 +5,10 @@ from app import db
 from app.game.game import Game
 from app.game.utils import save_game, load_game, delete_game
 from app.game.models import Game as GameModel
-from app.game.constants import HOT_SEATS_MODE, PVP_MODE,STATUS_ACTIVE
+from app.game.constants import HOT_SEATS_MODE, PVP_MODE, STATUS_ACTIVE
 from app.game.fields import FIELDS
 from app.game.ai import ai_move
+from app.game.forms import JoinGameForm
 
 game = Blueprint('game', __name__)
 
@@ -61,7 +62,7 @@ def field_info(field_id):
             field_data = field
 
     if not field_data:
-        return make_response('xd'), 404
+        return make_response('not found'), 404
 
     return make_response(field_data), 200
 
@@ -103,25 +104,41 @@ def vs_ai(code=None):
     return render_template('game/board/board.html', game=g, code=code)
 
 
-@game.route('/waiting_room')
-@game.route('/waiting_room/<code>', methods=['POST', 'GET'])
-def waiting_room(code=None):
-    if code:
-        game_record: GameModel = GameModel.query.filter_by(code=code, user_id=current_user.id).first()
-        game_record.status = STATUS_ACTIVE
-        db.session.commit()
-        g = load_game(code)
-
-        return render_template('game/board/board.html', game=g, code=code)
-
+@game.route('/init_pvp')
+def init_pvp():
     code = token_hex(16)
     g = Game(2, current_user.id)
     save_game(g, code)
 
-    game_record = GameModel(code=code, user_id=current_user.id, mode=PVP_MODE)
+    game_record = GameModel(code=code, user_id=current_user.id, mode=PVP_MODE, isHost=True)
     db.session.add(game_record)
     db.session.commit()
 
+    return redirect(url_for('game.waiting_room'))
 
-
-    return render_template('game/waiting_room.html', code=code)
+# @game.route('/waiting_room')
+# @game.route('/waiting_room/<code>', methods=['POST', 'GET'])
+# def waiting_room(code=None):
+#     if code:
+#         game_record: GameModel = GameModel.query.filter_by(code=code, user_id=current_user.id).first()
+#         game_record.status = STATUS_ACTIVE
+#         db.session.commit()
+#         g = load_game(code)
+#
+#         return render_template('game/board/board.html', game=g, code=code)
+#
+#     code = token_hex(16)
+#     g = Game(2, current_user.id)
+#     save_game(g, code)
+#
+#     game_record = GameModel(code=code, user_id=current_user.id, mode=PVP_MODE)
+#     db.session.add(game_record)
+#     db.session.commit()
+#
+#     return render_template('game/waiting_room.html', code=code)
+#
+#
+# # @game.route('/join_game', methods=['POST', 'GET'])
+# # def join_game():
+# #     form = JoinGameForm()
+# #     if form.validate_on_submit():
