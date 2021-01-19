@@ -125,7 +125,7 @@ class CityField:
 
 
 class Game:
-    def __init__(self, players_count: int, db_id: int):
+    def __init__(self, players_count: int, db_id: int = None):
         self.players = []
         self.current_player_index = 0
         self.board = []

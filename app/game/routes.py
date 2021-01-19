@@ -165,7 +165,21 @@ def guest_waiting_room(code):
     return render_template('game/waiting_room.html', is_host=False)
 
 
-
-@game.route('/play_pvp/<code>')
+@game.route('/play_pvp/<code>', methods=['POST', 'GET'])
 def play_pvp(code):
-    return 'game {}'.format(code)
+    payload = {
+        'buy': bool(int(request.form.get('buy'))) if request.form.get('buy') else None,
+        'build': request.form.get('build').split(';')[0:-1] if request.form.get('build') else None
+    }
+    if request.form.get('next_turn'):
+        g = load_game(code)
+        g.next_turn(payload)
+        if g.winner:
+            flash('player {} have won!!'.format(g.winner.id), 'success')
+            return redirect(url_for('game.home'))
+        save_game(g, code)
+    else:
+        g = load_game(code)
+
+    is_active = current_user.id == g.players[g.current_player_index].db_id
+    return render_template('game/board/board.html', game=g, code=code, pvp=True, is_active=is_active)

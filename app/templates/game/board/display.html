@@ -7,7 +7,10 @@
                 player{{ player.id }}: <span class="player{{ player.id }}_money">{{ player.money }}</span>
             {% endfor %}
         </div>
-        <form id="game_form" method="post" action="{{ url_for(request.endpoint) }}/{{ code }}">
+        {% if pvp and not is_active %}
+            <p>wait for your turn.</p>
+        {% else %}
+            <form id="game_form" method="post" action="{{ url_for(request.endpoint, code=code) }}">
             <input type="hidden" name="next_turn" value="1">
             <input type="hidden" id="build_input" name="build" value="">
             {% if game.can_buy %}
@@ -22,6 +25,7 @@
             {% endif %}
             <input type="submit" value="next turn">
         </form>
+        {% endif %}
         <div class="msgs">
             {% for msg in game.msgs|reverse %}
                 <p>{{ msg }}</p>
