@@ -4,7 +4,7 @@ from app.game.constants import STATUS_WAITING
 
 class Game(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    code = db.Column(db.String(25), unique=True, nullable=False)
+    code = db.Column(db.String(25), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     mode = db.Column(db.String(16), nullable=False)
     status = db.Column(db.String(16), nullable=False, default=STATUS_WAITING)

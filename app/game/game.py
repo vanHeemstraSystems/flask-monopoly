@@ -141,6 +141,15 @@ class Game:
 
         self._render_board()
 
+    def pvp_add_joining_player(self, db_id: int):
+        for p in self.players:
+            if p.db_id:
+                continue
+            else:
+                p.db_id = db_id
+                break
+
+
     def next_turn(self, payload):
         if payload['buy']:
             self._sell_field(self.players[self.current_player_index],

@@ -128,9 +128,24 @@ def waiting_room(code):
             flash('You can not start the game, no player has joined.', 'danger')
 
     return render_template('game/waiting_room.html', code=code)
-#
-#
-# # @game.route('/join_game', methods=['POST', 'GET'])
-# # def join_game():
-# #     form = JoinGameForm()
-# #     if form.validate_on_submit():
+
+
+@game.route('/join_game', methods=['POST', 'GET'])
+def join_game():
+    form = JoinGameForm()
+    if form.validate_on_submit():
+        code = form.join_code.data
+        game_records_count = GameModel.query.filter_by(code=code).count()
+        if game_records_count ==1:
+            g = load_game(code)
+            g.pvp_add_joining_player(current_user.id)
+            save_game(g, code)
+
+            new_game_record = GameModel(code=code, user_id=current_user.id, mode=PVP_MODE)
+            db.session.add(new_game_record)
+            db.session.commit()
+
+        else:
+            flash('you can not join this game.', 'danger')
+
+    return render_template('game/join_game.html', form=form)
