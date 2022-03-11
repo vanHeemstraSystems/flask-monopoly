@@ -39,9 +39,15 @@ body {
 
 .msgs{
   height: 50%;
-  width: 50%;
   max-height: 50vh;
   overflow-y: scroll;
+}
+
+.msg{
+  padding: .4rem;
+  margin-bottom: .2rem;
+  border: 1px solid grey;
+  border-radius: 4px;
 }
 
 .buildings{
@@ -56,9 +62,34 @@ body {
     flex: 1;
   }
 }
+
+#dashboard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5rem .75rem 1.5rem 1.5rem;
+}
+
 #card_container{
   visibility: hidden;
+  padding: 1.5rem .75rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem .75rem 1.5rem 1.5rem;
 }
 .buildings{
   font-size: 12px;
+}
+
+.card-body{
+  // border: 1px solid grey;
+  border-radius: 5px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }

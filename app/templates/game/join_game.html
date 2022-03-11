@@ -1,13 +1,15 @@
 {% extends 'layout.html' %}
 
+{% block css%}
+    {% assets "join_scss" %}
+    <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    {% endassets %}
+{% endblock %}
+
 {% block body %}
-    <div class="content-section">
-        <div class="row justify-content-center">
-            <div class="col-6 mt-5">
-                <form method="POST">
+    <div class="container">
+        <form method="POST">
                     {{ form.hidden_tag() }}
-                    <fieldset class="form-group">
-                        <legend class="border-bottom mb-4">Join game</legend>
                         <div class="form-group">
                             {{ form.join_code.label(class='form-control-label') }}
                             {% if form.join_code.errors %}
@@ -21,13 +23,11 @@
                                 {{ form.join_code(class='form-control form-control-lg') }}
                             {% endif %}
                         </div>
-                    </fieldset>
                     <div class="form-group">
-                        {{ form.submit(class='btn btn-outline-info') }}
+                        {{ form.submit(class='btn') }}
                     </div>
                 </form>
-            </div>
-        </div>
     </div>
 
 {% endblock %}
+ 

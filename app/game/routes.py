@@ -10,13 +10,15 @@ from app.game.constants import HOT_SEATS_MODE, PVP_MODE, STATUS_ACTIVE, STATUS_F
 from app.game.fields import FIELDS
 from app.game.ai import ai_move
 from app.game.forms import JoinGameForm
+from app.models import User
 
 game = Blueprint('game', __name__)
 
 
 @game.route('/')
 def home():
-    return render_template('game/home.html')
+    users_count = User.query.count()
+    return render_template('game/home.html', users_count=users_count)
 
 
 @game.route('/menu')

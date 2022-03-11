@@ -1,5 +1,5 @@
 <div id="display">
-    <div>
+    <div id="dashboard">
 
         <div>active player: {{ game.current_player_index }}</div>
         <div class="cash">
@@ -28,7 +28,7 @@
         {% endif %}
         <div class="msgs">
             {% for msg in game.msgs|reverse %}
-                <p>{{ msg }}</p>
+                <p class="msg">{{ msg }}</p>
             {% endfor %}
         </div>
     </div>

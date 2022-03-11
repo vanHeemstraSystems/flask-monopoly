@@ -1,7 +1,13 @@
 {% with msgs = get_flashed_messages(with_categories=true) %}
     {% if msgs %}
         {% for cat, m in msgs  %}
-            <div class="alert alert-{{ cat }}">{{ m }}</div>
+            <div class="alert alert-{{ cat }} msg{{loop.index}}">{{ m }}</div>
+            <script>
+                const msg = document.querySelector('.msg{{loop.index}}')
+                window.setTimeout(()=>{
+                    msg.style.display = 'none'
+                }, 5000)
+            </script>
         {% endfor %}
     {% endif %}
 {% endwith %}
