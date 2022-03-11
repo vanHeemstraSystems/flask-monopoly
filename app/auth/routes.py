@@ -43,3 +43,9 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('game.home'))
+
+
+@auth.route('/profile/<user_id>')
+def profile(user_id):
+    user = User.query.filter_by(id=user_id).first()
+    return render_template('auth/profile.html', user=user)
