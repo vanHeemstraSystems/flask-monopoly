@@ -23,3 +23,12 @@ html{
     -webkit-text-fill-color: transparent;
 }
 
+.alert{
+    position: fixed;
+    bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid green;
+    background-color: lightgreen;
+    color: green;
+    border-radius: 5px;
+  }
