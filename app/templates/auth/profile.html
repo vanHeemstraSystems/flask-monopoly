@@ -13,6 +13,7 @@
            <h2>Your games</h2>
            <ul class="game_list">
                {% for game in user.games %}
+                    {% if game.status == 'STATUS_ACTIVE' %}
                     <li class="game">
                             {% if game.mode == 'HOT_SEATS_MODE' %}
                                 <a href="{{url_for('game.hot_seats', code=game.code)}}">
@@ -36,6 +37,7 @@
                             {% endif %}
                         </a>
                     </li>
+                    {% endif %}
                {% endfor %}
            </ul>
         </div>

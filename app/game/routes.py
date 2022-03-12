@@ -39,6 +39,11 @@ def hot_seats(code=None):
             g = load_game(code)
             g.next_turn(payload)
             if g.winner:
+                game_in_db = GameModel.query.filter_by(code=code).first()
+                game_in_db.status = STATUS_FINISHED
+                db.session.commit()
+                delete_game(code)
+
                 flash('player {} have won!!'.format(g.winner.id), 'success')
                 return redirect(url_for('game.home'))
             save_game(g, code)
@@ -50,7 +55,7 @@ def hot_seats(code=None):
         g.next_turn(payload)
         save_game(g, code)
 
-        game_in_db = GameModel(code=code, user_id=current_user.id, mode=HOT_SEATS_MODE)
+        game_in_db = GameModel(code=code, user_id=current_user.id, mode=HOT_SEATS_MODE, status=STATUS_ACTIVE)
         db.session.add(game_in_db)
         db.session.commit()
 
@@ -86,7 +91,7 @@ def vs_ai(code=None):
             g.next_turn(ai_payload)
             if g.winner:
                 game_record = GameModel.query.filter_by(code=code).first()
-                game_record.finished = True
+                game_record.status = STATUS_FINISHED
                 db.session.commit()
                 delete_game(code)
                 flash('player {} have won!!'.format(g.winner.id), 'success')
@@ -100,7 +105,7 @@ def vs_ai(code=None):
         g.next_turn(payload)
         save_game(g, code)
 
-        game_in_db = GameModel(code=code, user_id=current_user.id, mode=PVAI_MODE)
+        game_in_db = GameModel(code=code, user_id=current_user.id, mode=PVAI_MODE, status=STATUS_ACTIVE)
         db.session.add(game_in_db)
         db.session.commit()
 
