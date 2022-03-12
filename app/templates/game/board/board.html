@@ -13,6 +13,13 @@
         {% include 'game/board/fields.html' %}
 
         {% include 'game/board/display.html' %}
+
+        {% if go_msg %}
+            <div class="go_msg">
+                <p>${data.msg}</p>
+                <a href='/'>Ok</a>
+            </div>
+        {% endif %}
     </div>
 
     <div

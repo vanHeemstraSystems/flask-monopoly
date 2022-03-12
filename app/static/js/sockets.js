@@ -11,4 +11,18 @@
         }
 
     })
+
+    socket.on('gameover', data=>{
+        const board = document.querySelector('#board')
+
+        go_msg = document.createElement('div')
+        go_msg.classList.add('go_msg')
+        go_msg.innerHTML = `
+            <p>${data.msg}</p>
+            <a href='/'>Ok</a>
+        `;
+
+        board.appendChild(go_msg);
+
+    })
 }

@@ -1,4 +1,5 @@
 from secrets import token_hex
+from turtle import goto
 from flask import Blueprint, render_template, flash, redirect, url_for, request, make_response
 from flask_login import current_user
 from flask_socketio import emit, join_room, send
@@ -174,24 +175,34 @@ def play_pvp(code):
         'build': request.form.get('build').split(';')[0:-1] if request.form.get('build') else None
     }
     g = load_game(code)
+    go_msg = None
     if g.winner:
-        flash('{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has'))
-        return redirect('game.home')
+        go_msg = '{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has')
+        socketio.emit('gameover', data={'msg': '{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has')})
     if request.form.get('next_turn'):
         last_player = g.players[g.current_player_index].db_id
         g.next_turn(payload)
         if g.winner:
             save_game(g, code)
-            flash('{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has'))
+            # flash('{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has'))
             game_record = GameModel.query.filter_by(code=code, isHost=True)
             game_record.status = STATUS_FINISHED
             db.session.commit()
-            return redirect(url_for('game.home'))
+            # return redirect(url_for('game.home'))
+            go_msg = '{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has')
+            socketio.emit('gameover', data={'msg': '{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has')})
         save_game(g, code)
         socketio.emit('refresh', data={'last_player': last_player}, broadcast=True)
 
     is_active = current_user.id == g.players[g.current_player_index].db_id
-    return render_template('game/board/board.html', game=g, code=code, pvp=True, is_active=is_active)
+
+    return render_template(
+        'game/board/board.html',
+        game=g, code=code,
+        pvp=True,
+        is_active=is_active,
+        go_msg= go_msg
+        )
 
 
 @socketio.on('join')
