@@ -180,22 +180,21 @@ def play_pvp(code):
         'build': request.form.get('build').split(';')[0:-1] if request.form.get('build') else None
     }
     g = load_game(code)
-    go_msg = None
     if g.winner:
-        go_msg = '{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has')
         socketio.emit('gameover', data={'msg': '{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has')})
+        flash('{} won.'.format('Enemy has' if current_user.id == g.winner.db_id else 'You have'))
+        return redirect(url_for('game.home'))
     if request.form.get('next_turn'):
         last_player = g.players[g.current_player_index].db_id
         g.next_turn(payload)
         if g.winner:
             save_game(g, code)
-            # flash('{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has'))
             game_record = GameModel.query.filter_by(code=code, isHost=True)
             game_record.status = STATUS_FINISHED
             db.session.commit()
-            # return redirect(url_for('game.home'))
-            go_msg = '{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has')
             socketio.emit('gameover', data={'msg': '{} won.'.format('You have' if current_user.id == g.winner.db_id else 'Enemy has')})
+            flash('{} won.'.format('Enemy has' if current_user.id == g.winner.db_id else 'You have'))
+            return redirect(url_for('game.home'))
         save_game(g, code)
         socketio.emit('refresh', data={'last_player': last_player}, broadcast=True)
 
@@ -205,8 +204,7 @@ def play_pvp(code):
         'game/board/board.html',
         game=g, code=code,
         pvp=True,
-        is_active=is_active,
-        go_msg= go_msg
+        is_active=is_active
         )
 
 
