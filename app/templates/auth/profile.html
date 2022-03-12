@@ -10,7 +10,7 @@
     <div class="container">
         <div class="content">
            <h1>Hello {{user.username}}</h1> 
-           <h2>Your games</h2>
+           <h2>pending games</h2>
            <ul class="game_list">
                {% for game in user.games %}
                     {% if game.status == 'STATUS_ACTIVE' %}
