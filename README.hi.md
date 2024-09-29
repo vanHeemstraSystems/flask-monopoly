@@ -10,16 +10,15 @@
 
 "फ्लास्क-एकाधिकार" पर आधारित<https://github.com/KrzysztofWelc/flask-monopoly>
 
-Run this application as follows:
+इस एप्लिकेशन को इस प्रकार चलाएँ:
 
 1) दर्ज करें`flask_app`निर्देशिका:`$ cd flask_app`2) ऐप/sample.env को ऐप/.env पर कॉपी करें:`$ cp app/sample.env app/.env`3) अद्यतन`app/.env`आपकी कॉन्फ़िगरेशन सेटिंग के साथ.
-4) यदि अस्तित्व में नहीं है, तो अंदर एक आभासी वातावरण बनाएं`flask_app`निर्देशिका:`$ python3 -m venv .venv`5) आभासी वातावरण प्रारंभ करें और दर्ज करें:`$ . .venv/bin/activate`
-6) Run `(.venv) $ pip install -r requirements.txt`6) भागो`(.venv) $ ./setup.sh`(मैकओएस या लिनक्स)या`(.venv) setup.bat`(विंडोज़)
+4) यदि अस्तित्व में नहीं है, तो अंदर एक आभासी वातावरण बनाएं`flask_app`निर्देशिका:`$ python3 -m venv .venv`
+5) Start the virtual environment and enter: `$ . .venv/bin/activate`6) भागो`(.venv) $ pip install -r requirements.txt`6) भागो`(.venv) $ ./setup.sh`(मैकओएस या लिनक्स)या`(.venv) setup.bat`(विंडोज़)
 8) फ्लास्क ऐप चलाएँ:`(.venv) $ flask run`9) संकेतानुसार वेब इंटरफ़ेस खोलें
 10) प्रयोग करें`CTRL+c`वेब सर्वर से बाहर निकलने के लिए.
-11) वैकल्पिक रूप से फ्लास्क कमांड लाइन इंटरफ़ेस चलाएँ:`(.venv) $ flask shell`
-12) Execute any flask commands: >>>
-13) Use `exit()`कमांड लाइन इंटरफ़ेस से बाहर निकलने के लिए।
+11) वैकल्पिक रूप से फ्लास्क कमांड लाइन इंटरफ़ेस चलाएँ:`(.venv) $ flask shell`12) किसी भी फ्लास्क कमांड को निष्पादित करें: >>>
+13) प्रयोग करें`exit()`कमांड लाइन इंटरफ़ेस से बाहर निकलने के लिए।
 
 ## 100 - परिचय
 

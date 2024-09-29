@@ -10,7 +10,7 @@
 
 基于“烧瓶垄断”<https://github.com/KrzysztofWelc/flask-monopoly>
 
-Run this application as follows:
+按如下方式运行该应用程序：
 
 1) 输入`flask_app`目录：`$ cd flask_app`2）将app/sample.env复制到app/.env：`$ cp app/sample.env app/.env`3）更新`app/.env`与您的配置设置。
 4）如果不存在，则在内部创建一个虚拟环境`flask_app`目录：`$ python3 -m venv .venv`5）启动虚拟环境，输入：`$ . .venv/bin/activate`6) 跑步`(.venv) $ pip install -r requirements.txt`6) 跑步`(.venv) $ ./setup.sh`（macOS 或 Linux）或`(.venv) setup.bat`（视窗）
