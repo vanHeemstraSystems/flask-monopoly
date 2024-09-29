@@ -12,15 +12,15 @@
 
 इस एप्लिकेशन को इस प्रकार चलाएँ:
 
-1) दर्ज करें`flask_app`निर्देशिका:`$ cd flask_app`2) भागो`pip install -r requirements.txt`
-3) If non-existent, create a virtual environment inside the `flask_app`निर्देशिका:`python3 -m venv .venv`4) आभासी वातावरण प्रारंभ करें और दर्ज करें:`. .venv/bin/activate`5) फ्लास्क ऐप को ऐप डायरेक्टरी पर सेट करें:`(.venv) $ export FLASK_APP=app`6) फ्लास्क पर्यावरण को विकास के लिए सेट करें:`(.venv) $ export FLASK_ENV=development`7) फ्लास्क ऐप चलाएँ:`(.venv) $ flask run`8) संकेतानुसार वेब इंटरफ़ेस खोलें
+1) दर्ज करें`flask_app`निर्देशिका:`$ cd flask_app`2) ~भागो`pip install -r requirements.txt`~ ऐप/नमूना.env को ऐप/.env पर कॉपी करें:`$ mv app/sample.env app/.env`3) यदि अस्तित्व में नहीं है, तो अंदर एक आभासी वातावरण बनाएं`flask_app`निर्देशिका:`python3 -m venv .venv`4) आभासी वातावरण प्रारंभ करें और दर्ज करें:`. .venv/bin/activate`5) फ्लास्क ऐप को ऐप डायरेक्टरी पर सेट करें:`(.venv) $ export FLASK_APP=app`
+6) Set the Flask Environment to development: `(.venv) $ export FLASK_ENV=development`7) फ्लास्क ऐप चलाएँ:`(.venv) $ flask run`8) संकेतानुसार वेब इंटरफ़ेस खोलें
 9) प्रयोग करें`CTRL+c`वेब सर्वर से बाहर निकलने के लिए.
 10) वैकल्पिक रूप से फ्लास्क कमांड लाइन इंटरफ़ेस चलाएँ:`(.venv) $ flask shell`11) किसी भी फ्लास्क कमांड को निष्पादित करें: >>>
 12) प्रयोग करें`exit()`कमांड लाइन इंटरफ़ेस से बाहर निकलने के लिए।
 
 ## 100 - परिचय
 
-देखना[README.md](./100/README.md)
+See [README.md](./100/README.md)
 
 ## 200 - आवश्यकताएँ
 
