@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 from flask import Flask
 from flask_assets import Environment, Bundle
-from flask_bcrypt import Bcrypt
+from bcrypt import bycrypt
 from flask_sqlalchemy import SQLAlchemy
 
+bcrypt = Bcrypt()
 db = SQLAlchemy()
 
 def create_app():
