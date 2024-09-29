@@ -12,7 +12,7 @@ Based on "flask-monopoly" at https://github.com/KrzysztofWelc/flask-monopoly
 Run this application as follows:
 
 1) Enter ```flask_app``` directory: ```$ cd flask_app```
-2) ~Run ```pip install -r requirements.txt```~ Copy app/sample.env to app/.env: ```$ mv app/sample.env app/.env```
+2) ~Run ```pip install -r requirements.txt```~ Copy app/sample.env to app/.env: ```$ cp app/sample.env app/.env```
 3) Update ```app/.env``` with your configuration setting.
 4) If non-existent, create a virtual environment inside the ```flask_app``` directory: ```python3 -m venv .venv```
 5) Start the virtual environment and enter: ```. .venv/bin/activate```
