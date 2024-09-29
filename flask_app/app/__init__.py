@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from flask import Flask
 from flask_assets import Environment, Bundle
+from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -31,6 +32,9 @@ def create_app():
 
     js = Bundle('js/throttle.js', 'js/selectors.js', 'js/buildOnField.js', 'js/updateDisplay.js', output='js/build.js')
     assets.register('js_build', js)
+
+    db.init_app(app)
+    bcrypt.init_app(app)
 
     # MORE
 
