@@ -6,7 +6,7 @@ Basé sur « Comment structurer une grande application Flask avec des plans Fla
 
 Basé sur "Flask SQLAlchemy" sur<https://github.com/vanHeemstraSystems/flask-sqlalchemy/>
 
-Basé sur le « modèle d'usine » à<https://github.com/vanHeemstraSystems/factory-pattern>
+Basé sur le « modèle d'usine » à<https://github.com/vanHeemstraSystems/factory-pattern>
 
 Basé sur le « monopole du flacon » à<https://github.com/KrzysztofWelc/flask-monopoly>
 
@@ -25,7 +25,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Créer notre application
+## 300 - Construire notre application
 
 Voir[README.md](./300/README.md)
 
