@@ -26,6 +26,9 @@ def create_app():
     profile_scss = Bundle('scss/pages/profile.scss', filters='pyscss', output='css/pages/profile.css')
     assets.register('profile_scss', profile_scss)    
 
+    js = Bundle('js/throttle.js', 'js/selectors.js', 'js/buildOnField.js', 'js/updateDisplay.js', output='js/build.js')
+    assets.register('js_build', js)
+    
     # MORE
 
     return app
