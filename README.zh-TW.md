@@ -12,7 +12,7 @@
 
 按如下方式運行該應用程式：
 
-1) 輸入`flask_app`目錄：`$ cd flask_app`2) ~運行`pip install -r requirements.txt`~ 將 app/sample.env 複製到 app/.env：`$ mv app/sample.env app/.env`3）更新`app/.env`與您的配置設定。
+1) 輸入`flask_app`目錄：`$ cd flask_app`2) ~運行`pip install -r requirements.txt`~ 將 app/sample.env 複製到 app/.env：`$ cp app/sample.env app/.env`3）更新`app/.env`與您的配置設定。
 4）如果不存在，則在內部建立一個虛擬環境`flask_app`目錄：`python3 -m venv .venv`5）啟動虛擬環境，輸入：`. .venv/bin/activate`6）將Flask App設定到app目錄：`(.venv) $ export FLASK_APP=app`7）設定Flask環境為開發：`(.venv) $ export FLASK_ENV=development`8）運行燒瓶應用程式：`(.venv) $ flask run`9）根據提示開啟Web介面
 10) 使用`CTRL+c`退出網路伺服器。
 11) 或運行flask命令列介面：`(.venv) $ flask shell`12）執行任何flask指令：>>>
@@ -30,6 +30,6 @@
 
 看[README.md](./300/README.md)
 
-## 400 - 結論
+## 400 - Conclusion
 
 看[README.md](./400/README.md)
