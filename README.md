@@ -16,7 +16,8 @@ Run this application as follows:
 3) Update ```app/.env``` with your configuration setting.
 4) If non-existent, create a virtual environment inside the ```flask_app``` directory: ```$ python3 -m venv .venv```
 5) Start the virtual environment and enter: ```$ . .venv/bin/activate```
-6) Run ```./setup.sh``` (macOS or Linux)or ```setup.bat``` (Windows)
+6) Run ```(.venv) $ pip install -r requirements.txt```
+6) Run ```(.venv) $ ./setup.sh``` (macOS or Linux)or ```(.venv) setup.bat``` (Windows)
 8) Run the flask app: ```(.venv) $ flask run```
 9) Open the web interface as prompted
 10) Use ```CTRL+c``` to exit the web server.
