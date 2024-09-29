@@ -12,7 +12,7 @@
 
 قم بتشغيل هذا التطبيق على النحو التالي:
 
-1) أدخل`flask_app`دليل:`$ cd flask_app`2) ~ تشغيل`pip install -r requirements.txt`~ انسخ app/sample.env إلى app/.env:`$ mv app/sample.env app/.env`3) التحديث`app/.env`مع إعداد التكوين الخاص بك.
+1) أدخل`flask_app`دليل:`$ cd flask_app`2) ~ تشغيل`pip install -r requirements.txt`~ انسخ app/sample.env إلى app/.env:`$ cp app/sample.env app/.env`3) التحديث`app/.env`مع إعداد التكوين الخاص بك.
 4) في حالة عدم وجودها، قم بإنشاء بيئة افتراضية داخل`flask_app`دليل:`python3 -m venv .venv`5) ابدأ البيئة الافتراضية وأدخل:`. .venv/bin/activate`6) قم بتعيين تطبيق Flask على دليل التطبيق:`(.venv) $ export FLASK_APP=app`7) ضبط بيئة القارورة للتطوير:`(.venv) $ export FLASK_ENV=development`8) قم بتشغيل تطبيق القارورة:`(.venv) $ flask run`9) افتح واجهة الويب كما هو مطلوب
 10) الاستخدام`CTRL+c`للخروج من خادم الويب.
 11) بدلاً من ذلك، قم بتشغيل واجهة سطر أوامر القارورة:`(.venv) $ flask shell`12) تنفيذ أي أوامر قارورة: >>>
