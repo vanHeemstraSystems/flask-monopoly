@@ -1,7 +1,7 @@
 venv
 .idea
 app/static/.webassets-cache
-app/site.db
+app/app.db
 app/.env
 app/game/games/*
 **/__pycache__
