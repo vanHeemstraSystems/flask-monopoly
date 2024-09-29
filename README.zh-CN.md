@@ -16,8 +16,9 @@
 4）如果不存在，则在内部创建一个虚拟环境`flask_app`目录：`$ python3 -m venv .venv`5）启动虚拟环境，输入：`$ . .venv/bin/activate`6) 跑步`(.venv) $ pip install -r requirements.txt`6) 跑步`(.venv) $ ./setup.sh`（macOS 或 Linux）或`(.venv) setup.bat`（视窗）
 8）运行烧瓶应用程序：`(.venv) $ flask run`9）根据提示打开Web界面
 10) 使用`CTRL+c`退出网络服务器。
-11) 或者运行flask命令行界面：`(.venv) $ flask shell`12）执行任何flask命令：>>>
-13) 使用`exit()`退出命令行界面。
+11) 或者运行flask命令行界面：`(.venv) $ flask shell`
+12) Execute any flask commands: >>>
+13) Use `exit()` to exit from the command line interface.
 
 ## 100 - 简介
 
