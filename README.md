@@ -13,16 +13,17 @@ Run this application as follows:
 
 1) Enter ```flask_app``` directory: ```$ cd flask_app```
 2) ~Run ```pip install -r requirements.txt```~ Copy app/sample.env to app/.env: ```$ mv app/sample.env app/.env```
-3) If non-existent, create a virtual environment inside the ```flask_app``` directory: ```python3 -m venv .venv```
-4) Start the virtual environment and enter: ```. .venv/bin/activate```
-5) Set the Flask App to app directory: ```(.venv) $ export FLASK_APP=app```
-6) Set the Flask Environment to development: ```(.venv) $ export FLASK_ENV=development```
-7) Run the flask app: ```(.venv) $ flask run```
-8) Open the web interface as prompted
-9) Use ```CTRL+c``` to exit the web server.
-10) Alternatively run the flask command line interface: ```(.venv) $ flask shell```
-11) Execute any flask commands: >>>
-12) Use ```exit()``` to exit from the command line interface.
+3) Update ```app/.env``` with your configuration setting.
+4) If non-existent, create a virtual environment inside the ```flask_app``` directory: ```python3 -m venv .venv```
+5) Start the virtual environment and enter: ```. .venv/bin/activate```
+6) Set the Flask App to app directory: ```(.venv) $ export FLASK_APP=app```
+7) Set the Flask Environment to development: ```(.venv) $ export FLASK_ENV=development```
+8) Run the flask app: ```(.venv) $ flask run```
+9) Open the web interface as prompted
+10) Use ```CTRL+c``` to exit the web server.
+11) Alternatively run the flask command line interface: ```(.venv) $ flask shell```
+12) Execute any flask commands: >>>
+13) Use ```exit()``` to exit from the command line interface.
 
 ## 100 - Introduction
 
