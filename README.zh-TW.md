@@ -8,7 +8,7 @@
 
 基於“工廠模式”<https://github.com/vanHeemstraSystems/factory-pattern>
 
-Based on "flask-monopoly" at <https://github.com/KrzysztofWelc/flask-monopoly>
+基於“燒瓶壟斷”<https://github.com/KrzysztofWelc/flask-monopoly>
 
 基於“Flask CLI 命令”，位於<https://testdriven.io/tips/38c1ac63-8d16-4cbc-8488-557b53afa9e5/>
 
