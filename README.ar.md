@@ -14,6 +14,8 @@
 
 بناء على "قارورة مع ساس" في<https://github.com/ChristinaVoss/flask-with-sass>
 
+استنادًا إلى "تجميع ملفات JavaScript وCSS في Flask باستخدام Flask-Assets" في<https://www.youtube.com/watch?v=HYO6GNOJMmQ>
+
 قم بتشغيل هذا التطبيق على النحو التالي:
 
 1) أدخل`flask_app`دليل:`$ cd flask_app`2) تشغيل`$ pip install -r requirements.txt`3) انسخ app/sample.env إلى app/.env:`$ cp app/sample.env app/.env`4) التحديث`app/.env`مع إعداد التكوين الخاص بك.
