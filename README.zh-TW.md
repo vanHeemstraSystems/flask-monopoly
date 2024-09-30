@@ -21,7 +21,7 @@
 13) 或運行flask命令列介面：`(.venv) $ flask shell`14）執行任何flask指令：>>>
 15) 使用`exit()`退出命令列介面。
 
-要查看所有路線，請從`flask_app`目錄運行`$ flask routes`:
+**提示**：查看所有路線，從`flask_app`目錄運行`$ flask routes`:
 
     $ flask routes
     Endpoint                 Methods    Rule                      
@@ -48,7 +48,7 @@
 
 看[README.md](./100/README.md)
 
-## 200 - Requirements
+## 200 - 要求
 
 看[README.md](./200/README.md)
 
