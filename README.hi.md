@@ -1,4 +1,4 @@
-कुप्पी-एकाधिकार
+flask-monopoly
 
 # कुप्पी एकाधिकार
 
@@ -20,15 +20,17 @@
 
 इस एप्लिकेशन को इस प्रकार चलाएँ:
 
-1) दर्ज करें`flask_app`निर्देशिका:`$ cd flask_app`2) भागो`$ pip install -r requirements.txt`3) ऐप/sample.env को ऐप/.env पर कॉपी करें:`$ cp app/sample.env app/.env`4) अद्यतन`app/.env`आपकी कॉन्फ़िगरेशन सेटिंग के साथ.
+1) दर्ज करें`flask_app`निर्देशिका:`$ cd flask_app`2) भागो`$ pip install -r requirements.txt`3) ऐप/sample.env को ऐप/.env पर कॉपी करें:`$ cp app/sample.env app/.env`
+4) Update `app/.env`आपकी कॉन्फ़िगरेशन सेटिंग के साथ.
 5) यदि अस्तित्व में नहीं है, तो अंदर एक आभासी वातावरण बनाएं`flask_app`निर्देशिका:`$ python3 -m venv .venv`6) आभासी वातावरण प्रारंभ करें और दर्ज करें:`$ . .venv/bin/activate`7) भागो`(.venv) $ ./setup.sh`(मैकओएस या लिनक्स)या`(.venv) setup.bat`(विंडोज़)
-8) मॉड्यूल फ्लास्क-बीक्रिप्ट न मिलने की त्रुटियों के मामले में, चलाएँ`(.venv) $ pip install Flask-Bcrypt`9) डेटाबेस बनाएं:`(.venv) $ flask commands create_db`10) फ्लास्क ऐप चलाएँ:`(.venv) $ flask run`(वैकल्पिक रूप से`$ python main.py`)
+8) मॉड्यूल फ्लास्क-बीक्रिप्ट न मिलने की त्रुटियों के मामले में, चलाएँ`(.venv) $ pip install Flask-Bcrypt`
+9) Create the database: `(.venv) $ flask commands create_db`10) फ्लास्क ऐप चलाएँ:`(.venv) $ flask run`(वैकल्पिक रूप से`$ python main.py`)
 11) संकेतानुसार वेब इंटरफ़ेस खोलें
 12) प्रयोग करें`CTRL+c`वेब सर्वर से बाहर निकलने के लिए.
 13) वैकल्पिक रूप से फ्लास्क कमांड लाइन इंटरफ़ेस चलाएँ:`(.venv) $ flask shell`14) किसी भी फ्लास्क कमांड को निष्पादित करें: >>>
 15) उपयोग करें`exit()`कमांड लाइन इंटरफ़ेस से बाहर निकलने के लिए।
 
-**बख्शीश**: सभी मार्गों को भीतर से देखने के लिए`flask_app`निर्देशिका चलाएँ`$ flask routes`:
+**बख्शीश**: सभी मार्गों को भीतर से देखने के लिए`flask_app` directory run `$ flask routes`:
 
     $ flask routes
     Endpoint                 Methods    Rule                      
