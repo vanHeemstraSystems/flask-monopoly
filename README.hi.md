@@ -8,7 +8,7 @@
 
 "फ़ैक्टरी पैटर्न" पर आधारित<https://github.com/vanHeemstraSystems/factory-pattern>
 
-Based on "flask-monopoly" at <https://github.com/KrzysztofWelc/flask-monopoly>
+"फ्लास्क-एकाधिकार" पर आधारित<https://github.com/KrzysztofWelc/flask-monopoly>
 
 "फ्लास्क सीएलआई कमांड" पर आधारित<https://testdriven.io/tips/38c1ac63-8d16-4cbc-8488-557b53afa9e5/>
 
@@ -50,7 +50,7 @@ Based on "flask-monopoly" at <https://github.com/KrzysztofWelc/flask-monopoly>
 
 ## 200 - आवश्यकताएँ
 
-देखना[README.md](./200/README.md)
+See [README.md](./200/README.md)
 
 ## 300 - हमारे एप्लिकेशन का निर्माण
 
