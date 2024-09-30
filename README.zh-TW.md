@@ -16,7 +16,7 @@
 
 基於“使用 Flask-Assets 在 Flask 中捆綁 JavaScript 和 CSS 文件”<https://www.youtube.com/watch?v=HYO6GNOJMmQ>
 
-基於“pyScss”，位於<https://github.com/Kronuz/pyScss>
+基於“pyScss”<https://github.com/Kronuz/pyScss>
 
 按如下方式運行該應用程式：
 
@@ -52,6 +52,8 @@
     static                   GET        /static/<path:filename>
 
 **提示**: 看全部_風俗_來自內部的命令`flask_app`目錄運行`$ flask commands --help`從終端。
+
+**警告**: 請務必使用`pyScss`版本1.3.7（**not**1.4.0），因為它會重新引入一個錯誤（「全域標誌不在位置 1 表達式的開頭」）。
 
 ## 100 - 簡介
 
