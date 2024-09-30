@@ -9,8 +9,13 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    {% block css %}{% endblock %}
   </head>
   <body>
+    {% include 'navbar.html' %}
     <div class="container mt-5 pt-1">{% block body %}{% endblock %}</div>
+    {% include 'messages.html' %}
+    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+    {% block js %}{% endblock %}
   </body>
 </html>
