@@ -16,7 +16,7 @@
 
 基于“使用 Flask-Assets 在 Flask 中捆绑 JavaScript 和 CSS 文件”<https://www.youtube.com/watch?v=HYO6GNOJMmQ>
 
-基于“pyScss”，位于<https://github.com/Kronuz/pyScss>
+基于“pyScss”<https://github.com/Kronuz/pyScss>
 
 按如下方式运行该应用程序：
 

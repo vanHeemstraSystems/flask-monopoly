@@ -2,11 +2,11 @@ flacon-monopole
 
 # Monopole des flacons
 
-Basé sur « Comment structurer une grande application Flask avec des plans Flask et Flask-SQLAlchemy » sur<https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy>
+Basé sur « Comment structurer une grande application Flask avec des plans Flask et Flask-SQLAlchemy » sur<https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy>
 
 Basé sur "Flask SQLAlchemy" sur<https://github.com/vanHeemstraSystems/flask-sqlalchemy/>
 
-Basé sur le « modèle d'usine » à<https://github.com/vanHeemstraSystems/factory-pattern>
+Basé sur le « modèle d'usine » à<https://github.com/vanHeemstraSystems/factory-pattern>
 
 Basé sur le « monopole du flacon » à<https://github.com/KrzysztofWelc/flask-monopoly>
 
@@ -51,9 +51,9 @@ Exécutez cette application comme suit :
     game.waiting_room        GET, POST  /waiting_room/<code>      
     static                   GET        /static/<path:filename>
 
-**Conseil**: Pour tout voir_custom_commandes, de l'intérieur`flask_app`exécution du répertoire`$ flask commands --help`depuis un terminal.
+**Conseil**: Pour tout voir_coutume_commandes, de l'intérieur`flask_app`exécution du répertoire`$ flask commands --help`depuis un terminal.
 
-**Avertissement** : Assurez-vous d'utiliser`pyScss`version 1.3.7 (**pas**1.4.0) car cela réintroduirait un bug ("les drapeaux globaux ne sont pas au début de l'expression en position 1").**Mise à jour**: utiliser[libsass](https://sass.github.io/libsass-python/)au lieu de`pyScss`.
+**Avertissement** : Assurez-vous d'utiliser`pyScss`version 1.3.7 (**pas**1.4.0) car cela réintroduirait un bug ("les drapeaux globaux ne sont pas au début de l'expression en position 1").**Mise à jour**: use [libsass](https://sass.github.io/libsass-python/)au lieu de`pyScss`.
 
 ## 100 - Introduction
 
@@ -63,7 +63,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Créer notre application
+## 300 - Construire notre application
 
 Voir[README.md](./300/README.md)
 
