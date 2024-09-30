@@ -120,6 +120,8 @@ MORE
 
 8) Provided a Player steps on a City Field that belongs to another Player, (s)he has to pay an amount, depending on the presence of one or more Homes or a Hotel. The Money will be automatically taken out of her/his Account.
 
+9) Who ever losses their Money first loses the Game. If all Players have lost their Money except for one (Human or Computer), the last Player with Money left wins the Game!
+
 MORE
 
 ## 1000 - How to play a Hot Seats Remotely Game?
