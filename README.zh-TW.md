@@ -21,14 +21,14 @@
 按如下方式運行該應用程式：
 
 1) 輸入`flask_app`目錄：`$ cd flask_app`2) 運行`$ pip install -r requirements.txt`3）將app/sample.env複製到app/.env：`$ cp app/sample.env app/.env`4）更新`app/.env`與您的配置設定。
-5）如果不存在，則在內部建立一個虛擬環境`flask_app`目錄：`$ python3 -m venv .venv`6）啟動虛擬環境，輸入：`$ . .venv/bin/activate`7) 跑步`(.venv) $ ./setup.sh`（macOS 或 Linux）或`(.venv) setup.bat`（視窗）
-8) 如果出現找不到模組 Flask-Bcrypt 的錯誤，請執行`(.venv) $ pip install Flask-Bcrypt`9）建立資料庫：`(.venv) $ flask commands create_db`10）運行燒瓶應用程式：`(.venv) $ flask run`（或者`$ python main.py`）
+5）如果不存在，則在內部建立一個虛擬環境`flask_app`目錄：`$ python3 -m venv .venv`6）啟動虛擬環境，輸入：`$ . .venv/bin/activate`7) 跑步`(.venv) $ ./setup.sh`（macOS 或 Linux）或`(.venv) setup.bat` (Windows)
+8) In case of errors of not finding module Flask-Bycrypt, run `(.venv) $ pip install Flask-Bcrypt`9）建立資料庫：`(.venv) $ flask commands create_db`10）運行燒瓶應用程式：`(.venv) $ flask run` (alternatively `$ python main.py`）
 11）根據提示開啟Web介面
 12) 使用`CTRL+c`退出網路伺服器。
 13) 或運行flask命令列介面：`(.venv) $ flask shell`14）執行任何flask指令：>>>
 15) 使用`exit()`退出命令列介面。
 
-**提示**：查看所有路線，從`flask_app`目錄運行`$ flask routes`:
+**Tip**：查看所有路線，從`flask_app`目錄運行`$ flask routes`:
 
     $ flask routes
     Endpoint                 Methods    Rule                      
