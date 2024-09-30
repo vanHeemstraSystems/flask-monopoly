@@ -9,6 +9,7 @@ app = create_app()
 @app.cli.command('create_db')
 def create_db():
     db.create_all()
+    print('***** Database created *****')
 
 @app.cli.command('clear_saves')
 def clear_saves():
@@ -21,6 +22,7 @@ def clear_saves():
     try:
         db.session.query(Game).delete()
         db.session.commit()
+        print('***** Saves cleared *****')
     except:
         db.session.rollback()
 
