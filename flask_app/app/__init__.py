@@ -17,23 +17,32 @@ def create_app():
     app.config.from_object(app_settings)
     assets = Environment(app)
     assets.url = app.static_url_path
+    # create bundle for Flask-Assets to compile and prefix scss to css
     scss = Bundle('scss/style.scss', 'scss/tiles.scss', filters='pyscss', output='css/all.css')
     assets.register('scss_all', scss)
+    # scss.build() - Superfluous
     general = Bundle('scss/variables.scss', 'scss/navbar.scss',  filters='pyscss', output='css/general.css')
     assets.register('general', general)
+    # general.build() - Superfluous
     custom_scss = Bundle('scss/customs.scss', filters='pyscss', output='css/customs.css')
     assets.register('customs', custom_scss)
+    custom_scss.build()
 
     home_scss = Bundle('scss/pages/home.scss', filters='pyscss', output='css/pages/home.css')
     assets.register('home_scss', home_scss)
+    # home_scss.build() - Superfluous
     menu_scss = Bundle('scss/pages/menu.scss', filters='pyscss', output='css/pages/menu.css')
     assets.register('menu_scss', menu_scss)
+    # menu_scss.build() - Superfluous
     join_scss = Bundle('scss/pages/join_game.scss', filters='pyscss', output='css/pages/join_game.css')
     assets.register('join_scss', join_scss)
+    # join_scss.build() - Superfluous
     waiting_room_scss = Bundle('scss/pages/waiting_room.scss', filters='pyscss', output='css/pages/waiting_room.css')
     assets.register('waiting_room_scss', waiting_room_scss)
+    # waiting_room_scss.build() - Superfluous
     profile_scss = Bundle('scss/pages/profile.scss', filters='pyscss', output='css/pages/profile.css')
     assets.register('profile_scss', profile_scss)    
+    # profile_scss.build() - Superfluous
 
     js = Bundle('js/throttle.js', 'js/selectors.js', 'js/buildOnField.js', 'js/updateDisplay.js', output='js/build.js')
     assets.register('js_build', js)

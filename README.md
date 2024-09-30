@@ -24,7 +24,7 @@ Run this application as follows:
 7) Run ```(.venv) $ ./setup.sh``` (macOS or Linux)or ```(.venv) setup.bat``` (Windows)
 8) In case of errors of not finding module Flask-Bycrypt, run ```(.venv) $ pip install Flask-Bcrypt```
 9) Create the database: ```(.venv) $ flask commands create_db```
-10) Run the flask app: ```(.venv) $ flask run```
+10) Run the flask app: ```(.venv) $ flask run``` (alternatively ```$ python main.py```)
 11) Open the web interface as prompted
 12) Use ```CTRL+c``` to exit the web server.
 13) Alternatively run the flask command line interface: ```(.venv) $ flask shell```
