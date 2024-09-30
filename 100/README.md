@@ -130,4 +130,12 @@ MORE
 
 ## 1100 - What is the Waiting Room?
 
+When a Player choosieds to Join a Game, (s)he will have to wait in the Waiting Room until the Organizer allows the Player to play.
+
+MORE
+
+## 1200 - How to see Details of a City Field?
+
+By clicking on a City Field, the details will be shown.
+
 MORE
