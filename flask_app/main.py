@@ -9,5 +9,20 @@ app = create_app()
 @app.cli.command('create_db')
 def create_db():
     db.create_all()
-    
-# MORE
+
+@app.cli.command('clear_saves')
+def clear_saves():
+    files = os.listdir(get_games_dir())
+    for f in files:
+        _, ext = os.path.splitext(f)
+        if ext == '.pkl':
+            os.remove(get_games_dir()+'/'+f)
+
+    try:
+        db.session.query(Game).delete()
+        db.session.commit()
+    except:
+        db.session.rollback()
+
+if __name__ == '__main__':
+    socketio.run(app)
