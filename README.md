@@ -29,7 +29,7 @@ Run this application as follows:
 14) Execute any flask commands: >>>
 15) Use ```exit()``` to exit from the command line interface.
 
-To see all routes, from within the ```flask_app``` directory run ```$ flask routes```:
+**Tip**: To see all routes, from within the ```flask_app``` directory run ```$ flask routes```:
 
 ```
 $ flask routes
