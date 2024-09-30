@@ -1,4 +1,4 @@
-flask-monopoly
+flacon-monopole
 
 # Monopole des flacons
 
@@ -14,10 +14,11 @@ Basé sur la « commande CLI Flask » sur<https://testdriven.io/tips/38c1ac63-
 
 Exécutez cette application comme suit :
 
-1) Enter `flask_app`annuaire:`$ cd flask_app`2) Courir`$ pip install -r requirements.txt`3) Copiez app/sample.env dans app/.env :`$ cp app/sample.env app/.env`4) Mise à jour`app/.env`avec votre paramètre de configuration.
-5) S'il n'existe pas, créez un environnement virtuel à l'intérieur du`flask_app`annuaire:`$ python3 -m venv .venv`6) Démarrez l'environnement virtuel et entrez :`$ . .venv/bin/activate`7) Courir`(.venv) $ ./setup.sh`(macOS ou Linux) ou`(.venv) setup.bat`(Windows)
-8) En cas d'erreurs où le module Flask-Bcrypt n'est pas trouvé, exécutez`(.venv) $ pip install Flask-Bcrypt`9) Créez la base de données :`(.venv) $ flask commands create_db`10) Exécutez l'application Flask :`(.venv) $ flask run`11) Ouvrez l'interface Web comme vous y êtes invité
-12) Utiliser`CTRL+c`pour quitter le serveur Web.
+1) Entrez`flask_app`annuaire:`$ cd flask_app`2) Courir`$ pip install -r requirements.txt`3) Copiez app/sample.env dans app/.env :`$ cp app/sample.env app/.env`4) Mise à jour`app/.env` with your configuration setting.
+5) If non-existent, create a virtual environment inside the `flask_app`annuaire:`$ python3 -m venv .venv`6) Démarrez l'environnement virtuel et entrez :`$ . .venv/bin/activate`7) Courir`(.venv) $ ./setup.sh`(macOS ou Linux) ou`(.venv) setup.bat`(Windows)
+8) En cas d'erreurs où le module Flask-Bcrypt n'est pas trouvé, exécutez`(.venv) $ pip install Flask-Bcrypt`9) Créez la base de données :`(.venv) $ flask commands create_db`10) Exécutez l'application Flask :`(.venv) $ flask run`
+11) Open the web interface as prompted
+12) Use `CTRL+c`pour quitter le serveur Web.
 13) Vous pouvez également exécuter l'interface de ligne de commande flask :`(.venv) $ flask shell`14) Exécutez toutes les commandes du flacon : >>>
 15) Utiliser`exit()`pour quitter l'interface de ligne de commande.
 
@@ -44,7 +45,7 @@ Exécutez cette application comme suit :
     game.waiting_room        GET, POST  /waiting_room/<code>      
     static                   GET        /static/<path:filename>
 
-**Conseil**: Pour tout voir_coutume_commandes, de l'intérieur`flask_app`exécution du répertoire`$ flask commands --help`depuis un terminal.
+**Conseil**: Pour tout voir_coutume_commandes, de l'intérieur`flask_app`exécution du répertoire`$ flask commands --help` from a terminal.
 
 ## 100 - Introduction
 
@@ -52,7 +53,7 @@ Voir[README.md](./100/README.md)
 
 ## 200 - Exigences
 
-Voir[README.md](./200/README.md)
+See [README.md](./200/README.md)
 
 ## 300 - Créer notre application
 
