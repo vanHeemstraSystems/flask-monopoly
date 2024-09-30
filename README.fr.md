@@ -2,11 +2,11 @@ flacon-monopole
 
 # Monopole des flacons
 
-Basé sur « Comment structurer une grande application Flask avec des plans Flask et Flask-SQLAlchemy » sur<https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy>
+Basé sur « Comment structurer une grande application Flask avec des plans Flask et Flask-SQLAlchemy » sur<https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy>
 
 Basé sur "Flask SQLAlchemy" sur<https://github.com/vanHeemstraSystems/flask-sqlalchemy/>
 
-Basé sur le « modèle d'usine » à<https://github.com/vanHeemstraSystems/factory-pattern>
+Basé sur le « modèle d'usine » à<https://github.com/vanHeemstraSystems/factory-pattern>
 
 Basé sur le « monopole du flacon » à<https://github.com/KrzysztofWelc/flask-monopoly>
 
@@ -21,7 +21,7 @@ Exécutez cette application comme suit :
 13) Vous pouvez également exécuter l'interface de ligne de commande flask :`(.venv) $ flask shell`14) Exécutez toutes les commandes du flacon : >>>
 15) Utiliser`exit()`pour quitter l'interface de ligne de commande.
 
-Pour voir tous les itinéraires, depuis le`flask_app`exécution du répertoire`$ flask routes`:
+**Conseil**: Pour voir tous les itinéraires, depuis le`flask_app`exécution du répertoire`$ flask routes`:
 
     $ flask routes
     Endpoint                 Methods    Rule                      
@@ -52,7 +52,7 @@ Voir[README.md](./100/README.md)
 
 Voir[README.md](./200/README.md)
 
-## 300 - Construire notre application
+## 300 - Créer notre application
 
 Voir[README.md](./300/README.md)
 
