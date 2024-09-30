@@ -2,7 +2,7 @@
 
 # कुप्पी एकाधिकार
 
-"फ्लास्क ब्लूप्रिंट और फ्लास्क-SQLAlchemy के साथ एक बड़े फ्लास्क अनुप्रयोग की संरचना कैसे करें" पर आधारित<https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy>
+Based on "How To Structure a Large Flask Application with Flask Blueprints and Flask-SQLAlchemy" at <https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy>
 
 "फ्लास्क SQLAlchemy" पर आधारित<https://github.com/vanHeemstraSystems/flask-sqlalchemy/>
 
@@ -12,14 +12,14 @@
 
 इस एप्लिकेशन को इस प्रकार चलाएँ:
 
-1) दर्ज करें`flask_app`निर्देशिका:`$ cd flask_app`2) ऐप/sample.env को ऐप/.env पर कॉपी करें:`$ cp app/sample.env app/.env`3) अद्यतन`app/.env` with your configuration setting.
-4) If non-existent, create a virtual environment inside the `flask_app`निर्देशिका:`$ python3 -m venv .venv`5) आभासी वातावरण प्रारंभ करें और दर्ज करें:`$ . .venv/bin/activate`6) भागो`(.venv) $ pip install -r requirements.txt`6) भागो`(.venv) $ ./setup.sh`(मैकओएस या लिनक्स)या`(.venv) setup.bat`(विंडोज़)
+1) Enter `flask_app`निर्देशिका:`$ cd flask_app`2) ऐप/sample.env को ऐप/.env पर कॉपी करें:`$ cp app/sample.env app/.env`3) अद्यतन`app/.env`आपकी कॉन्फ़िगरेशन सेटिंग के साथ.
+4) यदि अस्तित्व में नहीं है, तो अंदर एक आभासी वातावरण बनाएं`flask_app`निर्देशिका:`$ python3 -m venv .venv`5) आभासी वातावरण प्रारंभ करें और दर्ज करें:`$ . .venv/bin/activate`6) भागो`(.venv) $ pip install -r requirements.txt`6) भागो`(.venv) $ ./setup.sh`(मैकओएस या लिनक्स)या`(.venv) setup.bat`(विंडोज़)
 8) फ्लास्क ऐप चलाएँ:`(.venv) $ flask run`9) संकेतानुसार वेब इंटरफ़ेस खोलें
 10) प्रयोग करें`CTRL+c`वेब सर्वर से बाहर निकलने के लिए.
 11) वैकल्पिक रूप से फ्लास्क कमांड लाइन इंटरफ़ेस चलाएँ:`(.venv) $ flask shell`12) किसी भी फ्लास्क कमांड को निष्पादित करें: >>>
-13) प्रयोग करें`exit()` to exit from the command line interface.
+13) प्रयोग करें`exit()`कमांड लाइन इंटरफ़ेस से बाहर निकलने के लिए।
 
-## 100 - Introduction
+## 100 - परिचय
 
 देखना[README.md](./100/README.md)
 
