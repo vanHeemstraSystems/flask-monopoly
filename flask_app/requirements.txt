@@ -2,7 +2,12 @@ bcrypt
 Flask
 Flask-Assets
 Flask-Bcrypt
+Flask-Login
+Flask-Scss
 Flask-SocketIO
 Flask-SQLAlchemy
 Flask-WTF
 python-dotenv
+python-engineio
+python-socketio
+WTForms

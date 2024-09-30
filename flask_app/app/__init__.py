@@ -46,6 +46,7 @@ def create_app():
     socketio.init_app(app)
     socketio.cors_allowed_origins = "*"
 
-    # MORE
+    from app.auth.routes import auth
+    from app.game.routes import game
 
     return app
