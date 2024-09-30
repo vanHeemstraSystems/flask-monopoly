@@ -29,6 +29,31 @@ Run this application as follows:
 14) Execute any flask commands: >>>
 15) Use ```exit()``` to exit from the command line interface.
 
+To see all routes, from within the ```flask_app``` directory run ```$ flask routes```:
+
+```
+$ flask routes
+Endpoint                 Methods    Rule                      
+-----------------------  ---------  --------------------------
+auth.login               GET, POST  /auth/login               
+auth.logout              GET        /auth/logout              
+auth.profile             GET        /auth/profile/<user_id>   
+auth.register            GET, POST  /auth/register            
+game.field_info          GET        /field_info/<field_id>    
+game.guest_waiting_room  GET, POST  /guest_waiting_room/<code>
+game.home                GET        /                         
+game.hot_seats           GET, POST  /hot_seats/<code>         
+game.hot_seats           GET        /hot_seats                
+game.init_pvp            GET        /init_pvp                 
+game.join_game           GET, POST  /join_game                
+game.menu                GET        /menu                     
+game.play_pvp            GET, POST  /play_pvp/<code>          
+game.vs_ai               GET, POST  /vs_ai/<code>             
+game.vs_ai               GET        /vs_ai                    
+game.waiting_room        GET, POST  /waiting_room/<code>      
+static                   GET        /static/<path:filename>
+```
+
 ## 100 - Introduction
 
 See [README.md](./100/README.md)
