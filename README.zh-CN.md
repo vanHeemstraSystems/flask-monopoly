@@ -21,7 +21,7 @@
 13) 或者运行flask命令行界面：`(.venv) $ flask shell`14）执行任何flask命令：>>>
 15) 使用`exit()`退出命令行界面。
 
-要查看所有路线，请从`flask_app`目录运行`$ flask routes`:
+**提示**：查看所有路线，从`flask_app`目录运行`$ flask routes`:
 
     $ flask routes
     Endpoint                 Methods    Rule                      
