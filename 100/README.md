@@ -32,7 +32,7 @@ Submit the form to sign up.
 
 3) If successful, you will be redirected to the Home page (```/```) and a message will state: ```account created for [ username ]```. If the username or the email address are already registered, an error will be returned.
 
-4) The number of registered user will now include you as a registered user.
+4) The number of registered users will now include you as a registered user.
 
 5) Once registered you can now login.
 
