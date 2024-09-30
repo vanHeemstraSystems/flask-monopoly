@@ -21,6 +21,29 @@
 13) بدلاً من ذلك، قم بتشغيل واجهة سطر أوامر القارورة:`(.venv) $ flask shell`14) تنفيذ أي أوامر قارورة: >>>
 15) الاستخدام`exit()`للخروج من واجهة سطر الأوامر.
 
+لرؤية كافة الطرق، من داخل`flask_app`تشغيل الدليل`$ flask routes`:
+
+    $ flask routes
+    Endpoint                 Methods    Rule                      
+    -----------------------  ---------  --------------------------
+    auth.login               GET, POST  /auth/login               
+    auth.logout              GET        /auth/logout              
+    auth.profile             GET        /auth/profile/<user_id>   
+    auth.register            GET, POST  /auth/register            
+    game.field_info          GET        /field_info/<field_id>    
+    game.guest_waiting_room  GET, POST  /guest_waiting_room/<code>
+    game.home                GET        /                         
+    game.hot_seats           GET, POST  /hot_seats/<code>         
+    game.hot_seats           GET        /hot_seats                
+    game.init_pvp            GET        /init_pvp                 
+    game.join_game           GET, POST  /join_game                
+    game.menu                GET        /menu                     
+    game.play_pvp            GET, POST  /play_pvp/<code>          
+    game.vs_ai               GET, POST  /vs_ai/<code>             
+    game.vs_ai               GET        /vs_ai                    
+    game.waiting_room        GET, POST  /waiting_room/<code>      
+    static                   GET        /static/<path:filename>
+
 ## 100- مقدمة
 
 يرى[README.md](./100/README.md)
