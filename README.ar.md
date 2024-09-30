@@ -6,7 +6,7 @@
 
 استنادا إلى "قارورة SQLAlchemy" في<https://github.com/vanHeemstraSystems/flask-sqlalchemy/>
 
-Based on "Factory Pattern" at <https://github.com/vanHeemstraSystems/factory-pattern>
+بناءً على "نمط المصنع" في<https://github.com/vanHeemstraSystems/factory-pattern>
 
 على أساس "احتكار القارورة" في<https://github.com/KrzysztofWelc/flask-monopoly>
 
@@ -53,7 +53,7 @@ Based on "Factory Pattern" at <https://github.com/vanHeemstraSystems/factory-pat
 
 **نصيحة**: لرؤية كل شيء_مخصص_الأوامر، من الداخل`flask_app`تشغيل الدليل`$ flask commands --help`من محطة.
 
-**تحذير**: تأكد من الاستخدام`pyScss`الإصدار 1.3.7 (**لا**1.4.0) لأنه سيعيد تقديم خطأ ("الأعلام العامة ليست في بداية التعبير في الموضع 1").**تحديث**: يستخدم[libsass](https://sass.github.io/libsass-python/) instead of `pyScss`.
+**تحذير**: تأكد من الاستخدام`pyScss`الإصدار 1.3.7 (**لا**1.4.0) لأنه سيعيد تقديم خطأ ("الأعلام العامة ليست في بداية التعبير في الموضع 1").**تحديث**: يستخدم[libsass](https://sass.github.io/libsass-python/)بدلاً من`pyScss`.
 
 ## 100- مقدمة
 
