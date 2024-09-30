@@ -12,6 +12,8 @@
 
 "फ्लास्क सीएलआई कमांड" पर आधारित<https://testdriven.io/tips/38c1ac63-8d16-4cbc-8488-557b53afa9e5/>
 
+"फ्लास्क विद सैस" पर आधारित<https://github.com/ChristinaVoss/flask-with-sass>
+
 इस एप्लिकेशन को इस प्रकार चलाएँ:
 
 1) दर्ज करें`flask_app`निर्देशिका:`$ cd flask_app`2) भागो`$ pip install -r requirements.txt`3) ऐप/sample.env को ऐप/.env पर कॉपी करें:`$ cp app/sample.env app/.env`4) अद्यतन`app/.env`आपकी कॉन्फ़िगरेशन सेटिंग के साथ.
@@ -21,7 +23,7 @@
 13) वैकल्पिक रूप से फ्लास्क कमांड लाइन इंटरफ़ेस चलाएँ:`(.venv) $ flask shell`14) किसी भी फ्लास्क कमांड को निष्पादित करें: >>>
 15) उपयोग करें`exit()`कमांड लाइन इंटरफ़ेस से बाहर निकलने के लिए।
 
-**बख्शीश**: सभी मार्गों को भीतर से देखने के लिए`flask_app`निर्देशिका चलाएँ`$ flask routes`:
+**बख्शीश**: To see all routes, from within the `flask_app`निर्देशिका चलाएँ`$ flask routes`:
 
     $ flask routes
     Endpoint                 Methods    Rule                      
@@ -56,7 +58,7 @@
 
 ## 300 - हमारे एप्लिकेशन का निर्माण
 
-देखना[README.md](./300/README.md)
+See [README.md](./300/README.md)
 
 ## 400 - निष्कर्ष
 
