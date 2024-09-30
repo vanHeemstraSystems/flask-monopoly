@@ -49,4 +49,7 @@ def create_app():
     from app.auth.routes import auth
     from app.game.routes import game
 
+    app.register_blueprint(game, url_prefix='/')
+    app.register_blueprint(auth, url_prefix='/auth')
+
     return app
