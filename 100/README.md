@@ -110,7 +110,7 @@ MORE
 
 3) You will be one of the Players. Each Player is given a number (e.g. 1) and a color (e.g. amber).
 
-4) If you enter a City Field, you will be given the option to Buy, unless the City Field has already been bought. You can choose ```Yes``` or ```No```. If you decide to buy, the Field will be marked with your number (e.g. 1) and color (e.g. amber). **Note**: you can only buy if you have enough Money remaining versus the asking price of the City Field.
+4) If you enter a City Field, you will be given the option to Buy, unless the City Field has already been bought. You can choose ```Yes``` or ```No```. If you decide to buy, the Field will be marked with your number (e.g. 1) and color (e.g. amber). **Note**: you can only buy if you have enough Money remaining versus the asking price of the City Field. If you do not have enough Money, you will not be asked to buy.
 
 5) Click **Next Turn** if you want to continue the game.
 
