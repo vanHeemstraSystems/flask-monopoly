@@ -1,7 +1,5 @@
 # 100 - Introduction
 
-## 100 - Origin
-
 Flask monopoly is semestral project of [Krzysztof Welc](https://github.com/KrzysztofWelc) for web programming classes in year 2020/2021. 
 
 It is web service allowing user to play monopoly-like game in three modes:
@@ -9,10 +7,16 @@ It is web service allowing user to play monopoly-like game in three modes:
 - vs ai
 - online agaist another player
 
-## technologies used:
+### technologies used:
 - html/scss/js
 - python (flask, sqlAlchemy, etc...)
 - web sockets
+
+## 100 - How to go to the Home page
+
+1) Browse to the website with the URL ending with (```/```).
+
+2) **Note**: on most pages you can return to the Home Page by choosing **Home** from the navigation bar.
 
 ## 200 - How to Register a New User
 
@@ -54,15 +58,23 @@ Submit the form to login.
 
 1) From the Home page of the game (```/```), choose from the navigation bar the menu item **Logout**.
 
-2) ...
+2) You will be logged out and redirected to the Home page (```/```).
 
-## 500 - How to start a New Game as a Logged In User
+## 500 - How to lookup the Profile of a Registered User
+
+1) From the Home page of the game (```/```), choose from the navigation bar the menu item **[ username ]**.
+
+2) You will be redirected to the Profile page (```auth/profile/[user id]```). It states your username and the pending games you are part of.
+
+## 600 - How to start a New Game as a Logged In User
 
 1) From the Home page of the game (```/```), choose from the navigation bar the menu item **New Game**.
 
 2) You will be redirected to the start a New Game page (```/new_game```).
 
-## 600 - How to join an Existing Game as a Logged In User
+MORE
+
+## 700 - How to join an Existing Game as a Logged In User
 
 1) From the Home page of the game (```/```), choose from the navigation bar the menu item **Join Game**.
 
@@ -73,5 +85,7 @@ Submit the form to login.
 4) If the Join Code is **not** registered, you will be given a message: ```You cannot join this game```.
 
 5) If the Join Code is registered, you will be redirected to ...
+
+
 
 MORE
