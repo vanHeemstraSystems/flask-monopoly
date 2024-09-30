@@ -51,7 +51,7 @@
     game.waiting_room        GET, POST  /waiting_room/<code>      
     static                   GET        /static/<path:filename>
 
-**نصيحة**: لرؤية كل شيء_مخصص_الأوامر، من الداخل`flask_app`تشغيل الدليل`$ flask commands --help`من محطة.
+**نصيحة**: لرؤية كل شيء_مخصص_الأوامر، من الداخل`flask_app` directory run `$ flask commands --help`من محطة.
 
 **تحذير**: تأكد من الاستخدام`pyScss`الإصدار 1.3.7 (**لا**1.4.0) لأنه سيعيد تقديم خطأ ("الأعلام العامة ليست في بداية التعبير في الموضع 1").**تحديث**: يستخدم[libsass](https://sass.github.io/libsass-python/)بدلاً من`pyScss`.
 
