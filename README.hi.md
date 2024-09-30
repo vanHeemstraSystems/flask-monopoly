@@ -51,7 +51,7 @@
     game.waiting_room        GET, POST  /waiting_room/<code>      
     static                   GET        /static/<path:filename>
 
-**बख्शीश**: To see all _रिवाज़_आदेश, भीतर से`flask_app`निर्देशिका चलाएँ`$ flask commands --help` from a terminal.
+**बख्शीश**: To see all _रिवाज़_आदेश, भीतर से`flask_app`निर्देशिका चलाएँ`$ flask commands --help`एक टर्मिनल से.
 
 **चेतावनी**: प्रयोग अवश्य करें`pyScss`संस्करण 1.3.7 (**नहीं**1.4.0) क्योंकि यह एक बग को फिर से प्रस्तुत करेगा ("वैश्विक झंडे स्थिति 1 पर अभिव्यक्ति की शुरुआत में नहीं हैं")।**अद्यतन**: उपयोग[libsass](https://sass.github.io/libsass-python/)के बजाय`pyScss`.
 
