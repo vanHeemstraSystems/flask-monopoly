@@ -16,7 +16,7 @@
 
 基于“使用 Flask-Assets 在 Flask 中捆绑 JavaScript 和 CSS 文件”<https://www.youtube.com/watch?v=HYO6GNOJMmQ>
 
-基于“pyScss”，位于<https://github.com/Kronuz/pyScss>
+基于“pyScss”<https://github.com/Kronuz/pyScss>
 
 按如下方式运行该应用程序：
 
@@ -28,7 +28,7 @@
 13) 或者运行flask命令行界面：`(.venv) $ flask shell`14）执行任何flask命令：>>>
 15) 使用`exit()`退出命令行界面。
 
-**提示**：查看所有路线，从`flask_app`目录运行`$ flask routes`:
+**提示**: To see all routes, from within the `flask_app`目录运行`$ flask routes`:
 
     $ flask routes
     Endpoint                 Methods    Rule                      
