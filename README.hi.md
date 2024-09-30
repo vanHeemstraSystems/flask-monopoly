@@ -8,7 +8,7 @@
 
 "फ़ैक्टरी पैटर्न" पर आधारित<https://github.com/vanHeemstraSystems/factory-pattern>
 
-Based on "flask-monopoly" at <https://github.com/KrzysztofWelc/flask-monopoly>
+"फ्लास्क-एकाधिकार" पर आधारित<https://github.com/KrzysztofWelc/flask-monopoly>
 
 "फ्लास्क सीएलआई कमांड" पर आधारित<https://testdriven.io/tips/38c1ac63-8d16-4cbc-8488-557b53afa9e5/>
 
@@ -20,8 +20,7 @@ Based on "flask-monopoly" at <https://github.com/KrzysztofWelc/flask-monopoly>
 
 इस एप्लिकेशन को इस प्रकार चलाएँ:
 
-1) दर्ज करें`flask_app`निर्देशिका:`$ cd flask_app`2) भागो`$ pip install -r requirements.txt`
-3) Copy app/sample.env to app/.env: `$ cp app/sample.env app/.env`4) अद्यतन`app/.env`आपकी कॉन्फ़िगरेशन सेटिंग के साथ.
+1) दर्ज करें`flask_app`निर्देशिका:`$ cd flask_app`2) भागो`$ pip install -r requirements.txt`3) ऐप/sample.env को ऐप/.env पर कॉपी करें:`$ cp app/sample.env app/.env`4) अद्यतन`app/.env`आपकी कॉन्फ़िगरेशन सेटिंग के साथ.
 5) यदि अस्तित्व में नहीं है, तो अंदर एक आभासी वातावरण बनाएं`flask_app`निर्देशिका:`$ python3 -m venv .venv`6) आभासी वातावरण प्रारंभ करें और दर्ज करें:`$ . .venv/bin/activate`7) भागो`(.venv) $ ./setup.sh`(मैकओएस या लिनक्स)या`(.venv) setup.bat`(विंडोज़)
 8) मॉड्यूल फ्लास्क-बीक्रिप्ट न मिलने की त्रुटियों के मामले में, चलाएँ`(.venv) $ pip install Flask-Bcrypt`9) डेटाबेस बनाएं:`(.venv) $ flask commands create_db`10) फ्लास्क ऐप चलाएँ:`(.venv) $ flask run`(वैकल्पिक रूप से`$ python main.py`)
 11) संकेतानुसार वेब इंटरफ़ेस खोलें
