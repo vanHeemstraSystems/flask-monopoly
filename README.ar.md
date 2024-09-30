@@ -16,8 +16,9 @@
 
 1) أدخل`flask_app`دليل:`$ cd flask_app`2) تشغيل`$ pip install -r requirements.txt`3) انسخ app/sample.env إلى app/.env:`$ cp app/sample.env app/.env`4) التحديث`app/.env`مع إعداد التكوين الخاص بك.
 5) في حالة عدم وجودها، قم بإنشاء بيئة افتراضية داخل`flask_app`دليل:`$ python3 -m venv .venv`6) ابدأ البيئة الافتراضية وأدخل:`$ . .venv/bin/activate`7) تشغيل`(.venv) $ ./setup.sh`(ماك أو لينكس) أو`(.venv) setup.bat`(ويندوز)
-8) في حالة حدوث أخطاء في عدم العثور على الوحدة Flask-Bcrypt، قم بتشغيل`(.venv) $ pip install Flask-Bcrypt`9) إنشاء قاعدة البيانات:`(.venv) $ flask create_db`10) قم بتشغيل تطبيق القارورة:`(.venv) $ flask run`11) افتح واجهة الويب كما هو مطلوب
-12) الاستخدام`CTRL+c`للخروج من خادم الويب.
+8) في حالة حدوث أخطاء في عدم العثور على الوحدة Flask-Bcrypt، قم بتشغيل`(.venv) $ pip install Flask-Bcrypt`9) إنشاء قاعدة البيانات:`(.venv) $ flask commands create_db`10) قم بتشغيل تطبيق القارورة:`(.venv) $ flask run`
+11) Open the web interface as prompted
+12) Use `CTRL+c`للخروج من خادم الويب.
 13) بدلاً من ذلك، قم بتشغيل واجهة سطر أوامر القارورة:`(.venv) $ flask shell`14) تنفيذ أي أوامر قارورة: >>>
 15) الاستخدام`exit()`للخروج من واجهة سطر الأوامر.
 
@@ -43,6 +44,8 @@
     game.vs_ai               GET        /vs_ai                    
     game.waiting_room        GET, POST  /waiting_room/<code>      
     static                   GET        /static/<path:filename>
+
+**نصيحة**: لرؤية كل شيء_مخصص_الأوامر، من الداخل`flask_app`تشغيل الدليل`$ flask commands --help`من محطة.
 
 ## 100- مقدمة
 
