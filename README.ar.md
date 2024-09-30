@@ -21,8 +21,8 @@
 قم بتشغيل هذا التطبيق على النحو التالي:
 
 1) أدخل`flask_app`دليل:`$ cd flask_app`2) تشغيل`$ pip install -r requirements.txt`3) انسخ app/sample.env إلى app/.env:`$ cp app/sample.env app/.env`4) التحديث`app/.env`مع إعداد التكوين الخاص بك.
-5) في حالة عدم وجودها، قم بإنشاء بيئة افتراضية داخل`flask_app` directory: `$ python3 -m venv .venv`6) ابدأ البيئة الافتراضية وأدخل:`$ . .venv/bin/activate`7) تشغيل`(.venv) $ ./setup.sh`(ماك أو لينكس) أو`(.venv) setup.bat` (Windows)
-8) In case of errors of not finding module Flask-Bycrypt, run `(.venv) $ pip install Flask-Bcrypt`9) إنشاء قاعدة البيانات:`(.venv) $ flask commands create_db`10) قم بتشغيل تطبيق القارورة:`(.venv) $ flask run`(بدلاً عن ذلك`$ python main.py`)
+5) في حالة عدم وجودها، قم بإنشاء بيئة افتراضية داخل`flask_app`دليل:`$ python3 -m venv .venv`6) ابدأ البيئة الافتراضية وأدخل:`$ . .venv/bin/activate`7) تشغيل`(.venv) $ ./setup.sh`(ماك أو لينكس) أو`(.venv) setup.bat`(ويندوز)
+8) في حالة حدوث أخطاء في عدم العثور على الوحدة Flask-Bcrypt، قم بتشغيل`(.venv) $ pip install Flask-Bcrypt`9) إنشاء قاعدة البيانات:`(.venv) $ flask commands create_db`10) قم بتشغيل تطبيق القارورة:`(.venv) $ flask run`(بدلاً عن ذلك`$ python main.py`)
 11) افتح واجهة الويب كما هو مطلوب
 12) الاستخدام`CTRL+c`للخروج من خادم الويب.
 13) بدلاً من ذلك، قم بتشغيل واجهة سطر أوامر القارورة:`(.venv) $ flask shell`14) تنفيذ أي أوامر قارورة: >>>
@@ -53,7 +53,7 @@
 
 **نصيحة**: لرؤية كل شيء_مخصص_الأوامر، من الداخل`flask_app`تشغيل الدليل`$ flask commands --help`من محطة.
 
-**تحذير**: تأكد من الاستخدام`pyScss`الإصدار 1.3.7 (**لا**1.4.0) لأنه سيعيد تقديم خطأ ("الأعلام العامة ليست في بداية التعبير في الموضع 1").**تحديث**: يستخدم[libsass](https://sass.github.io/libsass-python/)بدلاً من`pyScss`.
+**تحذير**: تأكد من الاستخدام`pyScss`الإصدار 1.3.7 (**لا** 1.4.0) as it would re-introduce a bug ("global flags not at the start of the expression at position 1"). **تحديث**: يستخدم[libsass](https://sass.github.io/libsass-python/)بدلاً من`pyScss`.
 
 ## 100- مقدمة
 
