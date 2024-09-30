@@ -70,9 +70,21 @@ Submit the form to login.
 
 1) From the Home page of the game (```/```), choose from the navigation bar the menu item **New Game**.
 
-2) You will be redirected to the start a New Game page (```/new_game```).
+2) You will be redirected to the start the Game's Menu page (```/menu```).
 
-MORE
+3) You can choose from one of three Game Modes:
+
+- **Hot Seats Locally**: meaning you play with humans who are also playing locally.
+
+- **Versus Computer**: meaning you play against a computer using Artificial Intelligence.
+
+- **Hot Seats Remote:** meaning you play with humans who are playing over the Internet.
+
+4.A) Hot Seats Locally: MORE
+
+4.B) Versus Computer: MORE
+
+4.C) Hot Seats Remote: MORE
 
 ## 700 - How to join an Existing Game as a Logged In User
 
