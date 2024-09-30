@@ -9,6 +9,8 @@ Based on "Factory Pattern" at https://github.com/vanHeemstraSystems/factory-patt
 
 Based on "flask-monopoly" at https://github.com/KrzysztofWelc/flask-monopoly
 
+Based on "Flask CLI Command" at https://testdriven.io/tips/38c1ac63-8d16-4cbc-8488-557b53afa9e5/
+
 Run this application as follows:
 
 1) Enter ```flask_app``` directory: ```$ cd flask_app```
@@ -19,12 +21,13 @@ Run this application as follows:
 6) Start the virtual environment and enter: ```$ . .venv/bin/activate```
 7) Run ```(.venv) $ ./setup.sh``` (macOS or Linux)or ```(.venv) setup.bat``` (Windows)
 8) In case of errors of not finding module Flask-Bycrypt, run ```(.venv) $ pip install Flask-Bcrypt```
-8) Run the flask app: ```(.venv) $ flask run```
-9) Open the web interface as prompted
-10) Use ```CTRL+c``` to exit the web server.
-11) Alternatively run the flask command line interface: ```(.venv) $ flask shell```
-12) Execute any flask commands: >>>
-13) Use ```exit()``` to exit from the command line interface.
+9) Create the database: ```(.venv) $ flask create_db```
+10) Run the flask app: ```(.venv) $ flask run```
+11) Open the web interface as prompted
+12) Use ```CTRL+c``` to exit the web server.
+13) Alternatively run the flask command line interface: ```(.venv) $ flask shell```
+14) Execute any flask commands: >>>
+15) Use ```exit()``` to exit from the command line interface.
 
 ## 100 - Introduction
 
