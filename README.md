@@ -13,6 +13,8 @@ Based on "Flask CLI Command" at https://testdriven.io/tips/38c1ac63-8d16-4cbc-84
 
 Based on "Flask with Sass" at https://github.com/ChristinaVoss/flask-with-sass
 
+Based on "Bundling JavaScript and CSS Files in Flask Using Flask-Assets" at https://www.youtube.com/watch?v=HYO6GNOJMmQ
+
 Run this application as follows:
 
 1) Enter ```flask_app``` directory: ```$ cd flask_app```
