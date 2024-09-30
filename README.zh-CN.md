@@ -26,7 +26,7 @@
 11）根据提示打开Web界面
 12) 使用`CTRL+c`退出网络服务器。
 13) 或者运行flask命令行界面：`(.venv) $ flask shell`14）执行任何flask命令：>>>
-15) 使用`exit()` to exit from the command line interface.
+15) 使用`exit()`退出命令行界面。
 
 **提示**：查看所有路线，从`flask_app`目录运行`$ flask routes`:
 
@@ -69,4 +69,4 @@
 
 ## 400 - 结论
 
-See [README.md](./400/README.md)
+看[README.md](./400/README.md)
