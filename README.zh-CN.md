@@ -20,8 +20,7 @@
 
 按如下方式运行该应用程序：
 
-1) 输入`flask_app`目录：`$ cd flask_app`2) 运行`$ pip install -r requirements.txt`
-3) Copy app/sample.env to app/.env: `$ cp app/sample.env app/.env`4）更新`app/.env`与您的配置设置。
+1) 输入`flask_app`目录：`$ cd flask_app`2) 跑步`$ pip install -r requirements.txt`3）将app/sample.env复制到app/.env：`$ cp app/sample.env app/.env`4）更新`app/.env`与您的配置设置。
 5）如果不存在，则在内部创建一个虚拟环境`flask_app`目录：`$ python3 -m venv .venv`6）启动虚拟环境，输入：`$ . .venv/bin/activate`7) 跑步`(.venv) $ ./setup.sh`（macOS 或 Linux）或`(.venv) setup.bat`（视窗）
 8) 如果出现找不到模块 Flask-Bcrypt 的错误，请运行`(.venv) $ pip install Flask-Bcrypt`9）创建数据库：`(.venv) $ flask commands create_db`10）运行烧瓶应用程序：`(.venv) $ flask run`（或者`$ python main.py`）
 11）根据提示打开Web界面
@@ -52,7 +51,7 @@
     game.waiting_room        GET, POST  /waiting_room/<code>      
     static                   GET        /static/<path:filename>
 
-**提示**: 查看全部_风俗_命令，来自内部`flask_app`目录运行`$ flask commands --help`从终端。
+**提示**: 查看全部_风俗_来自内部的命令`flask_app`目录运行`$ flask commands --help`从终端。
 
 **警告**: 请务必使用`pyScss`版本1.3.7（**不是**1.4.0），因为它会重新引入一个错误（“全局标志不在位置 1 表达式的开头”）。**更新**： 使用[库萨斯](https://sass.github.io/libsass-python/)而不是`pyScss`.
 
