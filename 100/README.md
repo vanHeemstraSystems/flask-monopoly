@@ -126,6 +126,8 @@ MORE
 
 ## 1000 - How to play a Hot Seats Remotely Game?
 
+A Remote Game requires a Join Code. When a Player starts a New remote Game, the Join Code will be shown to be shared between Players.
+
 MORE
 
 ## 1100 - What is the Waiting Room?
