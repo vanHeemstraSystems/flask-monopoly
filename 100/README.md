@@ -1,6 +1,6 @@
 # 100 - Introduction
 
-Flask monopoly is semestral project of [Krzysztof Welc](https://github.com/KrzysztofWelc) for web programming classes in year 2020/2021. 
+Flask monopoly is semestral project of [Krzysztof Welc](https://github.com/KrzysztofWelc) for web programming classes in year 2020/2021. It has been updated for 2024 by [Willem van Heemstra](https://github.com/wvanheemstra).
 
 It is web service allowing user to play monopoly-like game in three modes:
 - hot seats
