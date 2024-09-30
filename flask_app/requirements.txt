@@ -1,5 +1,5 @@
-bycript
 Flask
 Flask-Assets
+Flask-Bcrypt
 Flask-SQLAlchemy
 python-dotenv

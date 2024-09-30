@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from flask import Flask
 from flask_assets import Environment, Bundle
-from bcrypt import bycrypt
+from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 
 bcrypt = Bcrypt()

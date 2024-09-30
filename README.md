@@ -12,12 +12,13 @@ Based on "flask-monopoly" at https://github.com/KrzysztofWelc/flask-monopoly
 Run this application as follows:
 
 1) Enter ```flask_app``` directory: ```$ cd flask_app```
-2) Copy app/sample.env to app/.env: ```$ cp app/sample.env app/.env```
-3) Update ```app/.env``` with your configuration setting.
-4) If non-existent, create a virtual environment inside the ```flask_app``` directory: ```$ python3 -m venv .venv```
-5) Start the virtual environment and enter: ```$ . .venv/bin/activate```
-6) Run ```(.venv) $ pip install -r requirements.txt```
-6) Run ```(.venv) $ ./setup.sh``` (macOS or Linux)or ```(.venv) setup.bat``` (Windows)
+2) Run ```$ pip install -r requirements.txt```
+3) Copy app/sample.env to app/.env: ```$ cp app/sample.env app/.env```
+4) Update ```app/.env``` with your configuration setting.
+5) If non-existent, create a virtual environment inside the ```flask_app``` directory: ```$ python3 -m venv .venv```
+6) Start the virtual environment and enter: ```$ . .venv/bin/activate```
+7) Run ```(.venv) $ ./setup.sh``` (macOS or Linux)or ```(.venv) setup.bat``` (Windows)
+8) In case of errors of not finding module Flask-Bycrypt, run ```(.venv) $ pip install Flask-Bcrypt```
 8) Run the flask app: ```(.venv) $ flask run```
 9) Open the web interface as prompted
 10) Use ```CTRL+c``` to exit the web server.
