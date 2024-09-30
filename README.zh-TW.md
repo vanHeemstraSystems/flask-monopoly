@@ -16,11 +16,11 @@
 
 基於“使用 Flask-Assets 在 Flask 中捆綁 JavaScript 和 CSS 文件”<https://www.youtube.com/watch?v=HYO6GNOJMmQ>
 
-基於“pyScss”<https://github.com/Kronuz/pyScss>
+基於“pyScss”，位於<https://github.com/Kronuz/pyScss>
 
 按如下方式運行該應用程式：
 
-1) 輸入`flask_app`目錄：`$ cd flask_app`2) 跑步`$ pip install -r requirements.txt`3）將app/sample.env複製到app/.env：`$ cp app/sample.env app/.env`4）更新`app/.env`與您的配置設定。
+1) 輸入`flask_app`目錄：`$ cd flask_app`2) 運行`$ pip install -r requirements.txt`3）將app/sample.env複製到app/.env：`$ cp app/sample.env app/.env`4）更新`app/.env`與您的配置設定。
 5）如果不存在，則在內部建立一個虛擬環境`flask_app`目錄：`$ python3 -m venv .venv`6）啟動虛擬環境，輸入：`$ . .venv/bin/activate`7) 跑步`(.venv) $ ./setup.sh`（macOS 或 Linux）或`(.venv) setup.bat`（視窗）
 8) 如果出現找不到模組 Flask-Bcrypt 的錯誤，請執行`(.venv) $ pip install Flask-Bcrypt`9）建立資料庫：`(.venv) $ flask commands create_db`10）運行燒瓶應用程式：`(.venv) $ flask run`（或者`$ python main.py`）
 11）根據提示開啟Web介面
@@ -51,7 +51,7 @@
     game.waiting_room        GET, POST  /waiting_room/<code>      
     static                   GET        /static/<path:filename>
 
-**提示**: 看全部_風俗_來自內部的命令`flask_app`目錄運行`$ flask commands --help`從終端。
+**提示**: 看全部_風俗_命令，來自內部`flask_app`目錄運行`$ flask commands --help`從終端。
 
 **警告**: 請務必使用`pyScss`版本1.3.7（**不是**1.4.0），因為它會重新引入一個錯誤（「全域標誌不在位置 1 表達式的開頭」）。**更新**： 使用[庫薩斯](https://sass.github.io/libsass-python/)而不是`pyScss`.
 
