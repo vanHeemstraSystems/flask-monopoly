@@ -16,7 +16,7 @@
 
 "फ्लास्क-एसेट्स का उपयोग करके फ्लास्क में जावास्क्रिप्ट और सीएसएस फ़ाइलों को बंडल करना" पर आधारित<https://www.youtube.com/watch?v=HYO6GNOJMmQ>
 
-Based on "pyScss" at <https://github.com/Kronuz/pyScss>
+"pyScss" पर आधारित<https://github.com/Kronuz/pyScss>
 
 इस एप्लिकेशन को इस प्रकार चलाएँ:
 
@@ -53,7 +53,7 @@ Based on "pyScss" at <https://github.com/Kronuz/pyScss>
 
 **बख्शीश**: सभी को देखने के लिए_रिवाज़_आदेश, भीतर से`flask_app`निर्देशिका चलाएँ`$ flask commands --help`एक टर्मिनल से.
 
-**चेतावनी**: प्रयोग अवश्य करें`pyScss`संस्करण 1.3.7 (**नहीं** 1.4.0) as it would re-introduce a bug ("global flags not at the start of the expression at position 1"). **अद्यतन**: उपयोग[libsass](https://sass.github.io/libsass-python/)के बजाय`pyScss`.
+**चेतावनी**: प्रयोग अवश्य करें`pyScss`संस्करण 1.3.7 (**नहीं**1.4.0) क्योंकि यह एक बग को फिर से प्रस्तुत करेगा ("वैश्विक झंडे स्थिति 1 पर अभिव्यक्ति की शुरुआत में नहीं हैं")।**अद्यतन**: उपयोग[libsass](https://sass.github.io/libsass-python/)के बजाय`pyScss`.
 
 ## 100 - परिचय
 
