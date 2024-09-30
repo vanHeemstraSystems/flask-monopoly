@@ -34,4 +34,44 @@ Submit the form to sign up.
 
 ## 300 - How to Login as a Registered User
 
+1) From the Home page of the game (```/```), choose from the navigation bar the menu item **Login**.
+
+2) On the Login page (```/auth/login```), fill in the form providing:
+
+- email address
+- password
+- (Optional) remember me
+
+Submit the form to login.
+
+3) If successful, you will be redirected to the Home page (```/```) and a message will state: ```logged in```. If either the email address and/or the password are incorrect, a message will state ```error```.
+
+4) Optionally, you can now logout by choosing from the navigation bar the menu item **Logout**.
+
+5) Alternatively, you can either start a New game or Join an existing game.
+
+## 400 - How to Logout as a Logged In User
+
+1) From the Home page of the game (```/```), choose from the navigation bar the menu item **Logout**.
+
+2) ...
+
+## 500 - How to start a New Game as a Logged In User
+
+1) From the Home page of the game (```/```), choose from the navigation bar the menu item **New Game**.
+
+2) You will be redirected to the start a New Game page (```/new_game```).
+
+## 600 - How to join an Existing Game as a Logged In User
+
+1) From the Home page of the game (```/```), choose from the navigation bar the menu item **Join Game**.
+
+2) You will be redirected to the join an Existing Game page (```/join_game```). 
+
+3) Fill in the Join Code and submit the form with **Join**.
+
+4) If the Join Code is **not** registered, you will be given a message: ```You cannot join this game```.
+
+5) If the Join Code is registered, you will be redirected to ...
+
 MORE
