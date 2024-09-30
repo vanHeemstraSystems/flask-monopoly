@@ -14,12 +14,35 @@
 
 按如下方式运行该应用程序：
 
-1) 输入`flask_app`目录：`$ cd flask_app`2) 运行`$ pip install -r requirements.txt`3）将app/sample.env复制到app/.env：`$ cp app/sample.env app/.env`4）更新`app/.env`与您的配置设置。
+1) 输入`flask_app`目录：`$ cd flask_app`2) 跑步`$ pip install -r requirements.txt`3）将app/sample.env复制到app/.env：`$ cp app/sample.env app/.env`4）更新`app/.env`与您的配置设置。
 5）如果不存在，则在内部创建一个虚拟环境`flask_app`目录：`$ python3 -m venv .venv`6）启动虚拟环境，输入：`$ . .venv/bin/activate`7) 跑步`(.venv) $ ./setup.sh`（macOS 或 Linux）或`(.venv) setup.bat`（视窗）
 8) 如果出现找不到模块 Flask-Bcrypt 的错误，请运行`(.venv) $ pip install Flask-Bcrypt`9）创建数据库：`(.venv) $ flask create_db`10）运行烧瓶应用程序：`(.venv) $ flask run`11）根据提示打开Web界面
 12) 使用`CTRL+c`退出网络服务器。
 13) 或者运行flask命令行界面：`(.venv) $ flask shell`14）执行任何flask命令：>>>
 15) 使用`exit()`退出命令行界面。
+
+要查看所有路线，请从`flask_app`目录运行`$ flask routes`:
+
+    $ flask routes
+    Endpoint                 Methods    Rule                      
+    -----------------------  ---------  --------------------------
+    auth.login               GET, POST  /auth/login               
+    auth.logout              GET        /auth/logout              
+    auth.profile             GET        /auth/profile/<user_id>   
+    auth.register            GET, POST  /auth/register            
+    game.field_info          GET        /field_info/<field_id>    
+    game.guest_waiting_room  GET, POST  /guest_waiting_room/<code>
+    game.home                GET        /                         
+    game.hot_seats           GET, POST  /hot_seats/<code>         
+    game.hot_seats           GET        /hot_seats                
+    game.init_pvp            GET        /init_pvp                 
+    game.join_game           GET, POST  /join_game                
+    game.menu                GET        /menu                     
+    game.play_pvp            GET, POST  /play_pvp/<code>          
+    game.vs_ai               GET, POST  /vs_ai/<code>             
+    game.vs_ai               GET        /vs_ai                    
+    game.waiting_room        GET, POST  /waiting_room/<code>      
+    static                   GET        /static/<path:filename>
 
 ## 100 - 简介
 
