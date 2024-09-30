@@ -1,4 +1,4 @@
-flacon-monopole
+flask-monopoly
 
 # Monopole des flacons
 
@@ -28,7 +28,7 @@ Exécutez cette application comme suit :
 13) Vous pouvez également exécuter l'interface de ligne de commande flask :`(.venv) $ flask shell`14) Exécutez toutes les commandes du flacon : >>>
 15) Utiliser`exit()`pour quitter l'interface de ligne de commande.
 
-**Conseil**: Pour voir tous les itinéraires, depuis le`flask_app`exécution du répertoire`$ flask routes`:
+**Conseil**: Pour voir tous les itinéraires, depuis le`flask_app` directory run `$ flask routes`:
 
     $ flask routes
     Endpoint                 Methods    Rule                      
@@ -53,7 +53,7 @@ Exécutez cette application comme suit :
 
 **Conseil**: Pour tout voir_coutume_commandes, de l'intérieur`flask_app`exécution du répertoire`$ flask commands --help`depuis un terminal.
 
-**Avertissement**: Make sure to use `pyScss`version 1.3.7 (**pas**1.4.0) car cela réintroduirait un bug ("les drapeaux globaux ne sont pas au début de l'expression en position 1").**Mise à jour**: utiliser[libsass](https://sass.github.io/libsass-python/)au lieu de`pyScss`.
+**Avertissement** : Assurez-vous d'utiliser`pyScss`version 1.3.7 (**pas**1.4.0) car cela réintroduirait un bug ("les drapeaux globaux ne sont pas au début de l'expression en position 1").**Mise à jour**: utiliser[libsass](https://sass.github.io/libsass-python/)au lieu de`pyScss`.
 
 ## 100 - Introduction
 
