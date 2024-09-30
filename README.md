@@ -62,7 +62,7 @@ static                   GET        /static/<path:filename>
 
 **Tip**: To see all *custom* commands, from within ```flask_app``` directory run ```$ flask commands --help``` from a terminal.
 
-**Warning**: Make sure to use ```pyScss``` version 1.3.7 (**not** 1.4.0) as it would re-introduce a bug ("global flags not at the start of the expression at position 1").
+**Warning**: Make sure to use ```pyScss``` version 1.3.7 (**not** 1.4.0) as it would re-introduce a bug ("global flags not at the start of the expression at position 1"). **Update**: use [libsass](https://sass.github.io/libsass-python/) instead of ```pyScss```.
 
 ## 100 - Introduction
 

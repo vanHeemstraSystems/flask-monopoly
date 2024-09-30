@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import sass
 from flask import Flask
 from flask_assets import Environment, Bundle
 from flask_bcrypt import Bcrypt
@@ -18,13 +19,13 @@ def create_app():
     assets = Environment(app)
     assets.url = app.static_url_path
     # create bundle for Flask-Assets to compile and prefix scss to css
-    test = Bundle('scss/test.scss', filters='pyscss', output='css/test.css')
+    test = Bundle('scss/test.scss', filters='libsass', output='css/test.css')
     assets.register('test', test)
-    # test.build() - Superfluous
-    # scss = Bundle('scss/style.scss', 'scss/tiles.scss', filters='pyscss', output='css/all.css')
-    # assets.register('scss_all', scss)
-    # scss.build() - Superfluous
-    # general = Bundle('scss/variables.scss', 'scss/navbar.scss',  filters='pyscss', output='css/general.css')
+    test.build() - Superfluous
+    scss = Bundle('scss/style.scss', 'scss/tiles.scss', filters='libsass', output='css/all.css')
+    assets.register('scss_all', scss)
+    scss.build()
+    # general = Bundle('scss/variables.scss', 'scss/navbar.scss',  filters='libsass', output='css/general.css')
     # assets.register('general', general)
     # general.build() - Superfluous
     # custom_scss = Bundle('scss/customs.scss', filters='pyscss', output='css/customs.css')

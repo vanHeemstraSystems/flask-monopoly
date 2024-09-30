@@ -8,6 +8,7 @@ Flask-Scss
 Flask-SocketIO
 Flask-SQLAlchemy
 Flask-WTF
+libsass
 pycparser
 pyScss==1.3.7
 python-dotenv
