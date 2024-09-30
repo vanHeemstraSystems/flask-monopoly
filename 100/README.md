@@ -104,6 +104,20 @@ MORE
 
 ## 900 - How to play a You versus a Computer Game?
 
+1) You will be have been redirected to the join an New or Existing Game page where you play against a computer (```/vs_ai```).
+
+2) The Board will show all Fields (such as parking, [ cities ], and start).
+
+3) You will be one of the Players. Each Player is given a number (e.g. 1) and a color (e.g. amber).
+
+4) If you enter a City Field, you will be given the option to Buy, unless the City Field has already been bought. You can choose ```Yes``` or ```No```. If you decide to buy, the Field will be marked with your number (e.g. 1) and color (e.g. amber)
+
+5) Click **Next Turn** if you want to continue the game.
+
+6) As you are playing against a Computer, the Computer will move by its own choice, and buy a City Field is possible also by its own choice. You will see if a City Field has been bought by the Computer if it is marked by its number (e.g. 0) and color (e.g. red).
+
+7) During the Game, the remaining Money of each Player (including the Computer) will be shown (e.g. Player 1: 3600).
+
 MORE
 
 ## 1000 - How to play a Hot Seats Remotely Game?
