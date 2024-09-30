@@ -118,6 +118,8 @@ MORE
 
 7) During the Game, the remaining Money of each Player (including the Computer) will be shown (e.g. Player 1: 3600).
 
+8) Provided a Player steps on a City Field that belongs to another Player, (s)he has to pay an amount, depending on the presence of one or more Homes or a Hotel. The Money will be automatically taken out of her/his Account.
+
 MORE
 
 ## 1000 - How to play a Hot Seats Remotely Game?
