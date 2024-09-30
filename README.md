@@ -15,6 +15,8 @@ Based on "Flask with Sass" at https://github.com/ChristinaVoss/flask-with-sass
 
 Based on "Bundling JavaScript and CSS Files in Flask Using Flask-Assets" at https://www.youtube.com/watch?v=HYO6GNOJMmQ
 
+Based on "pyScss" at https://github.com/Kronuz/pyScss
+
 Run this application as follows:
 
 1) Enter ```flask_app``` directory: ```$ cd flask_app```
