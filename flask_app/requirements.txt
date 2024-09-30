@@ -1,5 +1,6 @@
 bcrypt
 click
+email_validator
 Flask
 Flask-Assets
 Flask-Bcrypt
