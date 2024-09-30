@@ -11,6 +11,8 @@ Based on "flask-monopoly" at https://github.com/KrzysztofWelc/flask-monopoly
 
 Based on "Flask CLI Command" at https://testdriven.io/tips/38c1ac63-8d16-4cbc-8488-557b53afa9e5/
 
+Based on "Flask with Sass" at https://github.com/ChristinaVoss/flask-with-sass
+
 Run this application as follows:
 
 1) Enter ```flask_app``` directory: ```$ cd flask_app```
