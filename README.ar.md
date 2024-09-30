@@ -25,9 +25,8 @@
 8) في حالة حدوث أخطاء في عدم العثور على الوحدة Flask-Bcrypt، قم بتشغيل`(.venv) $ pip install Flask-Bcrypt`9) إنشاء قاعدة البيانات:`(.venv) $ flask commands create_db`10) قم بتشغيل تطبيق القارورة:`(.venv) $ flask run`(بدلاً عن ذلك`$ python main.py`)
 11) افتح واجهة الويب كما هو مطلوب
 12) الاستخدام`CTRL+c`للخروج من خادم الويب.
-13) بدلاً من ذلك، قم بتشغيل واجهة سطر أوامر القارورة:`(.venv) $ flask shell`
-14) Execute any flask commands: >>>
-15) Use `exit()` to exit from the command line interface.
+13) بدلاً من ذلك، قم بتشغيل واجهة سطر أوامر القارورة:`(.venv) $ flask shell`14) تنفيذ أي أوامر قارورة: >>>
+15) الاستخدام`exit()`للخروج من واجهة سطر الأوامر.
 
 **نصيحة**: لرؤية كافة الطرق، من داخل`flask_app`تشغيل الدليل`$ flask routes`:
 

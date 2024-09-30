@@ -18,11 +18,12 @@ Basé sur « Regroupement de fichiers JavaScript et CSS dans Flask à l'aide de 
 
 Basé sur "pyScss" sur<https://github.com/Kronuz/pyScss>
 
-Run this application as follows:
+Exécutez cette application comme suit :
 
-1) Entrez`flask_app`annuaire:`$ cd flask_app`2) Courir`$ pip install -r requirements.txt`3) Copiez app/sample.env dans app/.env :`$ cp app/sample.env app/.env`4) Mise à jour`app/.env`avec votre paramètre de configuration.
-5) S'il n'existe pas, créez un environnement virtuel à l'intérieur du`flask_app`annuaire:`$ python3 -m venv .venv`6) Démarrez l'environnement virtuel et entrez :`$ . .venv/bin/activate`7) Courir`(.venv) $ ./setup.sh`(macOS ou Linux) ou`(.venv) setup.bat`(Windows)
-8) En cas d'erreurs où le module Flask-Bcrypt n'est pas trouvé, exécutez`(.venv) $ pip install Flask-Bcrypt`9) Créez la base de données :`(.venv) $ flask commands create_db`10) Exécutez l'application Flask :`(.venv) $ flask run`(alternativement`$ python main.py`)
+1) Entrez`flask_app`annuaire:`$ cd flask_app`2) Courir`$ pip install -r requirements.txt`3) Copiez app/sample.env dans app/.env :`$ cp app/sample.env app/.env`4) Mise à jour`app/.env` with your configuration setting.
+5) If non-existent, create a virtual environment inside the `flask_app`annuaire:`$ python3 -m venv .venv`6) Démarrez l'environnement virtuel et entrez :`$ . .venv/bin/activate`7) Courir`(.venv) $ ./setup.sh`(macOS ou Linux) ou`(.venv) setup.bat`(Windows)
+8) En cas d'erreurs où le module Flask-Bcrypt n'est pas trouvé, exécutez`(.venv) $ pip install Flask-Bcrypt`
+9) Create the database: `(.venv) $ flask commands create_db`10) Exécutez l'application Flask :`(.venv) $ flask run`(alternativement`$ python main.py`)
 11) Ouvrez l'interface Web comme vous y êtes invité
 12) Utiliser`CTRL+c`pour quitter le serveur Web.
 13) Vous pouvez également exécuter l'interface de ligne de commande flask :`(.venv) $ flask shell`14) Exécutez toutes les commandes du flacon : >>>
@@ -53,7 +54,7 @@ Run this application as follows:
 
 **Conseil**: Pour tout voir_coutume_commandes, de l'intérieur`flask_app`exécution du répertoire`$ flask commands --help`depuis un terminal.
 
-**Avertissement** : Assurez-vous d'utiliser`pyScss`version 1.3.7 (**pas**1.4.0) car cela réintroduirait un bug ("les drapeaux globaux ne sont pas au début de l'expression en position 1").**Mise à jour**: utiliser[libsass](https://sass.github.io/libsass-python/)au lieu de`pyScss`.
+**Warning** : Assurez-vous d'utiliser`pyScss`version 1.3.7 (**pas**1.4.0) car cela réintroduirait un bug ("les drapeaux globaux ne sont pas au début de l'expression en position 1").**Mise à jour**: utiliser[libsass](https://sass.github.io/libsass-python/)au lieu de`pyScss`.
 
 ## 100 - Introduction
 
@@ -65,7 +66,7 @@ Voir[README.md](./200/README.md)
 
 ## 300 - Construire notre application
 
-Voir[README.md](./300/README.md)
+See [README.md](./300/README.md)
 
 ## 400 - Conclusion
 
