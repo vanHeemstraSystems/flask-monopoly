@@ -8,11 +8,13 @@ app = create_app()
 
 @app.cli.command('create_db')
 def create_db():
+    """ Creates a database """
     db.create_all()
     print('***** Database created *****')
 
 @app.cli.command('clear_saves')
 def clear_saves():
+    """ Clears saves """
     files = os.listdir(get_games_dir())
     for f in files:
         _, ext = os.path.splitext(f)

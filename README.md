@@ -21,7 +21,7 @@ Run this application as follows:
 6) Start the virtual environment and enter: ```$ . .venv/bin/activate```
 7) Run ```(.venv) $ ./setup.sh``` (macOS or Linux)or ```(.venv) setup.bat``` (Windows)
 8) In case of errors of not finding module Flask-Bycrypt, run ```(.venv) $ pip install Flask-Bcrypt```
-9) Create the database: ```(.venv) $ flask create_db```
+9) Create the database: ```(.venv) $ flask commands create_db```
 10) Run the flask app: ```(.venv) $ flask run```
 11) Open the web interface as prompted
 12) Use ```CTRL+c``` to exit the web server.
@@ -53,6 +53,8 @@ game.vs_ai               GET        /vs_ai
 game.waiting_room        GET, POST  /waiting_room/<code>      
 static                   GET        /static/<path:filename>
 ```
+
+**Tip**: To see all *custom* commands, from within ```flask_app``` directory run ```$ flask commands --help``` from a terminal.
 
 ## 100 - Introduction
 
