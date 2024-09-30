@@ -51,7 +51,7 @@
     game.waiting_room        GET, POST  /waiting_room/<code>      
     static                   GET        /static/<path:filename>
 
-**提示**: 查看全部_风俗_来自内部的命令`flask_app`目录运行`$ flask commands --help` from a terminal.
+**提示**: 查看全部_风俗_来自内部的命令`flask_app`目录运行`$ flask commands --help`从终端。
 
 **警告**: 请务必使用`pyScss`版本1.3.7（**不是**1.4.0），因为它会重新引入一个错误（“全局标志不在位置 1 表达式的开头”）。**更新**： 使用[库萨斯](https://sass.github.io/libsass-python/)而不是`pyScss`.
 
@@ -63,10 +63,10 @@
 
 看[README.md](./200/README.md)
 
-## 300 - Building Our Application
+## 300 - 构建我们的应用程序
 
 看[README.md](./300/README.md)
 
-## 400 - 结论
+## 400 - Conclusion
 
 看[README.md](./400/README.md)
