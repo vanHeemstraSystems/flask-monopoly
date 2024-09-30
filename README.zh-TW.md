@@ -44,7 +44,7 @@
     game.waiting_room        GET, POST  /waiting_room/<code>      
     static                   GET        /static/<path:filename>
 
-**提示**: 看全部_風俗_來自內部的命令`flask_app` directory run `$ flask commands --help`從終端。
+**提示**: 看全部_風俗_來自內部的命令`flask_app`目錄運行`$ flask commands --help`從終端。
 
 ## 100 - 簡介
 
