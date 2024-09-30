@@ -12,6 +12,8 @@
 
 基于“Flask CLI 命令”，位于<https://testdriven.io/tips/38c1ac63-8d16-4cbc-8488-557b53afa9e5/>
 
+基于“Flask with Sass”，位于<https://github.com/ChristinaVoss/flask-with-sass>
+
 按如下方式运行该应用程序：
 
 1) 输入`flask_app`目录：`$ cd flask_app`2) 跑步`$ pip install -r requirements.txt`3）将app/sample.env复制到app/.env：`$ cp app/sample.env app/.env`4）更新`app/.env`与您的配置设置。
