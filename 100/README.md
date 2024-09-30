@@ -76,9 +76,9 @@ Submit the form to login.
 
 - **Hot Seats Locally**: meaning you play with humans who are also playing locally (i.e. the button to progress is visible to all Players, taking turns).
 
-- **Versus Computer**: meaning you play against a computer using Artificial Intelligence (i.e. the button to progress is visible only to the Player - Human or Computer - whose Turn it is).
+- **Versus Computer**: meaning you play against a computer using Artificial Intelligence (i.e. the button to progress is visible only to the Player - Human or Computer - whose Turn it is, i.e. the Active Player).
 
-- **Hot Seats Remotely:** meaning you play with humans who are playing over the Internet(i.e. the button to progress is visible only to the Online Player whose Turn it is).
+- **Hot Seats Remotely:** meaning you play with humans who are playing over the Internet(i.e. the button to progress is visible only to the Online Player whose Turn it is, i.e. the Active Player).
 
 4.A) Hot Seats Locally: See [How to Play a Hot Seats Locally Game?](#800---how-to-play-a-hot-seats-locally-game)
 
