@@ -130,7 +130,7 @@ MORE
 
 ## 1100 - What is the Waiting Room?
 
-When a Player choosieds to Join a Game, (s)he will have to wait in the Waiting Room until the Organizer allows the Player to play.
+When a Player chooses to Join a Game, (s)he will have to wait in the Waiting Room until the Organizer allows the Player to play.
 
 MORE
 
