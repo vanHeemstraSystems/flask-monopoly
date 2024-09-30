@@ -6,12 +6,14 @@ from app.game.models import Game
 
 app = create_app()
 
+# Below code is duplicated in app/commands.py
 @app.cli.command('create_db')
 def create_db():
     """ Creates a database """
     db.create_all()
     print('***** Database created *****')
 
+# Below code is duplicated in app/commands.py
 @app.cli.command('clear_saves')
 def clear_saves():
     """ Clears saves """
