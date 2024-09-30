@@ -19,9 +19,6 @@ def create_app():
     assets = Environment(app)
     assets.url = app.static_url_path
     # create bundle for Flask-Assets to compile and prefix scss to css
-    test = Bundle('scss/test.scss', filters='libsass', output='css/test.css')
-    assets.register('test', test)
-    test.build() # force a build
     scss = Bundle('scss/style.scss', 'scss/tiles.scss', filters='libsass', output='css/all.css')
     assets.register('scss_all', scss)
     scss.build() # force a build
