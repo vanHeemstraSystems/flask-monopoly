@@ -8,6 +8,7 @@ Flask-Scss
 Flask-SocketIO
 Flask-SQLAlchemy
 Flask-WTF
+pyScss
 python-dotenv
 python-engineio
 python-socketio
