@@ -12,7 +12,9 @@
 
 "फ्लास्क सीएलआई कमांड" पर आधारित<https://testdriven.io/tips/38c1ac63-8d16-4cbc-8488-557b53afa9e5/>
 
-"फ्लास्क विद सैस" पर आधारित<https://github.com/ChristinaVoss/flask-with-sass>
+Based on "Flask with Sass" at <https://github.com/ChristinaVoss/flask-with-sass>
+
+"फ्लास्क-एसेट्स का उपयोग करके फ्लास्क में जावास्क्रिप्ट और सीएसएस फ़ाइलों को बंडल करना" पर आधारित<https://www.youtube.com/watch?v=HYO6GNOJMmQ>
 
 इस एप्लिकेशन को इस प्रकार चलाएँ:
 
