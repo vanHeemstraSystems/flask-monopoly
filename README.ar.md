@@ -25,8 +25,9 @@
 8) في حالة حدوث أخطاء في عدم العثور على الوحدة Flask-Bcrypt، قم بتشغيل`(.venv) $ pip install Flask-Bcrypt`9) إنشاء قاعدة البيانات:`(.venv) $ flask commands create_db`10) قم بتشغيل تطبيق القارورة:`(.venv) $ flask run`(بدلاً عن ذلك`$ python main.py`)
 11) افتح واجهة الويب كما هو مطلوب
 12) الاستخدام`CTRL+c`للخروج من خادم الويب.
-13) بدلاً من ذلك، قم بتشغيل واجهة سطر أوامر القارورة:`(.venv) $ flask shell`14) تنفيذ أي أوامر قارورة: >>>
-15) الاستخدام`exit()`للخروج من واجهة سطر الأوامر.
+13) بدلاً من ذلك، قم بتشغيل واجهة سطر أوامر القارورة:`(.venv) $ flask shell`
+14) Execute any flask commands: >>>
+15) Use `exit()` to exit from the command line interface.
 
 **نصيحة**: لرؤية كافة الطرق، من داخل`flask_app`تشغيل الدليل`$ flask routes`:
 
@@ -53,7 +54,7 @@
 
 **نصيحة**: لرؤية كل شيء_مخصص_الأوامر، من الداخل`flask_app`تشغيل الدليل`$ flask commands --help`من محطة.
 
-**تحذير**: تأكد من الاستخدام`pyScss`الإصدار 1.3.7 (**لا** 1.4.0) as it would re-introduce a bug ("global flags not at the start of the expression at position 1"). **تحديث**: يستخدم[libsass](https://sass.github.io/libsass-python/)بدلاً من`pyScss`.
+**تحذير**: تأكد من الاستخدام`pyScss`الإصدار 1.3.7 (**لا**1.4.0) لأنه سيعيد تقديم خطأ ("الأعلام العامة ليست في بداية التعبير في الموضع 1").**تحديث**: يستخدم[libsass](https://sass.github.io/libsass-python/)بدلاً من`pyScss`.
 
 ## 100- مقدمة
 
@@ -67,6 +68,6 @@
 
 يرى[README.md](./300/README.md)
 
-## 400 - Conclusion
+## 400 - الخاتمة
 
 يرى[README.md](./400/README.md)
