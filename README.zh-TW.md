@@ -1,4 +1,4 @@
-flask-monopoly
+燒瓶壟斷
 
 # 燒瓶壟斷
 
@@ -14,10 +14,9 @@ flask-monopoly
 
 按如下方式運行該應用程式：
 
-1) 輸入`flask_app`目錄：`$ cd flask_app`2) 運行`$ pip install -r requirements.txt`3）將app/sample.env複製到app/.env：`$ cp app/sample.env app/.env`4）更新`app/.env`與您的配置設定。
+1) 輸入`flask_app`目錄：`$ cd flask_app`2) 跑步`$ pip install -r requirements.txt`3）將app/sample.env複製到app/.env：`$ cp app/sample.env app/.env`4）更新`app/.env`與您的配置設定。
 5）如果不存在，則在內部建立一個虛擬環境`flask_app`目錄：`$ python3 -m venv .venv`6）啟動虛擬環境，輸入：`$ . .venv/bin/activate`7) 跑步`(.venv) $ ./setup.sh`（macOS 或 Linux）或`(.venv) setup.bat`（視窗）
-8) 如果出現找不到模組 Flask-Bcrypt 的錯誤，請執行`(.venv) $ pip install Flask-Bcrypt`
-9) Create the database: `(.venv) $ flask commands create_db`10）運行燒瓶應用程式：`(.venv) $ flask run`11）根據提示開啟Web介面
+8) 如果出現找不到模組 Flask-Bcrypt 的錯誤，請執行`(.venv) $ pip install Flask-Bcrypt`9）建立資料庫：`(.venv) $ flask commands create_db`10）運行燒瓶應用程式：`(.venv) $ flask run`11）根據提示開啟Web介面
 12) 使用`CTRL+c`退出網路伺服器。
 13) 或運行flask命令列介面：`(.venv) $ flask shell`14）執行任何flask指令：>>>
 15) 使用`exit()`退出命令列介面。
@@ -45,9 +44,9 @@ flask-monopoly
     game.waiting_room        GET, POST  /waiting_room/<code>      
     static                   GET        /static/<path:filename>
 
-**提示**: 看全部_風俗_命令，來自內部`flask_app`目錄運行`$ flask commands --help`從終端。
+**提示**: 看全部_風俗_來自內部的命令`flask_app` directory run `$ flask commands --help`從終端。
 
-## 100 - Introduction
+## 100 - 簡介
 
 看[README.md](./100/README.md)
 
