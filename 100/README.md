@@ -126,4 +126,8 @@ MORE
 
 ## 1000 - How to play a Hot Seats Remotely Game?
 
-More
+MORE
+
+## 1100 - What is the Waiting Room?
+
+MORE
