@@ -16,6 +16,8 @@ Basé sur "Flask with Sass" sur<https://github.com/ChristinaVoss/flask-with-sass
 
 Basé sur « Regroupement de fichiers JavaScript et CSS dans Flask à l'aide de Flask-Assets » sur<https://www.youtube.com/watch?v=HYO6GNOJMmQ>
 
+Basé sur "pyScss" sur<https://github.com/Kronuz/pyScss>
+
 Exécutez cette application comme suit :
 
 1) Entrez`flask_app`annuaire:`$ cd flask_app`2) Courir`$ pip install -r requirements.txt`3) Copiez app/sample.env dans app/.env :`$ cp app/sample.env app/.env`4) Mise à jour`app/.env`avec votre paramètre de configuration.
