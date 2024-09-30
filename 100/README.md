@@ -78,13 +78,13 @@ Submit the form to login.
 
 - **Versus Computer**: meaning you play against a computer using Artificial Intelligence.
 
-- **Hot Seats Remote:** meaning you play with humans who are playing over the Internet.
+- **Hot Seats Remotely:** meaning you play with humans who are playing over the Internet.
 
-4.A) Hot Seats Locally: MORE
+4.A) Hot Seats Locally: See [How to Play a Hot Seats Locally Game?](#800---how-to-play-a-hot-seats-locally-game)
 
-4.B) Versus Computer: MORE
+4.B) Versus Computer: See [How to Play a You Versus a Computer Game?](#900---how-to-play-a-you-versus-a-computer-game)
 
-4.C) Hot Seats Remote: MORE
+4.C) Hot Seats Remotely: See [How to Play a Hot Seats Remotely Game?](#1000---how-to-play-a-hot-seats-remotely-game)
 
 ## 700 - How to join an Existing Game as a Logged In User
 
@@ -98,6 +98,14 @@ Submit the form to login.
 
 5) If the Join Code is registered, you will be redirected to ...
 
-
+## 800 - How to play a Hot Seats Locally Game?
 
 MORE
+
+## 900 - How to play a You versus a Computer Game?
+
+MORE
+
+## 1000 - How to play a Hot Seats Remotely Game?
+
+More
