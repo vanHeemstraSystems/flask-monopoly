@@ -7,5 +7,14 @@
 {% endblock %}
 
 {% block body %}
-  <div class="container">Hello from Game: Home</div>
+  <div class="container">
+    <div class="row">
+        <div class="img-container">
+            <img class="img-fluid" src="{{url_for('static', filename='images/landing.svg')}}" alt="people playing monopoly">
+        </div>
+        <div class="text-container">
+            Hello from Game: Home
+        </div>
+    </div>
+  </div>
 {% endblock %}
