@@ -21,32 +21,32 @@ def create_app():
     # create bundle for Flask-Assets to compile and prefix scss to css
     test = Bundle('scss/test.scss', filters='libsass', output='css/test.css')
     assets.register('test', test)
-    test.build() - Superfluous
+    test.build() # force a build
     scss = Bundle('scss/style.scss', 'scss/tiles.scss', filters='libsass', output='css/all.css')
     assets.register('scss_all', scss)
-    scss.build()
-    # general = Bundle('scss/variables.scss', 'scss/navbar.scss',  filters='libsass', output='css/general.css')
-    # assets.register('general', general)
-    # general.build() - Superfluous
-    # custom_scss = Bundle('scss/customs.scss', filters='pyscss', output='css/customs.css')
-    # assets.register('customs', custom_scss)
-    # custom_scss.build()
+    scss.build() # force a build
+    general = Bundle('scss/variables.scss', 'scss/navbar.scss',  filters='libsass', output='css/general.css')
+    assets.register('general', general)
+    general.build() # force a build
+    custom_scss = Bundle('scss/customs.scss', filters='libsass', output='css/customs.css')
+    assets.register('customs', custom_scss)
+    custom_scss.build() # force a build
 
-    # home_scss = Bundle('scss/pages/home.scss', filters='pyscss', output='css/pages/home.css')
+    # home_scss = Bundle('scss/pages/home.scss', filters='libsass', output='css/pages/home.css')
     # assets.register('home_scss', home_scss)
-    # home_scss.build() - Superfluous
-    # menu_scss = Bundle('scss/pages/menu.scss', filters='pyscss', output='css/pages/menu.css')
+    # home_scss.build() # force a build
+    # menu_scss = Bundle('scss/pages/menu.scss', filters='libsass', output='css/pages/menu.css')
     # assets.register('menu_scss', menu_scss)
-    # menu_scss.build() - Superfluous
-    # join_scss = Bundle('scss/pages/join_game.scss', filters='pyscss', output='css/pages/join_game.css')
+    # menu_scss.build() # force a build
+    # join_scss = Bundle('scss/pages/join_game.scss', filters='libsass', output='css/pages/join_game.css')
     # assets.register('join_scss', join_scss)
-    # join_scss.build() - Superfluous
-    # waiting_room_scss = Bundle('scss/pages/waiting_room.scss', filters='pyscss', output='css/pages/waiting_room.css')
+    # join_scss.build() # force a build
+    # waiting_room_scss = Bundle('scss/pages/waiting_room.scss', filters='libsass', output='css/pages/waiting_room.css')
     # assets.register('waiting_room_scss', waiting_room_scss)
-    # waiting_room_scss.build() - Superfluous
-    # profile_scss = Bundle('scss/pages/profile.scss', filters='pyscss', output='css/pages/profile.css')
+    # waiting_room_scss.build() # force a build
+    # profile_scss = Bundle('scss/pages/profile.scss', filters='libsass', output='css/pages/profile.css')
     # assets.register('profile_scss', profile_scss)    
-    # profile_scss.build() - Superfluous
+    # profile_scss.build() # force a build
 
     js = Bundle('js/throttle.js', 'js/selectors.js', 'js/buildOnField.js', 'js/updateDisplay.js', output='js/build.js')
     assets.register('js_build', js)

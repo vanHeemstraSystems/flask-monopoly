@@ -10,6 +10,9 @@
       rel="stylesheet"
     />    
     {% assets "test" %} <link rel=stylesheet type=text/css href="{{ASSET_URL}}"> {% endassets %}
+    {% assets "customs" %}
+        <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    {% endassets %}
   </head>
   <body>
     {% include 'navbar.html' %}
