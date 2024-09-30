@@ -12,8 +12,8 @@
 
 قم بتشغيل هذا التطبيق على النحو التالي:
 
-1) أدخل`flask_app`دليل:`$ cd flask_app`2) تشغيل`$ pip install -r requirements.txt`3) انسخ app/sample.env إلى app/.env:`$ cp app/sample.env app/.env`4) التحديث`app/.env`مع إعداد التكوين الخاص بك.
-5) في حالة عدم وجودها، قم بإنشاء بيئة افتراضية داخل`flask_app`دليل:`$ python3 -m venv .venv`6) ابدأ البيئة الافتراضية وأدخل:`$ . .venv/bin/activate`7) تشغيل`(.venv) $ ./setup.sh`(ماك أو لينكس) أو`(.venv) setup.bat`(ويندوز)
+1) أدخل`flask_app`الدليل:`$ cd flask_app`2) تشغيل`$ pip install -r requirements.txt`3) انسخ app/sample.env إلى app/.env:`$ cp app/sample.env app/.env`4) التحديث`app/.env`مع إعداد التكوين الخاص بك.
+5) في حالة عدم وجودها، قم بإنشاء بيئة افتراضية داخل`flask_app`دليل:`$ python3 -m venv .venv`6) ابدأ البيئة الافتراضية وأدخل:`$ . .venv/bin/activate`7) تشغيل`(.venv) $ ./setup.sh` (macOS or Linux)or `(.venv) setup.bat`(ويندوز)
 8) في حالة حدوث أخطاء في عدم العثور على الوحدة Flask-Bcrypt، قم بتشغيل`(.venv) $ pip install Flask-Bcrypt`8) قم بتشغيل تطبيق القارورة:`(.venv) $ flask run`9) افتح واجهة الويب كما هو مطلوب
 10) الاستخدام`CTRL+c`للخروج من خادم الويب.
 11) بدلاً من ذلك، قم بتشغيل واجهة سطر أوامر القارورة:`(.venv) $ flask shell`12) تنفيذ أي أوامر قارورة: >>>
