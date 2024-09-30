@@ -32,21 +32,21 @@ def create_app():
     assets.register('customs', custom_scss)
     custom_scss.build() # force a build
 
-    # home_scss = Bundle('scss/pages/home.scss', filters='libsass', output='css/pages/home.css')
-    # assets.register('home_scss', home_scss)
-    # home_scss.build() # force a build
-    # menu_scss = Bundle('scss/pages/menu.scss', filters='libsass', output='css/pages/menu.css')
-    # assets.register('menu_scss', menu_scss)
-    # menu_scss.build() # force a build
-    # join_scss = Bundle('scss/pages/join_game.scss', filters='libsass', output='css/pages/join_game.css')
-    # assets.register('join_scss', join_scss)
-    # join_scss.build() # force a build
-    # waiting_room_scss = Bundle('scss/pages/waiting_room.scss', filters='libsass', output='css/pages/waiting_room.css')
-    # assets.register('waiting_room_scss', waiting_room_scss)
-    # waiting_room_scss.build() # force a build
-    # profile_scss = Bundle('scss/pages/profile.scss', filters='libsass', output='css/pages/profile.css')
-    # assets.register('profile_scss', profile_scss)    
-    # profile_scss.build() # force a build
+    home_scss = Bundle('scss/pages/home.scss', filters='libsass', output='css/pages/home.css')
+    assets.register('home_scss', home_scss)
+    home_scss.build() # force a build
+    menu_scss = Bundle('scss/pages/menu.scss', filters='libsass', output='css/pages/menu.css')
+    assets.register('menu_scss', menu_scss)
+    menu_scss.build() # force a build
+    join_scss = Bundle('scss/pages/join_game.scss', filters='libsass', output='css/pages/join_game.css')
+    assets.register('join_scss', join_scss)
+    join_scss.build() # force a build
+    waiting_room_scss = Bundle('scss/pages/waiting_room.scss', filters='libsass', output='css/pages/waiting_room.css')
+    assets.register('waiting_room_scss', waiting_room_scss)
+    waiting_room_scss.build() # force a build
+    profile_scss = Bundle('scss/pages/profile.scss', filters='libsass', output='css/pages/profile.css')
+    assets.register('profile_scss', profile_scss)    
+    profile_scss.build() # force a build
 
     js = Bundle('js/throttle.js', 'js/selectors.js', 'js/buildOnField.js', 'js/updateDisplay.js', output='js/build.js')
     assets.register('js_build', js)
