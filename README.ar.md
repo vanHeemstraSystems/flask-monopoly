@@ -8,7 +8,7 @@
 
 بناءً على "نمط المصنع" في<https://github.com/vanHeemstraSystems/factory-pattern>
 
-Based on "flask-monopoly" at <https://github.com/KrzysztofWelc/flask-monopoly>
+على أساس "احتكار القارورة" في<https://github.com/KrzysztofWelc/flask-monopoly>
 
 قم بتشغيل هذا التطبيق على النحو التالي:
 
@@ -29,7 +29,7 @@ Based on "flask-monopoly" at <https://github.com/KrzysztofWelc/flask-monopoly>
 
 ## 300 – بناء تطبيقنا
 
-See [README.md](./300/README.md)
+يرى[README.md](./300/README.md)
 
 ## 400 - الخاتمة
 
