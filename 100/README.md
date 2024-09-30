@@ -74,11 +74,11 @@ Submit the form to login.
 
 3) You can choose from one of three Game Modes:
 
-- **Hot Seats Locally**: meaning you play with humans who are also playing locally.
+- **Hot Seats Locally**: meaning you play with humans who are also playing locally (i.e. the button to progress is visible to all Players, taking turns).
 
-- **Versus Computer**: meaning you play against a computer using Artificial Intelligence.
+- **Versus Computer**: meaning you play against a computer using Artificial Intelligence (i.e. the button to progress is visible only to the Player - Human or Computer - whose Turn it is).
 
-- **Hot Seats Remotely:** meaning you play with humans who are playing over the Internet.
+- **Hot Seats Remotely:** meaning you play with humans who are playing over the Internet(i.e. the button to progress is visible only to the Online Player whose Turn it is).
 
 4.A) Hot Seats Locally: See [How to Play a Hot Seats Locally Game?](#800---how-to-play-a-hot-seats-locally-game)
 
