@@ -51,11 +51,11 @@
     game.waiting_room        GET, POST  /waiting_room/<code>      
     static                   GET        /static/<path:filename>
 
-**提示**: 看全部_風俗_來自內部的命令`flask_app`目錄運行`$ flask commands --help`從終端。
+**提示**: 看全部_風俗_命令，來自內部`flask_app`目錄運行`$ flask commands --help`從終端。
 
 **警告**: 請務必使用`pyScss`版本1.3.7（**不是**1.4.0），因為它會重新引入一個錯誤（「全域標誌不在位置 1 表達式的開頭」）。**更新**： 使用[庫薩斯](https://sass.github.io/libsass-python/)而不是`pyScss`.
 
-## 100 - 簡介
+## 100 - Introduction
 
 看[README.md](./100/README.md)
 
